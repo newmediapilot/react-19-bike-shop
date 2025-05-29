@@ -1,18 +1,10 @@
 import {NavLink} from "react-router";
-
-/**
- * Adds underline when route === to
- * @param isActive
- */
-const active = ({isActive}) => {
-    return `${isActive ? "underline" : ""}`;
-};
-
 /**
  * Navigation for the router
  * @constructor
  */
 function Nav() {
+    const active = ({isActive}) => `${isActive ? "underline" : ""}`;
     return (<header>
         <nav className="bg-white border-gray-200 px-4 lg:px-6 py-2.5 dark:bg-gray-100">
             <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">

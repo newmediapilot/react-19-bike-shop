@@ -1,0 +1,14 @@
+{
+  "list": [
+    { "id": 0, "title": "Bicycle Type", "description": "Random Lorem Ipsum" },
+    { "id": 1, "title": "Mountain Terrain", "description": "Lorem ipsum dolor sit amet" },
+    { "id": 2, "title": "Gear Ratio", "description": "Consectetur adipiscing elit" },
+    { "id": 3, "title": "Brake System", "description": "Sed do eiusmod tempor incididunt" },
+    { "id": 4, "title": "Frame Material", "description": "Ut labore et dolore magna aliqua" },
+    { "id": 5, "title": "Suspension Type", "description": "Ut enim ad minim veniam" },
+    { "id": 6, "title": "Wheel Size", "description": "Quis nostrud exercitation ullamco" },
+    { "id": 7, "title": "Tire Pressure", "description": "Laboris nisi ut aliquip ex ea commodo" },
+    { "id": 8, "title": "Handlebar Style", "description": "Duis aute irure dolor in reprehenderit" },
+    { "id": 9, "title": "Seat Comfort", "description": "In voluptate velit esse cillum dolore" }
+  ]
+}

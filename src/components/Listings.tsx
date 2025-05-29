@@ -2,7 +2,8 @@ import {memo} from 'react';
 
 export type ListData = {
     id: number,
-    name: string
+    title: string,
+    description: string,
 }[];
 
 /**
@@ -10,7 +11,8 @@ export type ListData = {
  * @param listData
  * @constructor
  */
-const List = memo(function List(listData: ListData = []) {
+const Listings = memo(function List(listData: ListData) {
+    console.log("Listings", listData);
     return (
         <div className="flex flex-col w-full h-full overflow-scroll text-gray-700 bg-white shadow-md rounded-lg bg-clip-border p-5">
             <table className="w-full text-left table-auto min-w-max text-slate-800">
@@ -67,4 +69,4 @@ const List = memo(function List(listData: ListData = []) {
     );
 });
 
-export default List;
+export default Listings;

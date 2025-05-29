@@ -3,6 +3,9 @@ import {fetchList} from './services/List';
 import Index from './pages';
 import * as React from 'react';
 
+/**
+ * Starter router with one DefaultLayout
+ */
 export const router = [
     {
         path: '/',
@@ -13,6 +16,8 @@ export const router = [
                 index: true,
                 element: <Index/>
             }
+            // More Routes
         ]
     },
+    // More Layouts
 ];

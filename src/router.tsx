@@ -1,5 +1,5 @@
 import DefaultLayout from './layouts/DefaultLayout';
-import {fetchList} from './services/List';
+import listLoader from './loaders/List.loader';
 import Index from './pages';
 import * as React from 'react';
 
@@ -10,7 +10,7 @@ export const router = [
     {
         path: '/',
         element: <DefaultLayout/>,
-        loader: fetchList,
+        loader: listLoader,
         children: [
             {
                 index: true,

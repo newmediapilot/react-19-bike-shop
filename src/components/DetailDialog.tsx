@@ -1,6 +1,7 @@
 import * as React from 'react';
 import {createPortal} from 'react-dom';
 import {NavLink} from 'react-router';
+import {ListData} from './Listings';
 
 type DialogProps = {
     id: number,
@@ -14,13 +15,13 @@ type DialogProps = {
  * @constructor
  * @param detail
  */
-function DetailDialog({detail = {id: 1, title: "title", description: "description"}}: { detail: DialogProps }) {
+function DetailDialog({detail}: { detail: DialogProps }) {
     const {id, title, description} = detail;
     return (
         createPortal(
             <dialog
-                aria-labelledby="detail-h2"
-                open>
+                popover="auto"
+                aria-labelledby="detail-h2" open={detail}>
                 <div className="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow-sm">
                     <h2 id="detail-h2" className="mb-2 text-2xl font-bold tracking-tight text-gray-90">List Item Detail</h2>
                     <p className="mb-3 font-normal text-gray-700 "><b>ID:</b> {id}</p>
@@ -30,8 +31,7 @@ function DetailDialog({detail = {id: 1, title: "title", description: "descriptio
                         Close Detail
                     </NavLink>
                 </div>
-            </dialog>
-            , document.body
+            </dialog>, document.body
         )
     );
 }

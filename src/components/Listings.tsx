@@ -13,25 +13,15 @@ export type ListData = {
  */
 const Listings = function List({list = []}: { list: ListData }) {
     return (
-        list.length && <div className="flex flex-col w-full h-full overflow-scroll text-gray-700 bg-white shadow-md rounded-lg bg-clip-border p-5">
+        list.length && <div className="overflow-hidden flex flex-col w-full h-full overflow-scroll text-gray-700 bg-white shadow-md rounded-lg bg-clip-border p-5">
             <table className="w-full text-left table-auto min-w-max text-slate-800">
                 <thead>
                 <tr className="text-slate-500 border-b border-slate-300 bg-slate-50">
-                    <th className="p-4">
-                        <p className="text-sm leading-none font-normal">
-                            ID
-                        </p>
-                    </th>
-                    <th className="p-4">
-                        <p className="text-sm leading-none font-normal">
-                            Title
-                        </p>
-                    </th>
-                    <th className="p-4">
-                        <p className="text-sm leading-none font-normal">
-                            Description
-                        </p>
-                    </th>
+                    {Object.keys(list[0]).map((key, b) =>
+                        <td key={b} className="p-4">
+                            <p className="text-sm">{key.toUpperCase()}</p>
+                        </td>
+                    )}
                     <th className="p-4">
                         <p className="text-sm leading-none font-normal">
                             Action
@@ -45,15 +35,16 @@ const Listings = function List({list = []}: { list: ListData }) {
                             <tr key={a} className="hover:bg-slate-50">
                                 {Object.keys(item).map((key, b) =>
                                     <td key={b} className="p-4">
-                                        <p className="text-sm font-bold">{item[key]}</p>
+                                        <p className="text-sm">{item[key]}</p>
                                     </td>
                                 )}
                                 <td className="p-4">
-                                    <p className="text-sm font-bold">
+                                    <p className="text-sm underline">
                                         <NavLink to={`./?v=${a}`}>View Detail</NavLink>
                                     </p>
                                 </td>
-                            </tr>)
+                            </tr>
+                        )
                     }
                 </tbody>
             </table>

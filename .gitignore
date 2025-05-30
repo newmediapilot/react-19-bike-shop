@@ -25,3 +25,4 @@ dist-ssr
 
 # User
 .idea
+package-lock.json

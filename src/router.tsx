@@ -1,6 +1,6 @@
 import DefaultLayout from './layouts/DefaultLayout';
 import listLoader from './loaders/List.loader';
-import Index from './pages';
+import Index from './pages/Index';
 import * as React from 'react';
 
 /**

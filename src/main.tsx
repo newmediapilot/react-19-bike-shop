@@ -7,8 +7,6 @@ import * as React from 'react';
 import {Provider} from 'react-redux'
 import {store} from './redux/store';
 
-console.log('store', store.getState());
-
 ReactDOM
     .createRoot(document.getElementById("root"))
     .render(

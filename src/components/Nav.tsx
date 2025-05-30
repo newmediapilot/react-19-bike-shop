@@ -14,7 +14,7 @@ function Nav() {
                     <ul className="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0">
                         <li>
                             <NavLink to="/" className={active}>Index</NavLink>
-                            {/* other routes */}
+                            <NavLink to="/test" className={`${active} pl-3`}>Error</NavLink>
                         </li>
                     </ul>
                 </div>

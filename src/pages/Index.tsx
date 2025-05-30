@@ -12,6 +12,7 @@ function Index() {
     const listData: ListData = useLoaderData();
     const [searchParams, _] = useSearchParams();
     const detailParam: string | null =  searchParams.get("detail");
+    // @ts-ignore
     const detailData = listData.find(item => item.id === Number(searchParams.get("detail")));
     return (
         <>

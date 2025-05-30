@@ -3,5 +3,5 @@
  * @param name
  */
 export const selectLoaderSlice = (name: string) => (state) => {
-    return state.root[name];
+    return state[name];
 };

@@ -13,7 +13,6 @@ Dependencies:
 
 # Preview
 
-
 ```
 npm i
 npm run build
@@ -26,7 +25,4 @@ npm run db
 ```
 
 # Live Demo
-
-
-
 

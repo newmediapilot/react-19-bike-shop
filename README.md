@@ -13,11 +13,16 @@ Dependencies:
 
 # Preview
 
-Run the commands below in parallel (separate terminal windows)
 
 ```
+npm i
+npm run build
 npm run dev
-npx json-server public/db.json
+```
+
+In a separate window run:
+```
+npm run db
 ```
 
 # Live Demo

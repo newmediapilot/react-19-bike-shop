@@ -13,7 +13,7 @@ export type ListData = {
  */
 const Listings = function List({list = []}: { list: ListData }) {
     return (
-        list.length && <div className="overflow-hidden flex flex-col w-full h-full overflow-scroll text-gray-700 bg-white shadow-md rounded-lg bg-clip-border p-5">
+        list.length && <div className="overflow-hidden flex flex-col w-full h-full text-gray-700 bg-white shadow-md rounded-lg bg-clip-border p-5">
             <table className="w-full text-left table-auto min-w-max text-slate-800">
                 <thead>
                 <tr className="text-slate-500 border-b border-slate-300 bg-slate-50">

@@ -1,5 +1,3 @@
-import {memo} from 'react';
-
 export type ListData = {
     id: number,
     title: string,
@@ -8,11 +6,10 @@ export type ListData = {
 
 /**
  * List component which renders when listData is truthy
- * @param listData
+ * @param list
  * @constructor
  */
-const Listings = memo(function List(listData: ListData) {
-    console.log("Listings", listData);
+const Listings = function List({list = []}: { list: ListData }) {
     return (
         <div className="flex flex-col w-full h-full overflow-scroll text-gray-700 bg-white shadow-md rounded-lg bg-clip-border p-5">
             <table className="w-full text-left table-auto min-w-max text-slate-800">
@@ -67,6 +64,6 @@ const Listings = memo(function List(listData: ListData) {
             </table>
         </div>
     );
-});
+};
 
 export default Listings;

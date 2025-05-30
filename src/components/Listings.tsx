@@ -1,4 +1,5 @@
 import {NavLink} from 'react-router';
+import {memo} from 'react';
 
 export type ListItem = {
     id: number,
@@ -13,7 +14,7 @@ export type ListData = ListItem[];
  * @param list
  * @constructor
  */
-const Listings = function List({list = []}: { list: ListData }) {
+const Listings = memo(function List({list = []}: { list: ListData }) {
     return (
         list.length && <div className="overflow-hidden flex flex-col w-full h-full text-gray-700 bg-white shadow-md rounded-lg bg-clip-border p-5">
             <table className="w-full text-left table-auto min-w-max text-slate-800">
@@ -41,9 +42,11 @@ const Listings = function List({list = []}: { list: ListData }) {
                                     </td>
                                 )}
                                 <td className="p-4">
-                                    <p className="text-sm underline">
-                                        <NavLink to={`./?detail=${a}`}>View Detail</NavLink>
-                                    </p>
+                                    <NavLink to={`./?detail=${a}`}>
+                                        <button className="cursor-pointer">
+                                            View Detail
+                                        </button>
+                                    </NavLink>
                                 </td>
                             </tr>
                         )
@@ -52,6 +55,6 @@ const Listings = function List({list = []}: { list: ListData }) {
             </table>
         </div>
     );
-};
+});
 
 export default Listings;

@@ -26,8 +26,8 @@ function DetailDialog({detail = {id: 1, title: "title", description: "descriptio
                     <p className="mb-3 font-normal text-gray-700 "><b>ID:</b> {id}</p>
                     <p className="mb-3 font-normal text-gray-700 "><b>Title:</b> {title}</p>
                     <p className="mb-3 font-normal text-gray-700 "><b>Description:</b> {description}</p>
-                    <NavLink to={`./`} className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                        <NavLink to="./">Close Detail</NavLink>
+                    <NavLink to="/" className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                        Close Detail
                     </NavLink>
                 </div>
             </dialog>

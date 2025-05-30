@@ -9,7 +9,4 @@ CacheStrategy.configure({timeout: 5000});
 
 ReactDOM
     .createRoot(document.getElementById("root"))
-    .render(
-        <RouterProvider
-            router={createBrowserRouter(router)}/>
-    );
+    .render(<RouterProvider router={createBrowserRouter(router)}/>);

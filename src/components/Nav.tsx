@@ -1,4 +1,5 @@
 import {NavLink} from "react-router";
+
 /**
  * Navigation for the router
  * @constructor
@@ -12,10 +13,7 @@ function Nav() {
                     <ul className="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0">
                         <li>
                             <NavLink to="/" className={active}>Index</NavLink>
-                            {/*<NavLink to="/" className={active}>Index</NavLink>*/}
-                            {/*<NavLink to="/" className={active}>Index</NavLink>*/}
-                            {/*<NavLink to="/" className={active}>Index</NavLink>*/}
-                            {/*<NavLink to="/" className={active}>Index</NavLink>*/}
+                            {/* other routes */}
                         </li>
                     </ul>
                 </div>

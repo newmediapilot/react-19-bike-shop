@@ -10,12 +10,11 @@ import * as React from 'react';
  */
 function Index() {
     const listData = useLoaderData();
-    console.log('listData', listData);
     return (
         <>
             <Search/>
-            <Listings list={undefined}/>
-            <DetailDialog detail={undefined}/>
+            <Listings list={listData}/>
+            <DetailDialog detail={{id: 12345, title: "title", description: "description"}}/>
         </>
     )
 }

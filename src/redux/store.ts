@@ -1,12 +1,6 @@
 import {configureStore, createSlice} from '@reduxjs/toolkit';
 import {useDispatch, useSelector} from 'react-redux';
 
-/**
- * Create the root slice to split the code
- * installSlice adds a key by name
- * uninstallSlice removes key
- * Data manipulation is done in `selectors.ts`
- */
 const rootSlice = createSlice({
     name: 'slices',
     initialState: {},

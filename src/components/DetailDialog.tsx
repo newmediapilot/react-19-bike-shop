@@ -1,5 +1,6 @@
 import * as React from 'react';
 import {createPortal} from 'react-dom';
+import {NavLink} from 'react-router';
 
 type DialogProps = {
     id: number,
@@ -22,6 +23,7 @@ function DetailDialog({detail = {id: 1, title: "title", description: "descriptio
                 <span className="block">ID: {id}</span>
                 <span className="block">Title: {title}</span>
                 <span className="block">Description: {description}</span>
+                <NavLink to={`./`}>Close Detail</NavLink>
             </dialog>
             , document.body
         )

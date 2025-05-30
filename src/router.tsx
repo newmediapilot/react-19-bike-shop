@@ -10,10 +10,10 @@ export const router = [
     {
         path: '/',
         element: <DefaultLayout/>,
-        loader: listLoader,
         children: [
             {
                 index: true,
+                loader: listLoader,
                 element: <Index/>
             }
             // More Routes

@@ -1,7 +1,6 @@
 import * as React from 'react';
 import {createPortal} from 'react-dom';
 import {NavLink} from 'react-router';
-import {ListData} from './Listings';
 
 type DialogProps = {
     id: number,
@@ -19,19 +18,20 @@ function DetailDialog({detail}: { detail: DialogProps }) {
     const {id, title, description} = detail;
     return (
         createPortal(
-            <dialog
-                popover="auto"
-                aria-labelledby="detail-h2" open={detail}>
-                <div className="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow-sm">
-                    <h2 id="detail-h2" className="mb-2 text-2xl font-bold tracking-tight text-gray-90">List Item Detail</h2>
-                    <p className="mb-3 font-normal text-gray-700 "><b>ID:</b> {id}</p>
-                    <p className="mb-3 font-normal text-gray-700 "><b>Title:</b> {title}</p>
-                    <p className="mb-3 font-normal text-gray-700 "><b>Description:</b> {description}</p>
-                    <NavLink to="/" className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                        Close Detail
-                    </NavLink>
-                </div>
-            </dialog>, document.body
+            <NavLink to="./">
+                <dialog
+                    popover="auto"
+                    className="left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
+                    aria-labelledby="detail-h2" open={detail}>
+                    <div className="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow-sm">
+                        <h2 id="detail-h2" className="mb-2 text-2xl font-bold tracking-tight text-gray-90">List Item Detail</h2>
+                        <p className="mb-3 font-normal text-gray-700 "><b>ID:</b> {id}</p>
+                        <p className="mb-3 font-normal text-gray-700 "><b>Title:</b> {title}</p>
+                        <p className="mb-3 font-normal text-gray-700 "><b>Description:</b> {description}</p>
+                        <b>Click to close</b>
+                    </div>
+                </dialog>
+            </NavLink>, document.body
         )
     );
 }

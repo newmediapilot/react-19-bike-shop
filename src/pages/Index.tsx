@@ -3,7 +3,6 @@ import Search from '../components/Search';
 import Listings from '../components/Listings';
 import {useLoaderData} from "react-router"
 import * as React from 'react';
-
 /**
  * Initial "homepage"
  * @constructor
@@ -18,5 +17,4 @@ function Index() {
         </>
     )
 }
-
 export default Index;

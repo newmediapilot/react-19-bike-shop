@@ -18,6 +18,9 @@ export const router = [
                 errorElement: <Catch/>,
                 loader: listLoader,
             },
+            /**
+             * Invoked if `loader` throws an exception, or if the URL is incorrect
+             */
             {
                 path: '*',
                 element: <Catch/>,

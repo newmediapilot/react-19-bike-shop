@@ -1,4 +1,5 @@
 import {NavLink} from "react-router";
+import * as React from 'react';
 
 /**
  * Navigation for the router

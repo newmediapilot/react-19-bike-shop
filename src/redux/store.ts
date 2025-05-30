@@ -1,4 +1,4 @@
-import {configureStore, combineReducers} from '@reduxjs/toolkit';
+import {combineReducers, configureStore} from '@reduxjs/toolkit';
 
 export type RootState = ReturnType<typeof store.getState>
 export type AppDispatch = typeof store.dispatch;
@@ -6,7 +6,7 @@ export type AppDispatch = typeof store.dispatch;
 const reducers = [{ok: (state = {}) => state}];
 
 export const store = configureStore({
-    reducer: reducers[0],
+    reducer: reducers[0]
 });
 
 /**
@@ -21,4 +21,5 @@ export const installReducer = (reducer) => {
         payload[key] = reducers[i][key];
     }
     store.replaceReducer(combineReducers(payload));
+    console.log('installReducer', store.getState());
 };

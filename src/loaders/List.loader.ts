@@ -4,6 +4,7 @@
  */
 import {ListData} from '../components/Listings';
 
+// @ts-ignore
 export default async function listLoader(): Promise<ListData> {
     const fetchPath = 'http://localhost:3000/list';
     const result = await fetch(fetchPath);

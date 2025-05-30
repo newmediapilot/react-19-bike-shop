@@ -18,12 +18,18 @@ function DetailDialog({detail = {id: 1, title: "title", description: "descriptio
     const {id, title, description} = detail;
     return (
         createPortal(
-            <dialog aria-labelledby="detail-h2" open>
-                <h1>List Item Detail</h1>
-                <span className="block">ID: {id}</span>
-                <span className="block">Title: {title}</span>
-                <span className="block">Description: {description}</span>
-                <NavLink to={`./`}>Close Detail</NavLink>
+            <dialog
+                aria-labelledby="detail-h2"
+                open>
+                <div className="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow-sm">
+                    <h2 id="detail-h2" className="mb-2 text-2xl font-bold tracking-tight text-gray-90">List Item Detail</h2>
+                    <p className="mb-3 font-normal text-gray-700 "><b>ID:</b> {id}</p>
+                    <p className="mb-3 font-normal text-gray-700 "><b>Title:</b> {title}</p>
+                    <p className="mb-3 font-normal text-gray-700 "><b>Description:</b> {description}</p>
+                    <NavLink to={`./`} className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                        <NavLink to="./">Close Detail</NavLink>
+                    </NavLink>
+                </div>
             </dialog>
             , document.body
         )

@@ -1,25 +1,31 @@
-import {combineReducers, configureStore} from '@reduxjs/toolkit';
+import {configureStore, createSlice} from '@reduxjs/toolkit';
+import {useDispatch, useSelector} from 'react-redux';
+
+/**
+ * Create the root slice to split the code
+ * installSlice adds a key by name
+ * uninstallSlice removes key
+ * Data manipulation is done in `selectors.ts`
+ */
+const rootSlice = createSlice({
+    name: 'slices',
+    initialState: {},
+    reducers: {
+        addLoaderSlice: (state, action) => {
+            const {key, data} = action.payload;
+            state[key] = data;
+        }
+    }
+});
+
+export const store = configureStore({
+    reducer: {
+        root: rootSlice.reducer
+    }
+});
 
 export type RootState = ReturnType<typeof store.getState>
 export type AppDispatch = typeof store.dispatch;
-
-const reducers = [{ok: (state = {}) => state}];
-
-export const store = configureStore({
-    reducer: reducers[0]
-});
-
-/**
- * Hydrates the root store with a new reducer
- * @param reducer
- */
-export const installReducer = (reducer) => {
-    reducers.push(reducer);
-    const payload = {};
-    for (let i = 0; i < reducers.length; i++) {
-        const key = Object.keys(reducers[i])[0];
-        payload[key] = reducers[i][key];
-    }
-    store.replaceReducer(combineReducers(payload));
-    console.log('installReducer', store.getState());
-};
+export const useAppDispatch = useDispatch.withTypes<AppDispatch>();
+export const useAppSelector = useSelector.withTypes<RootState>();
+export const {addLoaderSlice} = rootSlice.actions;

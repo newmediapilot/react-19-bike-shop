@@ -18,16 +18,10 @@ export const router = [
                 errorElement: <Catch/>,
                 loader: listLoader,
             },
-        ]
-    },
-    {
-        path: '*',
-        element: <DefaultLayout/>,
-        children: [
             {
-                index: true,
+                path: '*',
                 element: <Catch/>,
-            },
+            }
         ]
     }
 ];

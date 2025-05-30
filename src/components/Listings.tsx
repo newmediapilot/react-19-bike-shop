@@ -1,10 +1,12 @@
 import {NavLink} from 'react-router';
 
-export type ListData = {
+export type ListItem = {
     id: number,
     title: string,
     description: string,
-}[];
+}
+
+export type ListData = ListItem[];
 
 /**
  * List component which renders when listData is truthy
@@ -40,7 +42,7 @@ const Listings = function List({list = []}: { list: ListData }) {
                                 )}
                                 <td className="p-4">
                                     <p className="text-sm underline">
-                                        <NavLink to={`./?v=${a}`}>View Detail</NavLink>
+                                        <NavLink to={`./?detail=${a}`}>View Detail</NavLink>
                                     </p>
                                 </td>
                             </tr>

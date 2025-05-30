@@ -11,12 +11,13 @@ import * as React from 'react';
 function Index() {
     const listData: ListData = useLoaderData();
     const [searchParams, _] = useSearchParams();
+    const detailParam: string | null =  searchParams.get("detail");
     const detailData = listData.find(item => item.id === Number(searchParams.get("detail")));
     return (
         <>
             <Search/>
             <Listings list={listData}/>
-            <DetailDialog detail={detailData}/>
+            <DetailDialog detail={detailParam !== null && detailData}/>
         </>
     )
 }

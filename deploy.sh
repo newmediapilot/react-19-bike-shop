@@ -21,3 +21,11 @@ rm -rf ./vite.config.js
 
 # Dist to root folder
 mv dist/* .
+
+# Reset to original
+git reset --hard
+
+# Move back to main
+git checkout main
+
+echo "Build complete..."

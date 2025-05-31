@@ -14,6 +14,7 @@ const URL_FETCH_LIST: string = 'http://localhost:3000/list';
 /**
  * Fetch list of products
  */
+// @ts-ignore
 export default async function listLoader(): Promise<ListData> {
     return await loaderHandler(URL_FETCH_LIST, 'listLoader', localJSON.default.list);
 }

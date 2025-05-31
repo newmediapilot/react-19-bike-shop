@@ -1,5 +1,7 @@
 # Get latest
 git checkout main
+rm -rf node_modules
+npm i
 git fetch
 git pull
 

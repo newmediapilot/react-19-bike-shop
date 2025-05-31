@@ -18,6 +18,9 @@ prepare() {
 patch() {
   echo "Update package.json version :: start"
   npm version patch --no-git-tag-version
+  git add .
+  git commit -m '[deploy-preview.sh] automated patch to origin/main'
+  git push
   echo "Update package.json version :: done"
 }
 
@@ -47,6 +50,7 @@ reset() {
 
 deploy
 build
+tag
 deploy
 reset
 

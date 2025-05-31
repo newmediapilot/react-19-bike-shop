@@ -10,7 +10,7 @@
     "db": "npx json-server public/db.json",
     "lint": "eslint my-app",
     "preview": "vite preview",
-    "deploy": "bash script/deploy-gh-pages.sh"
+    "deploy": "bash script/deploy-preview.sh"
   },
   "dependencies": {
     "@emotion/css": "^11.13.5",

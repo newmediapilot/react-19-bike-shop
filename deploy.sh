@@ -10,6 +10,7 @@ npm run build
 
 # Checkout gh-pages
 git checkout gh-pages
+git merge main
 
 # Dist to root folder
 mv dist/* .

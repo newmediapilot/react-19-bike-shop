@@ -19,7 +19,7 @@ patch() {
   echo "Update package.json version :: start"
   npm version patch --no-git-tag-version
   git add .
-  git commit -m '[deploy-preview.sh] automated patch to origin/main'
+  git commit -m '[deploy-preview.sh] automated => version patch --no-git-tag-version'
   git push
   echo "Update package.json version :: done"
 }
@@ -36,7 +36,7 @@ deploy() {
   git checkout -b preview
   git push --set-upstream origin preview
   git add -f dist
-  git commit -m '[deploy-preview.sh] automated commit build to origin/preview'
+  git commit -m '[deploy-preview.sh] automated => populate deploy branch'
   git push
   preview -d dist
   echo "Create preview and add dist :: done"

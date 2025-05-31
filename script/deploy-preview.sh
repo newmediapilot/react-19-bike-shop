@@ -30,7 +30,8 @@ prepare() {
 
 patch() {
   echo "Update package.json version :: start"
-  npm version patch
+  V=$(npm version patch --no-git-tag-version)
+  git commit -m "[deploy-preview.sh] automated patch => $V"
   git push
   echo "Update package.json version :: done"
 }

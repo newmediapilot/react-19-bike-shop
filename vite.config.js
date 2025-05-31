@@ -6,8 +6,5 @@ export default defineConfig({
     base: './',
     plugins: [
         react(),
-    ],
-    define: {
-        BUILD_TIMESTAMP: execSync('git rev-parse --short HEAD').toString().trim(),
-    },
+    ]
 })

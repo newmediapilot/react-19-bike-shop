@@ -22,11 +22,12 @@ export default async function listLoader(): Promise<ListData> {
  * Generic loader handler with fallback for offline
  * @param path
  * @param key
+ * @param defaultData
  */
 const loaderHandler = async (
     path: string,
     key: string,
-    defaultData: string,
+    defaultData?: string,
 ) => {
     let result, data;
     try {

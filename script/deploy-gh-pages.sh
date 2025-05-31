@@ -5,7 +5,7 @@ git pull
 npm run build
 
 # Deploy gh-pages
-git checkout gh-pages
+git checkout -b gh-pages
 git add -f dist/**/*
 git commit -m '[deploy.sh] commit build to gh-pages'
 git push

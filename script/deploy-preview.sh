@@ -1,23 +1,20 @@
 # Publishes preview branch to Github Pages
 # initialize()
-#   - prepare()
-# deploy()
-#   - prepare()
-#     - Switch to main
-#     - Reset modules
-#   - patch()
-#     - Update package.json version
-#   - build()
-#     - Build production bundle
+# - Delete/Create new preview branch
+# prepare()
+# - Switch to main and reset modules
+# patch()
+# - Update package.json version
+# build()
+# - Build production bundle
 # reset()
-#   - Return to branch main
+# - Return to main
 
 initialize() {
   echo "Delete/Create new preview branch :: start"
   git push origin --delete preview
   git checkout -b preview
   git push --set-upstream origin preview
-  git checkout main
   echo "Delete/Create new preview branch :: end"
 }
 
@@ -60,7 +57,7 @@ reset() {
   echo "Return to main :: done"
 }
 
-initialize
+#initialize
 deploy
 build
 tag

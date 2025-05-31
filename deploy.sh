@@ -22,6 +22,9 @@ rm -rf ./vite.config.js
 # Dist to root folder
 mv dist/* .
 
+# Deploy gh-pages
+gh-pages -d .
+
 # Reset to original
 git reset --hard
 

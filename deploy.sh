@@ -8,7 +8,6 @@ npm run build
 
 # Checkout gh-pages
 git checkout gh-pages
-git merge main
 
 # Dist to root folder
 mv dist/* .
@@ -17,7 +16,6 @@ mv dist/* .
 git add .
 git commit -m '[deploy.sh] commit build to gh-pages'
 git push
-npm run deploy
 
 # Move back to main
 git checkout main

@@ -6,23 +6,15 @@ git pull
 # Build the app
 npm run build
 
-# Checkout gh-pages
-git checkout gh-pages
-
-# Dist to root folder
-mv dist/* .
-
-exit 1;
-
 # Deploy gh-pages
-git add .
+git checkout gh-pages
+git add -f dist/**/*
 git commit -m '[deploy.sh] commit build to gh-pages'
 git push
+npm run deploy:github
 
 # Move back to main
 git checkout main
 
 echo "Build complete..."
-echo "https://newmediapilot.github.io/react-19-bike-shop"
-echo "https://newmediapilot.github.io/react-19-bike-shop"
 echo "https://newmediapilot.github.io/react-19-bike-shop"

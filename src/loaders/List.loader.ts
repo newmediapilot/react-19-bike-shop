@@ -27,14 +27,15 @@ const loaderHandler = async (
     path: string,
     key: string,
 ) => {
-    let data;
+    let data, result;
 
     try {
-        const result = await fetch(path);
-        data = await result.json() || localJSON.list;
+        result = await fetch(path);
     } catch (e) {
         data = localJSON.default.list;
     }
+
+    data = await result.json();
 
     store.dispatch(addLoaderSlice({data, key: key}));
 

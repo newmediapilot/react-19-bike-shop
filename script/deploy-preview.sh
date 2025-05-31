@@ -1,6 +1,6 @@
-# Publishes preview branch to Github Pages
+# Publishes gh-pages branch to Github Pages
 # initialize()
-# - Delete/Create new preview branch
+# - Delete/Create new gh-pages branch
 # prepare()
 # - Switch to main and reset modules
 # patch()
@@ -11,11 +11,11 @@
 # - Return to main
 
 initialize() {
-  echo "Delete/Create new preview branch :: start"
-  git push origin --delete preview
-  git checkout -b preview
-  git push --set-upstream origin preview
-  echo "Delete/Create new preview branch :: end"
+  echo "Delete/Create new gh-pages branch :: start"
+  git push origin --delete gh-pages
+  git checkout -b gh-pages
+  git push --set-upstream origin gh-pages
+  echo "Delete/Create new gh-pages branch :: end"
 }
 
 prepare() {
@@ -31,7 +31,7 @@ prepare() {
 patch() {
   echo "Update package.json version :: start"
   V=$(npm version patch --no-git-tag-version)
-  git commit -m "[deploy-preview.sh] automated patch => $V"
+  git commit -m "[automated] automated patch version => $V"
   git push
   echo "Update package.json version :: done"
 }
@@ -43,12 +43,12 @@ build() {
 }
 
 deploy() {
-  echo "Create preview and add dist :: start"
+  echo "Create gh-pages and add dist :: start"
   git add -f dist
-  git commit -m '[deploy-preview.sh] automated => populate deploy branch'
+  git commit -m '[automated] => populate deploy branch'
   git push
   gh-pages -d dist
-  echo "Create preview and add dist :: done"
+  echo "Create gh-pages and add dist :: done"
 }
 
 reset() {

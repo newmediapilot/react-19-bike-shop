@@ -15,7 +15,7 @@ const URL_FETCH_LIST: string = 'http://localhost:3000/list';
  * Fetch list of products
  */
 export default async function listLoader(): Promise<ListData> {
-    return loaderHandler(URL_FETCH_LIST, 'listLoader');
+    return await loaderHandler(URL_FETCH_LIST, 'listLoader', localJSON.default.list);
 }
 
 /**
@@ -26,18 +26,15 @@ export default async function listLoader(): Promise<ListData> {
 const loaderHandler = async (
     path: string,
     key: string,
+    defaultData: string,
 ) => {
-    let data, result;
-
+    let result, data;
     try {
         result = await fetch(path);
+        data = await result.json();
     } catch (e) {
-        data = localJSON.default.list;
+        data = defaultData;
     }
-
-    data = await result.json();
-
     store.dispatch(addLoaderSlice({data, key: key}));
-
     return data;
 };

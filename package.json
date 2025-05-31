@@ -11,7 +11,7 @@
     "lint": "eslint my-app",
     "preview": "vite preview",
     "predeploy": "chmod +x ./deploy.sh && deploy.sh",
-    "deploy": "gh-pages -d ./"
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "react": "^19.1.0",

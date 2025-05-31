@@ -1,7 +1,7 @@
 # Publishes branch to Github Pages
 # deploy() Switch to main and reset modules
 # build() Build production bundle
-# deploy() Create gh-pages and add dist
+# deploy() Create preview and add dist
 # reset() Return to main
 
 prepare() {
@@ -21,15 +21,15 @@ build() {
 }
 
 deploy() {
-  echo "Create gh-pages and add dist :: start"
-  git push origin --delete gh-pages
-  git checkout -b gh-pages
-  git push --set-upstream origin gh-pages
+  echo "Create preview and add dist :: start"
+  git push origin --delete preview
+  git checkout -b preview
+  git push --set-upstream origin preview
   git add -f dist
-  git commit -m '[deploy-gh-pages.sh] automated commit build to origin/gh-pages'
+  git commit -m '[deploy-preview.sh] automated commit build to origin/preview'
   git push
-  gh-pages -d dist
-  echo "Create gh-pages and add dist :: done"
+  preview -d dist
+  echo "Create preview and add dist :: done"
 }
 
 reset() {

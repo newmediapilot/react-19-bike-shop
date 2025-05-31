@@ -1,9 +1,14 @@
-# Publishes branch to Github Pages
-# prepare() Switch to main and reset modules
-# patch() Update package.json version
-# build() Build production bundle
-# deploy() Create preview and add dist
-# reset() Return to main
+# Publishes preview branch to Github Pages
+# deploy()
+#   - prepare()
+#     - Switch to main
+#     - Reset modules
+#   - patch()
+#     - Update package.json version
+#   - build()
+#     - Build production bundle
+# reset()
+#   - Return to branch main
 
 prepare() {
   echo "Switch to main and reset modules :: start"

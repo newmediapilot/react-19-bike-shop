@@ -12,6 +12,8 @@ git checkout gh-pages
 # Dist to root folder
 mv dist/* .
 
+exit 1;
+
 # Deploy gh-pages
 git add .
 git commit -m '[deploy.sh] commit build to gh-pages'

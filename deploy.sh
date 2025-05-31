@@ -1,4 +1,5 @@
 # Get latest
+git checkout main
 git fetch
 git pull
 

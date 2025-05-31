@@ -59,7 +59,7 @@ reset() {
   echo "Return to main and delete dist :: done"
 }
 
-#initialize
+initialize
 deploy
 build
 tag

@@ -10,8 +10,8 @@
     "db": "npx json-server public/db.json",
     "lint": "eslint my-app",
     "preview": "vite preview",
-    "predeploy": "chmod +x ./deploy.sh && ./script/deploy.sh",
-    "deploy:github": "gh-pages -d dist"
+    "github:predeploy": "chmod +x ./deploy.sh && ./script/deploy.sh",
+    "github:deploy": "npm run predeploy:github && gh-pages -d dist"
   },
   "dependencies": {
     "@emotion/css": "^11.13.5",

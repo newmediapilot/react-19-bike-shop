@@ -22,7 +22,6 @@ export default async function listLoader(): Promise<ListData> {
  * Generic loader handler with fallback for offline
  * @param path
  * @param key
- * @param fallback - for gh-pages
  */
 const loaderHandler = async (
     path: string,

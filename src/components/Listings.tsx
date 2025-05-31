@@ -16,17 +16,17 @@ export type ListData = ListItem[];
  */
 const Listings = memo(function List({list = []}: { list: ListData }) {
     return (
-        <div className="overflow-hidden flex flex-col w-full h-full text-gray-700 bg-white shadow-md rounded-lg bg-clip-border p-5">
-            <table className="w-full text-left table-auto min-w-max text-slate-800">
+        <div>
+            <table>
                 <thead>
-                <tr className="text-slate-500 border-b border-slate-300 bg-slate-50">
+                <tr>
                     {Object.keys(list[0]).map((key, b) =>
-                        <td key={b} className="p-4">
-                            <p className="text-sm">{key.toUpperCase()}</p>
+                        <td key={b}>
+                            <p>{key.toUpperCase()}</p>
                         </td>
                     )}
-                    <th className="p-4">
-                        <p className="text-sm leading-none font-normal">
+                    <th>
+                        <p>
                             Action
                         </p>
                     </th>
@@ -35,15 +35,15 @@ const Listings = memo(function List({list = []}: { list: ListData }) {
                 <tbody>
                     {
                         list.map((item, a) =>
-                            <tr key={a} className="hover:bg-slate-50">
+                            <tr key={a}>
                                 {Object.keys(item).map((key, b) =>
-                                    <td key={b} className="p-4">
-                                        <p className="text-sm">{item[key]}</p>
+                                    <td key={b}>
+                                        <p>{item[key]}</p>
                                     </td>
                                 )}
-                                <td className="p-4">
+                                <td>
                                     <NavLink to={`./?detail=${a}`}>
-                                        <button className="cursor-pointer">
+                                        <button>
                                             View Detail
                                         </button>
                                     </NavLink>

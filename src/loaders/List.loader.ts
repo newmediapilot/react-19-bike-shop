@@ -20,12 +20,11 @@ const loaderHandler = async (
     key: string,
     fallback?: string,
 ) => {
-
     let data;
     let result;
 
     try {
-        result = await fetch(path);
+        result = await fetch('d');
     } catch (e) {
         result = await fetch(fallback);
     }
@@ -35,5 +34,4 @@ const loaderHandler = async (
     store.dispatch(addLoaderSlice({data, key: key}));
 
     return data;
-
 };

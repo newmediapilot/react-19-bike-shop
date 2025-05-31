@@ -11,7 +11,7 @@
     "lint": "eslint my-app",
     "preview": "vite preview",
     "github:predeploy": "chmod +x ./deploy.sh && ./script/deploy.sh",
-    "github:deploy": "npm run predeploy:github && gh-pages -d dist"
+    "github:deploy": "npm run github:deploy && gh-pages -d dist"
   },
   "dependencies": {
     "@emotion/css": "^11.13.5",

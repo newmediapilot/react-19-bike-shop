@@ -1,5 +1,6 @@
 # Publishes branch to Github Pages
-# deploy() Switch to main and reset modules
+# prepare() Switch to main and reset modules
+# patch() Update package.json version
 # build() Build production bundle
 # deploy() Create preview and add dist
 # reset() Return to main
@@ -12,6 +13,12 @@ prepare() {
   rm -rf node_modules
   npm i
   echo "Switch to main and reset modules :: done"
+}
+
+patch() {
+  echo "Update package.json version :: start"
+  npm version patch --no-git-tag-version
+  echo "Update package.json version :: done"
 }
 
 build() {

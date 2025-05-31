@@ -1,7 +1,7 @@
 
 # Build the app
 git checkout main
-git fetch
+git fetch --all
 git pull
 npm run build
 

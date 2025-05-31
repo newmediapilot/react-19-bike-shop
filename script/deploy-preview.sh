@@ -8,7 +8,7 @@
 # build()
 # - Build production bundle
 # reset()
-# - Return to main
+# - Return to main and delete dist
 
 initialize() {
   echo "Delete/Create new gh-pages branch :: start"
@@ -43,18 +43,20 @@ build() {
 }
 
 deploy() {
-  echo "Create gh-pages and add dist :: start"
+  echo "Checkout gh-pages and add dist :: start"
+  git checkout gh-pages
   git add -f dist
-  git commit -m '[automated] => populate deploy branch'
+  git commit -m '[automated] => populate gh-pages'
   git push
   gh-pages -d dist
-  echo "Create gh-pages and add dist :: done"
+  echo "Checkout gh-pages and add dist :: done"
 }
 
 reset() {
-  echo "Return to main :: start"
+  echo "Return to main and delete dist :: start"
   git checkout main
-  echo "Return to main :: done"
+  rm -rf dist
+  echo "Return to main and delete dist :: done"
 }
 
 #initialize

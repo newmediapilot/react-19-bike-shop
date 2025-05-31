@@ -1,4 +1,6 @@
 # Publishes preview branch to Github Pages
+# initialize()
+#   - prepare()
 # deploy()
 #   - prepare()
 #     - Switch to main
@@ -9,6 +11,15 @@
 #     - Build production bundle
 # reset()
 #   - Return to branch main
+
+initialize() {
+  echo "Delete/Create new preview branch :: start"
+  git push origin --delete preview
+  git checkout -b preview
+  git push --set-upstream origin preview
+  git checkout main
+  echo "Delete/Create new preview branch :: end"
+}
 
 prepare() {
   echo "Switch to main and reset modules :: start"
@@ -22,7 +33,7 @@ prepare() {
 
 patch() {
   echo "Update package.json version :: start"
-  npm version patch 
+  npm version patch
   git push
   echo "Update package.json version :: done"
 }
@@ -36,7 +47,6 @@ build() {
 deploy() {
   echo "Create preview and add dist :: start"
   git checkout -b preview
-  git push --set-upstream origin preview
   git add -f dist
   git commit -m '[deploy-preview.sh] automated => populate deploy branch'
   git push
@@ -50,6 +60,7 @@ reset() {
   echo "Return to main :: done"
 }
 
+initialize
 deploy
 build
 tag

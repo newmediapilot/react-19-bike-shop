@@ -4,19 +4,18 @@
  */
 import {ListData} from '../components/Listings';
 import {addLoaderSlice, store} from '../redux/store';
+import * as localJSON from '../../public/db.json';
 
 /**
- * Paths
+ * Path constants
  */
-const URL_FETCH_LIST:string = 'http://localhost:3000/list';
-const URL_FETCH_LIST_FB:string = 'http://localhost:3000/list';
-// Add more paths
+const URL_FETCH_LIST: string = 'http://localhost:3000/list';
 
 /**
- * FETCH_LIST
+ * Fetch list of products
  */
 export default async function listLoader(): Promise<ListData> {
-    return loaderHandler(URL_FETCH_LIST, 'listLoader', URL_FETCH_LIST_FB);
+    return loaderHandler(URL_FETCH_LIST, 'listLoader');
 }
 
 /**
@@ -28,19 +27,15 @@ export default async function listLoader(): Promise<ListData> {
 const loaderHandler = async (
     path: string,
     key: string,
-    fallback?: string,
 ) => {
-
     let data;
-    let result;
 
     try {
-        result = await fetch('d');
+        const result = await fetch(path);
+        data = await result.json() || localJSON.list;
     } catch (e) {
-        result = await fetch(fallback);
+        data = localJSON.default.list;
     }
-
-    data = await result.json();
 
     store.dispatch(addLoaderSlice({data, key: key}));
 

@@ -4,6 +4,7 @@ import {router} from './router';
 import * as React from 'react';
 import {Provider} from 'react-redux'
 import {store} from './redux/store';
+import AppVersion from './components/AppVersion';
 
 ReactDOM
     .createRoot(
@@ -11,6 +12,7 @@ ReactDOM
     )
     .render(
         <Provider store={store}>
+            <AppVersion/>
             <RouterProvider router={createBrowserRouter(router)}/>
         </Provider>
     );

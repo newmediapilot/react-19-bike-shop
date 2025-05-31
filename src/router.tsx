@@ -1,5 +1,5 @@
 import DefaultLayout from './layouts/DefaultLayout';
-import listLoader from './loaders/List.loader';
+import listLoader from './loaders/listLoader';
 import Index from './pages/Index';
 import * as React from 'react';
 import Catch from './pages/Catch';

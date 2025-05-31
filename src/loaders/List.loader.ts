@@ -5,11 +5,35 @@
 import {ListData} from '../components/Listings';
 import {addLoaderSlice, store} from '../redux/store';
 
-// @ts-ignore
 export default async function listLoader(): Promise<ListData> {
-    const fetchPath = 'http://localhost:3000/list';
-    const result = await fetch(fetchPath);
-    const data = await result.json();
-    store.dispatch(addLoaderSlice({data, key: 'listLoader'}));
-    return data;
+    return loaderHandler('http://localhost:3000/list', 'listLoader', '/db.json');
 }
+
+/**
+ * Generic loader handler with fallback for offline
+ * @param path
+ * @param key
+ * @param fallback - for gh-pages
+ */
+const loaderHandler = async (
+    path: string,
+    key: string,
+    fallback?: string,
+) => {
+
+    let data;
+    let result;
+
+    try {
+        result = await fetch(path);
+    } catch (e) {
+        result = await fetch(fallback);
+    }
+
+    data = await result.json();
+
+    store.dispatch(addLoaderSlice({data, key: key}));
+
+    return data;
+
+};

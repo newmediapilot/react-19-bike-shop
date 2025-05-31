@@ -15,15 +15,13 @@ rm -rf ./.gitignore
 rm -rf ./deploy.sh
 rm -rf ./eslint.config.js
 rm -rf ./index.html
-rm -rf ./package.json
-rm -rf ./README.md
 rm -rf ./vite.config.js
 
 # Dist to root folder
 mv dist/* .
 
 # Deploy gh-pages
-gh-pages -d .
+npm run deploy
 
 # Reset to original
 git reset --hard

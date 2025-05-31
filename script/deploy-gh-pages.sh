@@ -9,7 +9,7 @@ git checkout gh-pages
 git add -f dist/**/*
 git commit -m '[deploy.sh] commit build to gh-pages'
 git push
-npm run deploy:github
+gh-pages -d dist
 
 # Move back to main
 git checkout main

@@ -37,7 +37,6 @@ build() {
 
 deploy() {
   echo "Create preview and add dist :: start"
-  git push origin --delete preview
   git checkout -b preview
   git push --set-upstream origin preview
   git add -f dist

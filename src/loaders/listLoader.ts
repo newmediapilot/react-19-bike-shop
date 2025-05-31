@@ -34,6 +34,7 @@ const loaderHandler = async (
         result = await fetch(path);
         data = await result.json();
     } catch (e) {
+        console.warn("Using localJSON" , defaultData);
         data = defaultData;
     }
     store.dispatch(addLoaderSlice({data, key: key}));

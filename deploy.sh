@@ -17,4 +17,4 @@ npm run deploy:github
 git checkout main
 
 echo "Build complete..."
-echo "https://newmediapilot.github.io/react-19-bike-shop"
+echo "https://newmediapilot.github.io/react-19-bike-shop/dist"

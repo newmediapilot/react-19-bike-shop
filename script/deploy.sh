@@ -1,9 +1,7 @@
-# Get latest
+# Build the app
 git checkout main
 git fetch
 git pull
-
-# Build the app
 npm run build
 
 # Deploy gh-pages

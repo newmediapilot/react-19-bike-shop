@@ -44,11 +44,10 @@ build() {
 
 deploy() {
   echo "Create preview and add dist :: start"
-  git checkout -b preview
   git add -f dist
   git commit -m '[deploy-preview.sh] automated => populate deploy branch'
   git push
-  preview -d dist
+  gh-pages -d dist
   echo "Create preview and add dist :: done"
 }
 

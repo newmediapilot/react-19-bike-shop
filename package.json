@@ -10,7 +10,7 @@
     "db": "npx json-server public/db.json",
     "lint": "eslint my-app",
     "preview": "vite preview",
-    "predeploy": "npm run build",
+    "predeploy": "./predeploy.sh",
     "deploy": "gh-pages -d ./"
   },
   "dependencies": {

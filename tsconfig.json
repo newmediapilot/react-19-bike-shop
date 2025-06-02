@@ -4,6 +4,12 @@
     "jsx": "react",
     "paths": {
       "@local/*": ["src/*"]
-    }
+    },
+    "lib": [
+      "dom",
+      "es5",
+      "scripthost",
+      "es2015.iterable"
+    ]
   }
 }

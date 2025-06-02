@@ -13,5 +13,5 @@ import {setList} from '@local/composition/store';
  */
 // @ts-ignore
 export default async function listLoader(id:number): Promise<ListData> {
-    return await loaderHandler(`http://localhost:3000/list/:id`, 'list', setList, localJSON.default.list);
+    return await loaderHandler(`http://localhost:3000/list`, 'list', setList, localJSON.default.list);
 }

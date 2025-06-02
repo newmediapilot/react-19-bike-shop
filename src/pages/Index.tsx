@@ -13,13 +13,15 @@ import {selectList, selectListId} from '@local/composition/selectors';
 function Index() {
     const listData: ListData = useAppSelector(selectList);
     const [searchParams] = useSearchParams();
-    const detailParam: string = searchParams.get("detail");
-    const detailData: ListItem = useAppSelector(selectListId(Number(detailParam)));
+    const detailParam: string | null = searchParams.get("detail");
+    const detailSearchId:number = (null === detailParam) ? -1 : Number(detailParam);
+    console.log('detailSearchId', detailSearchId);
+    const detailData: ListItem = useAppSelector(selectListId(detailSearchId));
     return (
         <>
             <Search/>
             <Listings list={listData}/>
-            <DetailDialog detail={detailData}/>
+            <DetailDialog detail={(null !== detailParam) && detailData}/>
         </>
     )
 }

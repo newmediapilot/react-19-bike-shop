@@ -17,7 +17,7 @@ export type ListData = Array<ListItem>;
  * @param list
  * @constructor
  */
-const Listings = memo(function List({list = []}: { list:any [] }) {
+const Listings = memo(function List({list = []}: { list:Array<any> }) {
     return (!list || !list.length) ?
         <p>No matches found</p> :
         <Table.Root>

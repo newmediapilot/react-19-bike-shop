@@ -1,3 +1,4 @@
+// @ts-ignore
 import ReactDOM from "react-dom/client";
 import {createBrowserRouter, RouterProvider} from 'react-router-dom';
 import {router, routerOptions} from './composition/router';
@@ -12,7 +13,7 @@ import {Direction} from "radix-ui";
 
 // @ts-ignore
 if (import.meta.env.DEV) {
-    // @ts-ignore // Reloads console on HMR
+    // @ts-ignore
     import.meta.hot?.on("vite:beforeUpdate", console.clear)
 }
 

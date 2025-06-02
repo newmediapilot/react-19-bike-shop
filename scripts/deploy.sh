@@ -54,9 +54,9 @@ patch() {
   echo "[deploy-preview.sh] Update package.json version :: start"
   yarn version --no-git-tag-version --patch && git add package.json
   V=$(node -p "require('./package.json').version")
-  git commit -m "[automated-build] => $V"
-  git tag "$V" --force
-  git push && git push --tags
+  git commit --amend -am "[automated-build] => $V"
+  git tag "$V"
+  git push --force && git push --tags
   echo "[deploy-preview.sh] Update package.json version :: done"
 }
 

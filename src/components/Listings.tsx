@@ -1,3 +1,4 @@
+// @ts-ignore
 import {NavLink} from 'react-router';
 // @ts-ignore
 import {default as React, memo} from 'react';
@@ -10,16 +11,15 @@ export type ListItem = {
     description: string,
 }
 
-export type ListData = Array<ListItem>;
+export type ListData = Iterable<ListItem>;
 
 /**
  * List component which renders when listData is truthy
  * @param list
  * @constructor
  */
-const Listings = memo(function List({list = []}: { list:Array<any> }) {
-    return (!list || !list.length) ?
-        <p>No matches found</p> :
+const Listings = memo(({list = []}: { list: Array<any> }) => {
+    return (list && list.length) &&
         <Table.Root>
             <Table.Header>
                 <Table.Row>

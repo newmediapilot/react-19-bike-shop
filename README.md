@@ -5,14 +5,14 @@
 - [Yarn](https://yarnpkg.com/)
 - [Vite](https://vite.dev/)
 - [React 19](https://react.dev/learn/build-a-react-app-from-scratch)
-- [React Hook Form](https://react-hook-form.com)
 - [React Router](https://api.reactrouter.com/v7/functions/react_router.createBrowserRouter.html)
 - [React Redux](https://react-redux.js.org/introduction/getting-started)
-- [Emotion CSS](https://emotion.sh/)
+- [React Hook Form](https://react-hook-form.com)
 - [Radix UI](https://www.radix-ui.com/)
+- [Emotion CSS](https://emotion.sh/)
 - [React Spring](https://www.react-spring.dev/)
 - [JSON Server](https://www.npmjs.com/package/json-server)
-- [Service Worker API](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API)
+- [Workbox CLI](https://developer.chrome.com/docs/workbox/)
 
 > AI was used to generate `db.json`
 

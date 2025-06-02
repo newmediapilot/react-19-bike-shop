@@ -9,7 +9,8 @@ import AppVersion from './components/AppVersion';
 import {Theme} from "@radix-ui/themes";
 import "@radix-ui/themes/styles.css";
 import {Direction} from "radix-ui";
-
+import { registerSW } from 'virtual:pwa-register'
+registerSW({ immediate: true });
 
 // @ts-ignore
 if (import.meta.env.DEV) {

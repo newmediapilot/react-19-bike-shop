@@ -2,7 +2,7 @@
   "name": "react-19-bike-shop",
   "homepage": "https://newmediapilot.github.io/react-19-bike-shop",
   "private": true,
-  "version": "0.0.6",
+  "version": "0.0.7",
   "type": "module",
   "scripts": {
     "reset": "rm -rf node_modules && rm -rf ./*.lock && yarn install",
@@ -44,6 +44,7 @@
     "react-router-dom": "^7.6.1",
     "vite": "^6.3.5",
     "vite-plugin-pwa": "^1.0.0",
-    "vite-tsconfig-paths": "^5.1.4"
+    "vite-tsconfig-paths": "^5.1.4",
+    "workbox-cli": "^7.3.0"
   }
 }

@@ -1,6 +1,8 @@
+// @ts-ignore
 import * as React from 'react';
-import {createPortal} from 'react-dom';
-import {NavLink} from 'react-router';
+// @ts-ignore
+import {useNavigate} from 'react-router';
+import {Box, Grid} from '@radix-ui/themes';
 
 export type DialogProps = {
     id: number,
@@ -15,23 +17,23 @@ export type DialogProps = {
  * @param detail
  */
 function DetailDialog({detail}: { detail?: DialogProps }) {
+    let navigate = useNavigate();
     return (
-        detail && createPortal(
-            <NavLink to="./">
-                <dialog
-                    popover="auto"
-                    aria-labelledby="dialog-detail" open={!!detail}>
-                    <div>
-                        <h2 id="dialog-detail">List Item Detail</h2>
-                        <p><b>ID:</b> {detail.id}</p>
-                        <p><b>Title:</b> {detail.title}</p>
-                        <p><b>Description:</b> {detail.description}</p>
-                        <b>Click to close</b>
-                    </div>
-                </dialog>
-            </NavLink>,
-            document.body
-        )
+        detail && <dialog
+            onClick={() => navigate("./")}
+            popover="auto"
+            aria-labelledby="dialog-detail"
+            open={!!detail}>
+            <Box><h4 id="dialog-detail">Detail:</h4></Box>
+            <Grid>
+                <Box>ID</Box>
+                <Box>{detail.id}</Box>
+                <Box>Title</Box>
+                <Box>{detail.title}</Box>
+                <Box>Description</Box>
+                <Box>{detail.description}</Box>
+            </Grid>
+        </dialog>
     );
 }
 

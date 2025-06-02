@@ -1,5 +1,8 @@
+// @ts-ignore
 import {useForm} from "react-hook-form";
+// @ts-ignore
 import * as React from 'react';
+// @ts-ignore
 import {Box} from '@radix-ui/themes';
 import {setSearch, useAppDispatch} from '@local/composition/store';
 

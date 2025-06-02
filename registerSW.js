@@ -1,1 +1,0 @@
-if('serviceWorker' in navigator) {window.addEventListener('load', () => {navigator.serviceWorker.register('/react-19-bike-shop/sw.js', { scope: '/react-19-bike-shop/' })})}

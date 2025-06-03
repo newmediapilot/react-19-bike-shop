@@ -1,8 +1,5 @@
-// @ts-ignore
 import {NavLink} from 'react-router';
-// @ts-ignore
 import {default as React, memo} from 'react';
-// @ts-ignore
 import {Table} from "@radix-ui/themes";
 
 export type ListItem = {
@@ -24,6 +21,7 @@ const Listings = memo(({list = []}: { list: Array<any> }) => {
         <Table.Root>
             <Table.Header>
                 <Table.Row>
+                    <Table.ColumnHeaderCell>Id</Table.ColumnHeaderCell>
                     <Table.ColumnHeaderCell>Title</Table.ColumnHeaderCell>
                     <Table.ColumnHeaderCell>Description</Table.ColumnHeaderCell>
                     <Table.ColumnHeaderCell>Action</Table.ColumnHeaderCell>

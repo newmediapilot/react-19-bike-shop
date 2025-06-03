@@ -1,9 +1,6 @@
-// @ts-ignore
 import {Outlet} from "react-router";
 import Nav from '@local/components/Nav';
-// @ts-ignore
 import * as React from 'react';
-// @ts-ignore
 import {Box, Grid} from '@radix-ui/themes';
 
 /**

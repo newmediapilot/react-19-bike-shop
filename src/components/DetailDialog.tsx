@@ -1,8 +1,6 @@
-// @ts-ignore
 import * as React from 'react';
-// @ts-ignore
 import {useNavigate} from 'react-router';
-import {Box, Grid} from '@radix-ui/themes';
+import {Dialog} from '@radix-ui/themes';
 
 export type DialogProps = {
     id: number,
@@ -19,21 +17,26 @@ export type DialogProps = {
 function DetailDialog({detail}: { detail?: DialogProps }) {
     let navigate = useNavigate();
     return (
-        detail && <dialog
-            onClick={() => navigate("./")}
-            popover="auto"
-            aria-labelledby="dialog-detail"
-            open={!!detail}>
-            <Box><h4 id="dialog-detail">Detail:</h4></Box>
-            <Grid>
-                <Box>ID</Box>
-                <Box>{detail.id}</Box>
-                <Box>Title</Box>
-                <Box>{detail.title}</Box>
-                <Box>Description</Box>
-                <Box>{detail.description}</Box>
-            </Grid>
-        </dialog>
+        // detail && <dialog
+        //     onClick={() => navigate("./")}
+        //     popover="auto"
+        //     aria-labelledby="dialog-detail"
+        //     open={!!detail}>
+        //     <Box><h4 id="dialog-detail">Detail:</h4></Box>
+        //     <Grid>
+        //         <Box>ID</Box>
+        //         <Box>{detail.id}</Box>
+        //         <Box>Title</Box>
+        //         <Box>{detail.title}</Box>
+        //         <Box>Description</Box>
+        //         <Box>{detail.description}</Box>
+        //     </Grid>
+        // </dialog>
+        detail && (
+            <>
+                dialog
+            </>
+        )
     );
 }
 

@@ -3,7 +3,6 @@
  * Returns an object array
  */
 import {ListData} from '@local/components/Listings';
-// @ts-ignore
 import * as localJSON from '../db.json';
 import loaderHandler from './loaderHandler';
 import {setList} from '@local/composition/store';

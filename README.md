@@ -84,6 +84,16 @@ npm run dev
 - [Nav.tsx](src/components/Nav.tsx)
 - [Search.tsx](src/components/Search.tsx)
 
+### Pages
+
+> ##### Focus
+> - Acting as HOC (for now)
+> - `selectors` to drill data into components
+
+- [Catch.tsx](src/pages/Catch.tsx)
+- [Components.tsx](src/pages/Components.tsx)
+- [Index.tsx](src/pages/Index.tsx)
+
 ### Redux + Loader
 
 > Each loader definition is processed by [loaderHandler.tsx](src/loaders/loaderHandler.ts)

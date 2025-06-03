@@ -10,8 +10,9 @@ export type ListItem = {
     title: string,
     description: string,
 }
-
-export type ListData = Iterable<ListItem>;
+export type ListData = ListItem[];
+export const ListDataKey = "id";
+export const ListDataFields = ["title", "description"];
 
 /**
  * List component which renders when listData is truthy
@@ -19,7 +20,7 @@ export type ListData = Iterable<ListItem>;
  * @constructor
  */
 const Listings = memo(({list = []}: { list: Array<any> }) => {
-    return (list && list.length) &&
+    return (!list) ? <span>No results</span> :
         <Table.Root>
             <Table.Header>
                 <Table.Row>

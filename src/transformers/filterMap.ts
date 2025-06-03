@@ -1,30 +1,20 @@
-import {ListItem} from '@local/components/Listings';
-
 /**
- * Takes `items` join and searches against it using `searchQuery`
- * Returns list matching
- */
-const filterMapWords = (
-    search: string,
-    items: Array<ListItem | object>,
-    map: Array<string>
-): Array<any> => {
-    return [];
-};
-
-/**
- * Takes `items` join and searches against it using `searchQuery`
+ * Takes `search` and searches inside `items` based on `fields`
+ * requires `key` to keep index, returns an object of
  * Returns a filtered list with truthy `indexOf` matches based on index
+ * @param search
+ * @param items
+ * @param key
+ * @param fields
  */
-const filterMapTokens = (
+export function filterList(
     search: string,
-    items: Array<ListItem | object>,
-    map: Array<string>
-): Array<any> => {
-    return [];
-};
+    items: Array<any>,
+    key: string | number,
+    fields: Array<string>,
+): Array<any>{
+    const searchResult = fields.map(field => {
 
-export default {
-    filterMapWords,
-    filterMapTokens,
+    });
+    return [];
 }

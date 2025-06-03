@@ -1,5 +1,9 @@
 # React + Vite : Bicycle Shop
 
+### Live Demo
+
+https://newmediapilot.github.io/react-19-bike-shop
+
 #### Powered by:
 
 - [Yarn](https://yarnpkg.com/)
@@ -39,10 +43,6 @@ In a separate window run:
 ```
 npm run db
 ```
-
-# Live Demo
-
-https://newmediapilot.github.io/react-19-bike-shop
 
 ```
 npm run deploy
@@ -109,6 +109,17 @@ Vite uses `VITE_{VARIABE}` to define its environment by default.
 - [.env.local](.env.local)
 - [.env.development](.env.development)
 - [.env.production](.env.production)
+
+# Deployment
+
+`npm run deploy`
+
+1. Resets node modules via `npm run reset`
+1. Prompts to flatten the current branch to the newest tag
+1. Prompts to make a deployment
+1. Bumps version and amends commit with build message
+1. Adds git tag
+1. Pushes to `gh-pages`
 
 # References
 

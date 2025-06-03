@@ -1,16 +1,20 @@
 // @ts-ignore
 import ReactDOM from "react-dom/client";
+// @ts-ignore
 import {createBrowserRouter, RouterProvider} from 'react-router-dom';
 import {router, routerOptions} from './composition/router';
 import * as React from 'react';
 import {Provider} from 'react-redux'
 import {store} from './composition/store';
 import AppVersion from './components/AppVersion';
+// @ts-ignore
 import {Theme} from "@radix-ui/themes";
 import "@radix-ui/themes/styles.css";
+// @ts-ignore
 import {Direction} from "radix-ui";
+// @ts-ignore
 import { registerSW } from 'virtual:pwa-register'
-registerSW({ immediate: true });
+registerSW();
 
 // @ts-ignore
 if (import.meta.env.DEV) {

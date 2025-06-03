@@ -3,9 +3,11 @@
  * Returns an object array
  */
 import {ListData} from '@local/components/Listings';
-import * as localJSON from '../db.json';
 import loaderHandler from './loaderHandler';
 import {setList} from '@local/composition/store';
+
+// @ts-ignore
+import * as localJSON from '../db.json';
 
 /**
  * Fetch list of products

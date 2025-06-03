@@ -21,7 +21,7 @@ const rootSlice = createSlice({
             state.search = action.payload as SearchData;
         },
         setMode: (state: RootState, action) => {
-            state.mode = action.payload as SearchData;
+            state.mode = action.payload as ModeSelectType;
         },
     }
 });

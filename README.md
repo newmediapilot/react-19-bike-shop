@@ -1,5 +1,8 @@
 # React + Vite : Bicycle Shop
 
+"Proof of craft" project for testing React 19 and various FE
+concepts in a sterile context.
+
 ### Live Demo
 
 https://newmediapilot.github.io/react-19-bike-shop

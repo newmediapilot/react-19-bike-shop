@@ -1,11 +1,8 @@
 import {useForm} from "react-hook-form";
 import * as React from 'react';
-import {Box} from '@radix-ui/themes';
 import {setSearch, useAppDispatch} from '@local/composition/store';
 
-export type SearchData = {
-    search: string | undefined
-};
+export type SearchData = string | null;
 
 /**
  * Search input emitting a value onChange
@@ -16,19 +13,25 @@ function Search() {
         register,
         handleSubmit,
         getValues,
+        // TODO: type match here
     } = useForm<SearchData>({
         mode: 'onTouched'
     });
     const dispatch = useAppDispatch();
-    const submitHandler = () => dispatch(setSearch(getValues().search));
+    // TODO: validation via `handleSubmit`
+    // const submitHandler = () => dispatch(setSearch(getValues().search));
+    const changeHandler = () => dispatch(setSearch(getValues().search));
     return (
-        <Box>
-            <form
-                onChange={handleSubmit(submitHandler)}
-                onSubmit={e => handleSubmit(submitHandler) && e.preventDefault()}>
-                <input placeholder="Search..." {...register("search", {required: true})} />
-            </form>
-        </Box>
+        <form
+            onKeyUp={() => changeHandler()}
+            onChange={() => changeHandler()}
+            onSubmit={(e) => {
+                e.preventDefault();
+                changeHandler()
+            }}
+        >
+            <input placeholder="Search..." {...register("search", {required: true})} />
+        </form>
     );
 }
 

@@ -13,7 +13,8 @@ import { injectGlobal } from '@emotion/css';
 
 registerSW();
 
-if (import.meta.env.DEV) import.meta.hot?.on("vite:beforeUpdate", console.clear);
+// @ts-ignore
+if (import.meta.env.DEV) import.meta.hot?.on("vite:beforeUpdate", console.clear); // [HMR] forces console refresh
 
 /**
  * @see https://www.radix-ui.com/themes/docs/components/theme

@@ -1,8 +1,7 @@
 import * as React from 'react';
-import {RadioGroup} from "radix-ui";
-import {useAppDispatch, setMode} from '@local/composition/store';
+import {setMode, useAppDispatch} from '@local/composition/store';
 
-export type ModeSelectType = "filter" | "highlight" | "decorate";
+export type ModeSelectType = "filter" | "highlight" | "decoration";
 
 /**
  * ModeSelect input emitting a value onChange
@@ -10,20 +9,15 @@ export type ModeSelectType = "filter" | "highlight" | "decorate";
  */
 function ModeSelect() {
     const dispatch = useAppDispatch();
-    const modes: string[] = ["filter", "highlight", "decorate"];
-    const clickMode = (mode: string) => dispatch(setMode(mode));;
+    const modes: string[] = ["filter", "highlight", "decoration"];
     return (
-        <RadioGroup.Root defaultValue={modes[0]}>
+        <>
             {modes.map(mode => (
-                <RadioGroup.Item
-                    key={mode} value={mode} onClick={() => clickMode(mode)}>
-                    <RadioGroup.Indicator/>
-                    <label className="Label" htmlFor="r1">
-                        {mode}
-                    </label>
-                </RadioGroup.Item>
+                <label key={mode}>
+                    <input type="radio"  name="mode-select" onClick={() => dispatch(setMode(mode))} value={mode}/>
+                </label>
             ))}
-        </RadioGroup.Root>
+        </>
     );
 }
 

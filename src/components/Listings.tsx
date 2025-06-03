@@ -16,7 +16,7 @@ export const ListDataFields = ["title", "description"];
  * @param list
  * @constructor
  */
-const Listings = memo(({list = []}: { list: Array<any> }) => {
+const Listings = memo(({list}: { list: Array<any> }) => {
     return (!list) ? <span>No results</span> :
         <Table.Root>
             <Table.Header>

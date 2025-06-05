@@ -1,8 +1,10 @@
-import * as React from 'react';
-import {createPortal} from 'react-dom';
+import * as React from "react";
+import { createPortal } from "react-dom";
 
 // @ts-ignore
-const appVersionMeta = <meta name="APP_VERSION" description={__APP_VERSION__}/>;
+const appVersionMeta = (
+  <meta name="APP_VERSION" description={__APP_VERSION__} />
+);
 
 /**
  * Just the app version @search __APP_VERSION__
@@ -10,12 +12,7 @@ const appVersionMeta = <meta name="APP_VERSION" description={__APP_VERSION__}/>;
  * @constructor
  */
 function AppVersion() {
-    return (
-        createPortal(
-            appVersionMeta,
-            document.head,
-        )
-    );
+  return createPortal(appVersionMeta, document.head);
 }
 
 export default AppVersion;

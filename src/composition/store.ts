@@ -1,37 +1,53 @@
-import {configureStore, createSlice, createSelector} from '@reduxjs/toolkit';
-import {useDispatch, useSelector} from 'react-redux';
-import {ListData} from '@local/components/Listings';
-import {SearchData} from '@local/components/Search';
-import {ModeSelectType} from '@local/components/ModeSelect';
+import {
+  configureStore,
+  createDynamicMiddleware,
+  createSlice,
+} from "@reduxjs/toolkit";
+import { useDispatch, useSelector } from "react-redux";
+import { ListData, ListItem } from "@local/components/Listings";
+import { SearchData } from "@local/components/Search";
+import { ModeSelectType } from "@local/components/ModeSelect";
 
 export type RootState = {
-    list: ListData,
-    search?: SearchData,
-    mode?: ModeSelectType,
-}
+  list: ListData;
+  detail?: ListItem;
+  search?: SearchData;
+  mode?: ModeSelectType;
+};
 
 const rootSlice = createSlice({
-    name: 'slices',
-    initialState: {},
-    reducers: {
-        setList: (state: RootState, action) => {
-            state.list = action.payload.data as ListData;
-        },
-        setSearch: (state: RootState, action) => {
-            state.search = action.payload as SearchData;
-        },
-        setMode: (state: RootState, action) => {
-            state.mode = action.payload as ModeSelectType;
-        },
-    }
+  name: "slices",
+  initialState: {},
+  reducers: {
+    setPrefetch: (state: RootState, action) => {
+      state[action.payload.key] = action.payload.data;
+    },
+    setDetail: (state: RootState, action) => {
+      state.detail = action.payload.data as ListItem;
+    },
+    setSearch: (state: RootState, action) => {
+      state.search = action.payload as SearchData;
+    },
+    setMode: (state: RootState, action) => {
+      state.mode = action.payload as ModeSelectType;
+    },
+  },
 });
 
+const dynamicMiddleware = createDynamicMiddleware();
+const { addMiddleware } = dynamicMiddleware;
+export const addAppMiddleware = addMiddleware;
+
+// Apply custom middleware via `addAppMiddleware(middleware)`
 export const store = configureStore({
-    reducer: rootSlice.reducer
+  reducer: rootSlice.reducer,
+  // @ts-ignore
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware().prepend(dynamicMiddleware.middleware),
 });
 
 export type AppDispatch = typeof store.dispatch;
 export const useAppDispatch = useDispatch.withTypes<AppDispatch>();
 export const useAppSelector = useSelector.withTypes<RootState>();
-export const createAppSelector = createSelector;
-export const {setList, setSearch, setMode} = rootSlice.actions;
+// export const createAppSelector = createSelector;
+export const { setDetail, setSearch, setMode, setPrefetch } = rootSlice.actions;

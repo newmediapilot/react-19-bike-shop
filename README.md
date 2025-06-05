@@ -16,10 +16,11 @@ https://newmediapilot.github.io/react-19-bike-shop
 - [React Redux](https://react-redux.js.org/introduction/getting-started)
 - [React Hook Form](https://react-hook-form.com)
 - [Radix UI](https://www.radix-ui.com/)
-- [Emotion CSS](https://emotion.sh/)
+- [Skeleton UI](https://www.skeleton.dev/)
 - [React Spring](https://www.react-spring.dev/)
 - [JSON Server](https://www.npmjs.com/package/json-server)
 - [Workbox CLI](https://developer.chrome.com/docs/workbox/)
+- [LoDash](https://lodash.com/)
 
 > AI was used to generate `db.json`
 
@@ -99,20 +100,34 @@ npm run dev
 
 ### Redux + Loader
 
-> Each loader definition is processed by [loaderHandler.tsx](src/loaders/loaderHandler.ts)
+> Each loader definition is processed by [loaderHandler.tsx](src/loaders/core/loaderHandler.ts)
 > It manages how states are hydrated (fetch or cached)
 >
-> This is the general flow of data in a loader:
+> This is the general flow of data in `loaderHandler`:
 
 1. IF `redux` defined return `redux` data
 1. IF `redux` undefined use `fetch`
 1. IF `fetch` 200 set `local` && dispatch `redux`
-1. IF `fetch` !200 stub `fixture` && continue
-1. IF `local` defined
+1. IF `fetch` errors stub `fixture` && continue...
+1. IF `local` defined overwrite stub
 1. dispatch`redux`
 
-> If the last step fails we will just use the `fixture`. 
-> This is just so that `gh-pages` can function.
+> If the last step fails we fallback to  `fixture`. 
+> This is just so that `gh-pages` can function. 
+
+### Prefetch
+
+> Since we aren't using NextJS we have to write a pre-fetch solution 
+> Prefetch is handled by [pf.ts](src/loaders/core/pf.ts)
+
+- When we define a loader via `loaderHandler` we provide a `route:string`
+
+```
+// TODO: define loader
+```
+```
+// TODO: infoke prefetch
+```
 
 ### Environment variables
 
@@ -122,6 +137,11 @@ Vite uses `VITE_{VARIABE}` to define its environment by default.
 - [.env.local](.env.local)
 - [.env.development](.env.development)
 - [.env.production](.env.production)
+
+### Required Variables
+
+- `VITE_DB` informs `loaderHandler` how to join paths when using `fetch()`
+> Stubbed with `http://localhost:3000`
 
 # Deployment
 

@@ -1,0 +1,72 @@
+import _ from "lodash";
+import prefetchLoader from "@local/loaders/core/prefetchLoader";
+import loaderHandler from "@local/loaders/core/loaderHandler";
+
+/**
+ * Strategy to run loaders independently of routes and prefetch
+ * eg. A user hovers over a link, the loader will hydrate redux early >:)
+ * @param unique identifier across the entire app
+ * @param loader that matchers react-router
+ * @event helper to pass mouse events directly components
+ * @see src/loaders/core/prefetchLoader.ts;
+ * @see src/loaders/core/loaderHandler.ts;
+ */
+class PrefetchResolver {
+  loaders = {};
+
+  /**
+   * Runs a loader if it is defined by `loader`, prevents running otherwise
+   * @param route
+   */
+  prefetch(route: string) {
+    console.log("PrefetchResolver :: prefetch ::", route);
+    this.loaders[route]();
+    return this.loaders[route];
+  }
+
+  /**
+   * Sets a loader and returns it, prevents setting twice
+   * @param route
+   * @param loader
+   */
+  register(route: string, loader) {
+    console.log("PrefetchResolver :: register ::", route);
+    if (_.has(this.loaders, route)) return this.loaders[route];
+    this.loaders[route] = loader || prefetchLoader(route);
+    return this.loaders[route];
+  }
+
+  /**
+   * Runs `register` against aa list of potential fetches
+   * @param route
+   * @param list
+   */
+  registerAsIterable(route: string, list: Array<any>) {
+    console.log("PrefetchResolver :: registerAsIterable ::", list);
+    return list.map((item) => {
+      let [key, path] = route.split("@");
+      path = `@${path}/${item[key]}`;
+      let loader = prefetchLoader(path);
+      this.register(path, loader);
+    });
+  }
+
+  /**
+   * Returns a set of listeners to add onto component
+   * eg. `<button {...events(path)}`
+   * @param route
+   * @param id
+   */
+  events(route: string, id?: string): { onMouseOver: () => void } {
+    return {
+      onMouseOver: () => {
+        this.prefetch(route);
+        console.log(`PrefetchResolver :: events :: onMouseOver :: ${route}`);
+      },
+    };
+  }
+}
+
+const pf = new PrefetchResolver();
+
+export { pf };

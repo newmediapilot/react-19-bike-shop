@@ -1,15 +1,11 @@
-import * as React from 'react';
+import * as React from "react";
 
 /**
  * Initial "homepage"
  * @constructor
  */
 function Components() {
-    return (
-        <>
-            Components will be listed here...
-        </>
-    )
+  return <>Components will be listed here...</>;
 }
 
 export default Components;

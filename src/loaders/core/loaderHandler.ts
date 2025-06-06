@@ -1,4 +1,4 @@
-import { store } from '@local/composition/store';
+import { PrefetchSetType, store } from '@local/composition/store';
 import { pf } from '@local/loaders/core/pf';
 // @ts-ignore
 const VITE_DB = import.meta.env.VITE_DB;
@@ -37,8 +37,9 @@ const VITE_DB = import.meta.env.VITE_DB;
  * @param {Function} action - Redux dispatch action to apply fetched result.
  * @param {object} [fixture={}] - Optional fallback or static data eg. `gh-pages`
  */
-export default async function loaderHandler(route: string, action: any, fixture?: any) {
+export default async function loaderHandler(route: string, action: any) {
   let [key, path] = route.split('@');
+  let rpath = `@${path}`;
   let url = `${VITE_DB}/${path}`;
   let data = store.getState()[key];
   if (data) return data;
@@ -46,15 +47,16 @@ export default async function loaderHandler(route: string, action: any, fixture?
   try {
     const result = await fetch(url);
     data = await result.json();
-    store.dispatch(action({ data, key: `@${path}` }));
-    window.localStorage.setItem(`@${path}`, data);
+    store.dispatch(action({ data, key: rpath } as PrefetchSetType));
 
-    if (key) pf.loaderIterable(route, data as Array<any>);
+    if (key) pf.iterate(route, data as Array<any>);
+
+    window.localStorage.setItem(rpath, data);
 
     return data;
   } catch (e) {
     const data = window.localStorage.getItem(key);
-    store.dispatch(action({ data, key }));
+    data && store.dispatch(action({ data, key }));
 
     return data;
   }

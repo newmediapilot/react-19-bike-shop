@@ -4,12 +4,14 @@ import { NavLink } from 'react-router';
  * Initial "homepage"
  * @constructor
  */
-function Catch() {
+function PCatch() {
   return (
-    <div>
+    <main className="p-4">
       <h1>There was an error handling the request.</h1>
-      <NavLink to="/">Return Home</NavLink>
-    </div>
+      <div className="pt-4">
+        <NavLink to="/">Return Home</NavLink>
+      </div>
+    </main>
   );
 }
-export default Catch;
+export default PCatch;

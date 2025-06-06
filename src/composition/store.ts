@@ -17,11 +17,17 @@ export type RootState = {
   filter?: ModeSelectType;
 };
 
+export type PrefetchSetType = {
+  key: string;
+  payload: ListData | ListItem;
+};
+
 const rootSlice = createSlice({
   name: 'slices',
   initialState: {},
   reducers: {
-    setPrefetch: (state: RootState, action) => {
+    setStoreKey: (state: RootState, action) => {
+      console.log('setStoreKey :: ', action.payload.key, action.payload.data);
       state[action.payload.key] = action.payload.data;
     },
     setDetail: (state: RootState, action) => {
@@ -52,4 +58,4 @@ export type AppDispatch = typeof store.dispatch;
 export const useAppDispatch = useDispatch.withTypes<AppDispatch>();
 export const useAppSelector = useSelector.withTypes<RootState>();
 // export const createAppSelector = createSelector;
-export const { setDetail, setSearch, setFilter, setPrefetch } = rootSlice.actions;
+export const { setDetail, setSearch, setFilter, setStoreKey } = rootSlice.actions;

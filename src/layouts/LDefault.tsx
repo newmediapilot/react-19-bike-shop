@@ -8,22 +8,24 @@ import { Outlet } from 'react-router';
  * Initial layout with <nav>
  * @constructor
  */
-export default function DefaultLayout() {
+export default function LDefault({ nav = true, footer = true }) {
   return (
-    <Grid
-      className={`
-            p-4
-        `}
-    >
-      <header>
-        <NavGlobal />
-      </header>
+    <Grid className="p-4">
+      {nav && (
+        <header>
+          <NavGlobal />
+        </header>
+      )}
       <main>
         <Outlet />
       </main>
-      <footer>
-        <NavFooter />
-      </footer>
+
+      {footer && (
+        <footer>
+          {' '}
+          <NavFooter />
+        </footer>
+      )}
     </Grid>
   );
 }

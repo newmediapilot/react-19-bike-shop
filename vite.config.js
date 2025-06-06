@@ -4,6 +4,7 @@ import tsconfigPaths from 'vite-tsconfig-paths'
 import {readFileSync} from 'fs'
 import path from 'path'
 import {VitePWA} from "vite-plugin-pwa";
+import tailwindcss from "@tailwindcss/vite";
 
 const packageJSON = JSON.parse(readFileSync('./package.json', 'utf-8'));
 const packageVersion = packageJSON.version;
@@ -18,6 +19,7 @@ export default defineConfig({
     },
     plugins: [
         tsconfigPaths(), // [auto] resolve.alias
+        tailwindcss(),
         react(),
         VitePWA({
             injectRegister: 'inline',

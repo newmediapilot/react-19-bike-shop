@@ -1,16 +1,14 @@
 /**
  * Registers a loader for later use;
  */
-import { setPrefetch, store } from '@local/composition/store';
+import { setStoreKey, store } from '@local/composition/store';
 import loaderHandler from './loaderHandler';
-// @ts-ignore
 
 /**
  * Return a loader with route to key
- * Process exclusively via `setPrefetch` reducer
+ * Process exclusively via `setStoreKey` reducer
  */
 export default function prefetchLoader(route: string) {
-  store.dispatch(setPrefetch({ data: { ready: true }, key: route })); // TODO: debug line
-
-  return () => loaderHandler(route, setPrefetch);
+  store.dispatch(setStoreKey({ data: { ready: true }, key: route }));
+  return () => loaderHandler(route, setStoreKey);
 }

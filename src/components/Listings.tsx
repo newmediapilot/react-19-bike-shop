@@ -1,7 +1,7 @@
 // @ts-ignore
 import { default as React } from 'react';
 // @ts-ignore
-import LTable from '@local/components-primitives/LTable';
+import LTable from '@local/components/core/LTable';
 import { selectList } from '@local/composition/selectors';
 import { useAppSelector } from '@local/composition/store';
 

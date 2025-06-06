@@ -1,4 +1,4 @@
-import LDialog from '@local/components-primitives/LDialog';
+import LDialog from '@local/components/core/LDialog';
 import FilterLabel from '@local/components/FilterLabel';
 import FilterRadioGroup from '@local/components/FilterRadioGroup';
 import InputSearch from '@local/components/InputSearch';
@@ -11,7 +11,7 @@ import * as React from 'react';
  * Initial "homepage" for now
  * @constructor
  */
-function Index() {
+function PListings() {
   return (
     <>
       <InputSearch />
@@ -28,4 +28,4 @@ function Index() {
   );
 }
 
-export default Index;
+export default PListings;

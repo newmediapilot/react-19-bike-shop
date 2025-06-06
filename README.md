@@ -84,7 +84,7 @@ npm run dev
 
 - [AppVersion.tsx](src/components/AppVersion.tsx)
 - [DetailDialog.tsx](src/components/ListingsDialog.tsx)
-- [Listings.tsx](src/components-primitives/LTable.tsx)
+- [Listings.tsx](src/components/core/LTable.tsx)
 - [Nav.tsx](src/components/NavGlobal.tsx)
 - [Search.tsx](src/components/InputSearch.tsx)
 
@@ -94,9 +94,9 @@ npm run dev
 > - Acting as HOC (for now)
 > - `selectors` to drill data into components
 
-- [Catch.tsx](src/pages/Catch.tsx)
-- [Components.tsx](src/pages/Components.tsx)
-- [Index.tsx](src/pages/Index.tsx)
+- [Catch.tsx](src/pages/PCatch.tsx)
+- [Components.tsx](src/pages/PComponents.tsx)
+- [Index.tsx](src/pages/PListings.tsx)
 
 ### Redux + Loader
 

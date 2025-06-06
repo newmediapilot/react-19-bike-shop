@@ -29,7 +29,7 @@ class PrefetchResolver {
   prefetch(route: string) {
     //console.log('PrefetchResolver :: prefetch ::', route);
     const stored = this.store.getState()[route];
-    stored.ready && this.loaders[route]();
+    stored && stored?.ready && this.loaders[route]();
   }
 
   /**
@@ -52,7 +52,7 @@ class PrefetchResolver {
    * @param route
    * @param list
    */
-  loaderIterable(route: string, list: Array<any>) {
+  iterate(route: string, list: Array<any>) {
     //console.log('PrefetchResolver :: registerAsIterable :: ', list);
     return list.map((item) => {
       let [key, path] = route.split('@');

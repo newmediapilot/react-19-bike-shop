@@ -4,6 +4,7 @@ import tsconfigPaths from 'vite-tsconfig-paths'
 import {readFileSync} from 'fs'
 import path from 'path'
 import {VitePWA} from "vite-plugin-pwa";
+import tailwindcss from "@tailwindcss/vite";
 
 const packageJSON = JSON.parse(readFileSync('./package.json', 'utf-8'));
 const packageVersion = packageJSON.version;
@@ -12,12 +13,13 @@ const {version: __APP_VERSION__} = JSON.stringify(packageVersion.version || 'loc
 
 // https://vite.dev/config/
 export default defineConfig({
-    base: '/react-19-bike-shop/',
+    base: `/${packageName}/`,
     server: {
         port: 1234,
     },
     plugins: [
         tsconfigPaths(), // [auto] resolve.alias
+        tailwindcss(),
         react(),
         VitePWA({
             injectRegister: 'inline',

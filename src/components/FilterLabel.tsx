@@ -6,8 +6,9 @@ import { selectFilter } from '@local/composition/selectors';
  * Displays mode selected by <ModeSelect>
  */
 function FilterLabel() {
-  const mode: string = useAppSelector(selectFilter);
-  return mode && <span>{mode}</span>;
+  const filter: string = useAppSelector(selectFilter);
+  console.log('mode', filter);
+  return filter ? <span>{filter}</span> : 'No filter selected';
 }
 
 export default FilterLabel;

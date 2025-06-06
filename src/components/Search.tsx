@@ -13,9 +13,10 @@ function Search() {
   const { register } = useForm({ mode: 'onChange' });
   const onChange = (e) => dispatch(setSearch(e.currentTarget.value));
   return (
-    <>
-      <input {...register('search', { onChange })} />
-    </>
+    <label className="label">
+      <span className="label-text">Filter</span>
+      <input className="input" {...register('search', { onChange })} />
+    </label>
   );
 }
 

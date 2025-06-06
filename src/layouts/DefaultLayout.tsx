@@ -1,5 +1,5 @@
 import { Outlet } from 'react-router';
-import Nav from '@local/components/Nav';
+import GlobalNavigation from '@local/components/GlobalNavigation';
 import * as React from 'react';
 import { Box, Grid } from '@radix-ui/themes';
 
@@ -11,7 +11,7 @@ export default function DefaultLayout() {
   return (
     <Grid columns="1" gap="3" rows="repeat(auto, 100%)" width="auto">
       <Box width="100%">
-        <Nav />
+        <GlobalNavigation />
       </Box>
       <Box width="100%">
         <Outlet />

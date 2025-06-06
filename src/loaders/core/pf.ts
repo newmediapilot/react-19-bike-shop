@@ -13,15 +13,24 @@ import loaderHandler from '@local/loaders/core/loaderHandler';
  */
 class PrefetchResolver {
   loaders = {};
+  store = null;
 
   /**
-   * Runs a loader if it is defined by `loader`, prevents running otherwise
+   * Configure with store so we can check values against routes
+   * @param store
+   */
+  configureStore(store) {
+    this.store = store;
+  }
+
+  /**
+   * Runs a loader if it is `{ready:true}`
    * @param route
    */
   prefetch(route: string) {
     //console.log('PrefetchResolver :: prefetch ::', route);
-    this.loaders[route]();
-    return this.loaders[route];
+    const stored = this.store.getState()[route];
+    stored.ready && this.loaders[route]();
   }
 
   /**

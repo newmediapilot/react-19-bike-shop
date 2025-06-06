@@ -37,7 +37,7 @@ const VITE_DB = import.meta.env.VITE_DB;
  * @param {Function} action - Redux dispatch action to apply fetched result.
  * @param {object} [fixture={}] - Optional fallback or static data eg. `gh-pages`
  */
-export default async function loaderHandler(route: string, action: any) {
+export default async function loaderHandler(route: string, action: any, fixture?: any) {
   let [key, path] = route.split('@');
   let url = `${VITE_DB}/${path}`;
   let data = store.getState()[key];

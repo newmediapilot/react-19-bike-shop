@@ -1,15 +1,20 @@
 import { configureStore, createDynamicMiddleware, createSlice } from '@reduxjs/toolkit';
 import { useDispatch, useSelector } from 'react-redux';
-import { ListData, ListItem } from '@local/components-primitives/LTable';
-import { SearchData } from '@local/components/Search';
 import { ModeSelectType } from '@local/components/FilterRadioGroup';
+
+export type ListItem = {
+  id: number;
+  title: string;
+  description: string;
+};
+
+export type ListData = ListItem[];
 
 export type RootState = {
   list: ListData;
   detail?: ListItem;
-  search?: SearchData;
+  search?: string;
   filter?: ModeSelectType;
-  // TODO: put prefetch stuff under `@prefetch`
 };
 
 const rootSlice = createSlice({
@@ -23,7 +28,7 @@ const rootSlice = createSlice({
       state.detail = action.payload.data as ListItem;
     },
     setSearch: (state: RootState, action) => {
-      state.search = action.payload as SearchData;
+      state.search = action.payload as string;
     },
     setFilter: (state: RootState, action) => {
       state.filter = action.payload as ModeSelectType;

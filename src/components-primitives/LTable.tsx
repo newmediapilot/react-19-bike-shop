@@ -1,8 +1,5 @@
 import { NavLink } from 'react-router';
-// @ts-ignore
-import { default as React, memo } from 'react';
-// @ts-ignore
-import { Table } from '@radix-ui/themes';
+import { default as React } from 'react';
 import { pf } from '@local/loaders/core/pf';
 
 /**
@@ -10,32 +7,34 @@ import { pf } from '@local/loaders/core/pf';
  * @param list
  * @constructor
  */
-const LTable = memo(({ list, fields = [] }: { list: Array<any>; fields: Array<string> }) => {
+const LTable = function ({ list, fields = [] }: { list: Array<any>; fields: Array<string> }) {
   return (
     list && (
-      <Table.Root>
-        <Table.Header>
-          <Table.Row>
+      <table className="table">
+        <thead>
+          <tr>
             {fields.map((field, key) => (
-              <Table.ColumnHeaderCell key={key}>{field}</Table.ColumnHeaderCell>
+              <th key={key}>{field}</th>
             ))}
-          </Table.Row>
-        </Table.Header>
-        <Table.Body>
+          </tr>
+        </thead>
+        <tbody>
           {list.map((item, index) => (
-            <Table.Row {...pf.events(`@list/${item.id}`)} key={index}>
-              <Table.Cell>{item.id}</Table.Cell>
-              <Table.Cell>{item.title}</Table.Cell>
-              <Table.Cell>{item.description}</Table.Cell>
-              <Table.Cell>
-                <NavLink to={`./?detail=${item.id}`}>Open Detail</NavLink>
-              </Table.Cell>
-            </Table.Row>
+            <tr key={index} {...pf.events(`@list/${item.id}`)}>
+              <td>{item.id}</td>
+              <td>{item.title}</td>
+              <td>{item.description}</td>
+              <td>
+                <NavLink className="btn btn-sm preset-filled" to={`./?detail=${item.id}`}>
+                  Open Detail
+                </NavLink>
+              </td>
+            </tr>
           ))}
-        </Table.Body>
-      </Table.Root>
+        </tbody>
+      </table>
     )
   );
-});
+};
 
 export default LTable;

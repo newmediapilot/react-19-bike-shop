@@ -1,5 +1,6 @@
 import DefaultLayout from '../layouts/DefaultLayout';
 import Index from '../pages';
+// @ts-ignore
 import * as React from 'react';
 import Catch from '../pages/Catch';
 import Components from '../pages/Components';

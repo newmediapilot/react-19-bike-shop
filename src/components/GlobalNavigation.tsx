@@ -5,7 +5,7 @@ import { pf } from '@local/loaders/core/pf';
  * Navigation for the router
  * @constructor
  */
-function Nav() {
+function GlobalNavigation() {
   const active = ({ isActive }) => `${isActive ? 'underline' : ''}`;
   return (
     <nav>
@@ -22,4 +22,4 @@ function Nav() {
   );
 }
 
-export default Nav;
+export default GlobalNavigation;

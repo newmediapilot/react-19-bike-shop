@@ -1,5 +1,5 @@
 import * as React from 'react';
-import ListingsDetail from '@local/components/ListingsDetail';
+import ListingsDialog from '@local/components/ListingsDialog';
 import Search from '@local/components/Search';
 import FilterRadioGroup from '@local/components/FilterRadioGroup';
 import LDialog from '@local/components-primitives/LDialog';
@@ -14,13 +14,15 @@ import ListingsOverlay from '@local/components/ListingsOverlay';
 function Index() {
   return (
     <>
-      <ListingsOverlay />
       <Search />
       <FilterRadioGroup />
       <FilterLabel />
-      <Listings />
+      <>
+        <Listings />
+        <ListingsOverlay />
+      </>
       <LDialog>
-        <ListingsDetail />
+        <ListingsDialog />
       </LDialog>
     </>
   );

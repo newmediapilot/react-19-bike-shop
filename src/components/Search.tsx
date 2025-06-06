@@ -2,8 +2,6 @@ import { useForm } from 'react-hook-form';
 import * as React from 'react';
 import { setSearch, useAppDispatch } from '@local/composition/store';
 
-export type SearchData = string | null;
-
 /**
  * Search input emitting a value onChange
  * Emits a value to redux
@@ -15,9 +13,9 @@ function Search() {
   const { register } = useForm({ mode: 'onChange' });
   const onChange = (e) => dispatch(setSearch(e.currentTarget.value));
   return (
-    <form onSubmit={(e) => e.preventDefault()}>
+    <>
       <input {...register('search', { onChange })} />
-    </form>
+    </>
   );
 }
 

@@ -5,9 +5,9 @@ import { selectFilter } from '@local/composition/selectors';
 /**
  * Displays mode selected by <ModeSelect>
  */
-function ModeLabel() {
+function FilterLabel() {
   const mode: string = useAppSelector(selectFilter);
   return mode && <span>{mode}</span>;
 }
 
-export default ModeLabel;
+export default FilterLabel;

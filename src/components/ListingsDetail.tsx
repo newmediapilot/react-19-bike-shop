@@ -3,7 +3,7 @@ import { useNavigate, useSearchParams } from 'react-router';
 import { Box, Grid } from '@radix-ui/themes';
 import { selectListDetail } from '@local/composition/selectors';
 import { useAppSelector } from '@local/composition/store';
-import { ListItem } from '@local/primitives/LTable';
+import { ListItem } from '@local/components-primitives/LTable';
 
 /**
  * <dialog> that is appended to the end of the <body> element

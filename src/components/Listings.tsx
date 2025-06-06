@@ -3,7 +3,7 @@ import { default as React } from 'react';
 // @ts-ignore
 import { useAppSelector } from '@local/composition/store';
 import { selectList } from '@local/composition/selectors';
-import LTable from '@local/primitives/LTable';
+import LTable from '@local/components-primitives/LTable';
 
 /**
  * <Listings> component hosting <LTable>

@@ -1,8 +1,8 @@
 import { configureStore, createDynamicMiddleware, createSlice } from '@reduxjs/toolkit';
 import { useDispatch, useSelector } from 'react-redux';
-import { ListData, ListItem } from '@local/primitives/LTable';
+import { ListData, ListItem } from '@local/components-primitives/LTable';
 import { SearchData } from '@local/components/Search';
-import { ModeSelectType } from '@local/components/ModeSelect';
+import { ModeSelectType } from '@local/components/FilterRadioGroup';
 
 export type RootState = {
   list: ListData;

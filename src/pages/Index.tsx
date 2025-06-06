@@ -1,11 +1,11 @@
 import * as React from 'react';
 import ListingsDetail from '@local/components/ListingsDetail';
 import Search from '@local/components/Search';
-import ModeSelect from '@local/components/ModeSelect';
-import LDialog from '@local/primitives/LDialog';
+import FilterRadioGroup from '@local/components/FilterRadioGroup';
+import LDialog from '@local/components-primitives/LDialog';
 import Listings from '@local/components/Listings';
-import ModeLabel from '@local/components/ModeLabel';
-import Highlighter from '@local/components/Highlighter';
+import FilterLabel from '@local/components/FilterLabel';
+import ListingsOverlay from '@local/components/ListingsOverlay';
 
 /**
  * Initial "homepage" for now
@@ -14,10 +14,10 @@ import Highlighter from '@local/components/Highlighter';
 function Index() {
   return (
     <>
-      <Highlighter />
+      <ListingsOverlay />
       <Search />
-      <ModeSelect />
-      <ModeLabel />
+      <FilterRadioGroup />
+      <FilterLabel />
       <Listings />
       <LDialog>
         <ListingsDetail />

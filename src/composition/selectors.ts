@@ -1,7 +1,7 @@
 import { RootState } from './store';
 import { SearchData } from '@local/components/Search';
-import { ListData, ListItem } from '@local/primitives/LTable';
-import { ModeSelectType } from '@local/components/ModeSelect';
+import { ListData, ListItem } from '@local/components-primitives/LTable';
+import { ModeSelectType } from '@local/components/FilterRadioGroup';
 
 /**
  * Return <Search> value

@@ -1,9 +1,9 @@
-import * as React from 'react';
-import { useEffect, useState } from 'react';
-import { useNavigate, useSearchParams } from 'react-router';
 import { selectListDetail } from '@local/composition/selectors';
 import { useAppSelector } from '@local/composition/store';
 import { pf } from '@local/loaders/core/pf';
+import * as React from 'react';
+import { useEffect, useState } from 'react';
+import { useNavigate, useSearchParams } from 'react-router';
 
 /**
  * <dialog> that is appended to the end of the <body> element
@@ -51,7 +51,7 @@ function ListingsDialog() {
                 p-4
         `}
         >
-          Click to close dialog
+          Click to Close
         </footer>
       </div>
     )

@@ -1,5 +1,5 @@
-import { ListData, ListItem, RootState } from './store';
 import { ModeSelectType } from '@local/components/FilterRadioGroup';
+import { ListData, ListItem, RootState } from './store';
 
 /**
  * Return <Search> value
@@ -17,5 +17,5 @@ export const selectList = (state: RootState): ListData => state['@list'] as List
  * Return a single listing by {id}
  */
 export const selectListDetail = (id: string) => (state: RootState) => {
-  state[`@list/${id}`] as ListItem;
+  return state[`@list/${id}`] as ListItem;
 };

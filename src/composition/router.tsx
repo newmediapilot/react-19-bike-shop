@@ -1,11 +1,10 @@
 import DefaultLayout from '../layouts/DefaultLayout';
 import Index from '../pages';
 // @ts-ignore
+import { pf } from '@local/loaders/core/pf';
 import * as React from 'react';
 import Catch from '../pages/Catch';
 import Components from '../pages/Components';
-import prefetchLoader from '@local/loaders/core/prefetchLoader';
-import { pf } from '@local/loaders/core/pf';
 
 /**
  * Starter router with one DefaultLayout

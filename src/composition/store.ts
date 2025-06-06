@@ -1,6 +1,6 @@
+import { ModeSelectType } from '@local/components/FilterRadioGroup';
 import { configureStore, createDynamicMiddleware, createSlice } from '@reduxjs/toolkit';
 import { useDispatch, useSelector } from 'react-redux';
-import { ModeSelectType } from '@local/components/FilterRadioGroup';
 
 export type ListItem = {
   id: number;

@@ -1,6 +1,5 @@
-import _ from 'lodash';
 import prefetchLoader from '@local/loaders/core/prefetchLoader';
-import loaderHandler from '@local/loaders/core/loaderHandler';
+import _ from 'lodash';
 
 /**
  * Strategy to run loaders independently of routes and prefetch

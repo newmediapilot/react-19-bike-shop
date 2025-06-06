@@ -1,15 +1,15 @@
-import ReactDOM from 'react-dom/client';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import { router, routerOptions } from './composition/router';
-import * as React from 'react';
-import { Provider } from 'react-redux';
-import { store } from './composition/store';
-import AppVersion from './components/AppVersion';
+import { pf } from '@local/loaders/core/pf';
 import { Theme } from '@radix-ui/themes';
 import '@radix-ui/themes/styles.css';
 import { Direction } from 'radix-ui';
+import * as React from 'react';
+import ReactDOM from 'react-dom/client';
+import { Provider } from 'react-redux';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { registerSW } from 'virtual:pwa-register';
-import { pf } from '@local/loaders/core/pf';
+import AppVersion from './components/AppVersion';
+import { router, routerOptions } from './composition/router';
+import { store } from './composition/store';
 import './main.css';
 
 registerSW();

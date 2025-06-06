@@ -1,6 +1,6 @@
-import * as React from 'react';
-import { setFilter, useAppDispatch } from '@local/composition/store';
 import LRadioItem from '@local/components-primitives/LRadioItem';
+import { setFilter, useAppDispatch } from '@local/composition/store';
+import * as React from 'react';
 
 export type ModeSelectType = 'filter' | 'highlight' | 'decoration';
 
@@ -10,11 +10,17 @@ export type ModeSelectType = 'filter' | 'highlight' | 'decoration';
  */
 function FilterRadioGroup() {
   const dispatch = useAppDispatch();
-  const modes: ModeSelectType[] = ['filter', 'highlight', 'decoration'];
+  const filters: ModeSelectType[] = ['filter', 'highlight', 'decoration'];
   return (
     <>
-      {modes.map((m) => (
-        <LRadioItem key={m} name={'m-select'} value={m} onClick={() => dispatch(setFilter(m))} />
+      {filters.map((m) => (
+        <LRadioItem
+          label={m}
+          key={m}
+          value={m}
+          name={'m-select'}
+          onClick={() => dispatch(setFilter(m))}
+        />
       ))}
     </>
   );

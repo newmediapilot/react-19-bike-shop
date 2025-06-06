@@ -1,10 +1,11 @@
-import { NavLink } from 'react-router';
-import { default as React } from 'react';
 import { pf } from '@local/loaders/core/pf';
+import { default as React } from 'react';
+import { NavLink } from 'react-router';
 
 /**
  * List component which renders when listData is truthy
  * @param list
+ * @param fields
  * @constructor
  */
 const LTable = function ({ list, fields = [] }: { list: Array<any>; fields: Array<string> }) {

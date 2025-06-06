@@ -48,7 +48,7 @@ export default defineConfig({
             ]
         }),
     ],
-    define: {__APP_VERSION__},
+    define: {__APP_VERSION__, __APP_NAME__},
 });
 
 console.log('vite.cofig.js ::', path.resolve(__dirname, "./src"));

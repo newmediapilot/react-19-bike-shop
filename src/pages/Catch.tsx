@@ -1,5 +1,5 @@
-import { NavLink, useLoaderData } from 'react-router';
 import * as React from 'react';
+import { NavLink } from 'react-router';
 /**
  * Initial "homepage"
  * @constructor

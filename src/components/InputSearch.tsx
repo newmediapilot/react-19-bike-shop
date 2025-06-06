@@ -1,6 +1,6 @@
-import { useForm } from 'react-hook-form';
-import * as React from 'react';
 import { setSearch, useAppDispatch } from '@local/composition/store';
+import * as React from 'react';
+import { useForm } from 'react-hook-form';
 
 /**
  * Search input emitting a value onChange
@@ -8,7 +8,7 @@ import { setSearch, useAppDispatch } from '@local/composition/store';
  * Emits empty string "" onKeyDown 'Escape'
  * @constructor
  */
-function Search() {
+function InputSearch() {
   const dispatch = useAppDispatch();
   const { register } = useForm({ mode: 'onChange' });
   const onChange = (e) => dispatch(setSearch(e.currentTarget.value));
@@ -20,4 +20,4 @@ function Search() {
   );
 }
 
-export default Search;
+export default InputSearch;

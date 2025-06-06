@@ -1,7 +1,8 @@
-import { Outlet } from 'react-router';
-import GlobalNavigation from '@local/components/GlobalNavigation';
+import NavFooter from '@local/components/NavFooter';
+import NavGlobal from '@local/components/NavGlobal';
+import { Grid } from '@radix-ui/themes';
 import * as React from 'react';
-import { Box, Grid } from '@radix-ui/themes';
+import { Outlet } from 'react-router';
 
 /**
  * Initial layout with <nav>
@@ -9,13 +10,20 @@ import { Box, Grid } from '@radix-ui/themes';
  */
 export default function DefaultLayout() {
   return (
-    <Grid columns="1" gap="3" rows="repeat(auto, 100%)" width="auto">
-      <Box width="100%">
-        <GlobalNavigation />
-      </Box>
-      <Box width="100%">
+    <Grid
+      className={`
+            p-4
+        `}
+    >
+      <header>
+        <NavGlobal />
+      </header>
+      <main>
         <Outlet />
-      </Box>
+      </main>
+      <footer>
+        <NavFooter />
+      </footer>
     </Grid>
   );
 }

@@ -15,12 +15,12 @@ https://newmediapilot.github.io/react-19-bike-shop
 - [React Router](https://api.reactrouter.com/v7/functions/react_router.createBrowserRouter.html)
 - [React Redux](https://react-redux.js.org/introduction/getting-started)
 - [React Hook Form](https://react-hook-form.com)
-- [Radix UI](https://www.radix-ui.com/)
-- [Skeleton UI](https://www.skeleton.dev/)
-- [React Spring](https://www.react-spring.dev/)
-- [JSON Server](https://www.npmjs.com/package/json-server)
 - [Workbox CLI](https://developer.chrome.com/docs/workbox/)
+- [Skeleton UI](https://www.skeleton.dev/)
+- [Radix UI](https://www.radix-ui.com/)
+- [React Spring](https://www.react-spring.dev/)
 - [LoDash](https://lodash.com/)
+- [JSON Server](https://www.npmjs.com/package/json-server)
 
 > AI was used to generate `db.json`
 
@@ -85,8 +85,8 @@ npm run dev
 - [AppVersion.tsx](src/components/AppVersion.tsx)
 - [DetailDialog.tsx](src/components/ListingsDialog.tsx)
 - [Listings.tsx](src/components-primitives/LTable.tsx)
-- [Nav.tsx](src/components/GlobalNavigation.tsx)
-- [Search.tsx](src/components/Search.tsx)
+- [Nav.tsx](src/components/NavGlobal.tsx)
+- [Search.tsx](src/components/InputSearch.tsx)
 
 ### Pages
 
@@ -134,7 +134,7 @@ npm run dev
 Vite uses `VITE_{VARIABE}` to define its environment by default.
 `.env()` consumes and scans the files on compile.
 
-- [.env.local](.env.local)
+- [.env.local](.env.uat)
 - [.env.development](.env.development)
 - [.env.production](.env.production)
 

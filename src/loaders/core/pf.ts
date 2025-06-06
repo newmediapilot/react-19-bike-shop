@@ -22,6 +22,8 @@ class PrefetchResolver {
     this.store = store;
   }
 
+  suspense(defaultComponent, progressComponent) {}
+
   /**
    * Runs a loader if it is `{ready:true}`
    * @param route

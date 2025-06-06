@@ -16,13 +16,9 @@ export default function LDefault({ nav = true, footer = true }) {
           <NavGlobal />
         </header>
       )}
-      <main>
-        <Outlet />
-      </main>
-
+      <Outlet />
       {footer && (
         <footer>
-          {' '}
           <NavFooter />
         </footer>
       )}

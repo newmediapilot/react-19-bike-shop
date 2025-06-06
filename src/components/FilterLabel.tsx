@@ -1,3 +1,4 @@
+import CInfoLabel from '@local/components/core/CInfoLabel';
 import { selectFilter } from '@local/composition/selectors';
 import { useAppSelector } from '@local/composition/store';
 import * as React from 'react';
@@ -7,11 +8,12 @@ import * as React from 'react';
  */
 function FilterLabel() {
   const filter: string = useAppSelector(selectFilter);
-  return filter ? (
-    <span className="label">{filter}</span>
-  ) : (
-    <span className="label">No filter selected</span>
-  );
+  const text = {
+    filter: 'Only displays rows that match the search.',
+    highlight: 'Highlights words which match the search.',
+    decoration: 'Generates links on words that match the search.',
+  };
+  return <CInfoLabel>{text[filter] || 'No filter selected.'}</CInfoLabel>;
 }
 
 export default FilterLabel;

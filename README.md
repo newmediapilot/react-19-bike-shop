@@ -84,7 +84,7 @@ npm run dev
 
 - [AppVersion.tsx](src/components/AppVersion.tsx)
 - [DetailDialog.tsx](src/components/ListingsDialog.tsx)
-- [Listings.tsx](src/components/core/LTable.tsx)
+- [Listings.tsx](src/components/core/CTable.tsx)
 - [Nav.tsx](src/components/NavGlobal.tsx)
 - [Search.tsx](src/components/InputSearch.tsx)
 

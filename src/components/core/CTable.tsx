@@ -8,7 +8,7 @@ import { NavLink } from 'react-router';
  * @param fields
  * @constructor
  */
-const LTable = function ({ list, fields = [] }: { list: Array<any>; fields: Array<string> }) {
+const CTable = function ({ list, fields = [] }: { list: Array<any>; fields: Array<string> }) {
   return (
     list && (
       <table className="table">
@@ -26,7 +26,10 @@ const LTable = function ({ list, fields = [] }: { list: Array<any>; fields: Arra
               <td>{item.title}</td>
               <td>{item.description}</td>
               <td>
-                <NavLink className="btn btn-sm preset-filled" to={`./?detail=${item.id}`}>
+                <NavLink
+                  className="btn btn-sm bg-none text-white border border-gray-600"
+                  to={`./?detail=${item.id}`}
+                >
                   Open Detail
                 </NavLink>
               </td>
@@ -38,4 +41,4 @@ const LTable = function ({ list, fields = [] }: { list: Array<any>; fields: Arra
   );
 };
 
-export default LTable;
+export default CTable;

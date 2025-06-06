@@ -1,3 +1,4 @@
+import CProgressBar from '@local/components/core/CProgressBar';
 import * as React from 'react';
 import { NavLink } from 'react-router';
 
@@ -9,13 +10,9 @@ import { NavLink } from 'react-router';
 function PComponents({ components }: { components: Array<any> }) {
   return (
     <main className="p-4">
-      {components ? (
-        components.map(() => {
-          return <p>hello</p>;
-        })
-      ) : (
-        <NavLink to="/">Return Home</NavLink>
-      )}
+      <NavLink to="/">Return Home</NavLink>
+      <h4>Progress:</h4>
+      <CProgressBar />
     </main>
   );
 }

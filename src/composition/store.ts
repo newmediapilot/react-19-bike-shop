@@ -27,11 +27,8 @@ const rootSlice = createSlice({
   initialState: {},
   reducers: {
     setStoreKey: (state: RootState, action) => {
-      console.log('setStoreKey :: ', action.payload.key, action.payload.data);
+      // console.log('setStoreKey :: ', action.payload.key, action.payload.data);
       state[action.payload.key] = action.payload.data;
-    },
-    setDetail: (state: RootState, action) => {
-      state.detail = action.payload.data as ListItem;
     },
     setSearch: (state: RootState, action) => {
       state.search = action.payload as string;
@@ -58,4 +55,4 @@ export type AppDispatch = typeof store.dispatch;
 export const useAppDispatch = useDispatch.withTypes<AppDispatch>();
 export const useAppSelector = useSelector.withTypes<RootState>();
 // export const createAppSelector = createSelector;
-export const { setDetail, setSearch, setFilter, setStoreKey } = rootSlice.actions;
+export const { setSearch, setFilter, setStoreKey } = rootSlice.actions;

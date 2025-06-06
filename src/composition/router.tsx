@@ -4,8 +4,8 @@ import PListings from '@local/pages/PListings';
 import LDefault from '../layouts/LDefault';
 // @ts-ignore
 import { pf } from '@local/loaders/core/pf';
+import PLogin from '@local/pages/PLogin';
 import * as React from 'react';
-import { NavLink } from 'react-router';
 
 /**
  * Starter router with one DefaultLayout
@@ -18,26 +18,32 @@ export const router = [
   {
     path: '/',
     index: true,
-    element: <NavLink to="/">Return Home</NavLink>,
+    element: <PLogin />,
   },
   {
     path: '/listings',
     element: <LDefault />,
     children: [
       {
-        path: '/listings',
+        index: true,
         loader: pf.loader('id@list'),
         element: <PListings />,
-        errorElement: <PCatch />,
+        errorElement: <PCatch message="Loader Error" />,
       },
     ],
   },
   {
     path: '/components',
-    element: <PComponents components={false} />,
+    element: <LDefault />,
+    children: [
+      {
+        index: true,
+        element: <PComponents components={false} />,
+      },
+    ],
   },
   {
     path: '*',
-    element: <PCatch />,
+    element: <PCatch message="404 Not found" />,
   },
 ];

@@ -12,11 +12,15 @@ function InputSearch() {
   const dispatch = useAppDispatch();
   const { register } = useForm({ mode: 'onChange' });
   const onChange = (e) => dispatch(setSearch(e.currentTarget.value));
+  const placeholder = '';
   return (
-    <label className="label">
-      <span className="label-text">Filter</span>
-      <input className="input" {...register('search', { onChange })} />
-    </label>
+    <div className="py-2">
+      <input
+        className="input"
+        placeholder="Enter your search..."
+        {...register('search', { onChange })}
+      />
+    </div>
   );
 }
 

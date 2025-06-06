@@ -1,17 +1,24 @@
 import * as React from 'react';
 import { NavLink } from 'react-router';
+
 /**
  * Initial "homepage"
  * @constructor
  */
-function PCatch() {
+
+function PCatch({ message = 'Path Error' }) {
   return (
-    <main className="p-4">
-      <h1>There was an error handling the request.</h1>
-      <div className="pt-4">
-        <NavLink to="/">Return Home</NavLink>
+    <main className="min-h-screen flex items-center justify-center">
+      <div className="max-w-sm w-full p-6 border shadow-md space-y-4">
+        <h1 className="text-xl text-center font-semibold">{message}</h1>
+        <div className="flex gap-2">
+          <NavLink to="/" className="btn btn-primary w-full">
+            Return to Login
+          </NavLink>
+        </div>
       </div>
     </main>
   );
 }
+
 export default PCatch;

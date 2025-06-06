@@ -5,3 +5,26 @@
 @import '@skeletonlabs/skeleton/themes/cerberus';
 
 @source '../node_modules/@skeletonlabs/skeleton-react/dist';
+
+.progress-infinite {
+  animation: progress-infinite 2s ease-in-out infinite;
+}
+
+@keyframes progress-infinite {
+  0% {
+    translate: -100%;
+  }
+  25% {
+    scale: 1;
+  }
+  50% {
+    scale: 0.5 1;
+    translate: 0%;
+  }
+  75% {
+    scale: 1;
+  }
+  100% {
+    translate: 100%;
+  }
+}

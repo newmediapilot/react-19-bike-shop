@@ -10,7 +10,7 @@ const LDialog = function ({ children }) {
   const dialog = useRef<HTMLDialogElement>(null);
   const [open, setOpen] = useState(undefined);
   useEffect(() => {
-    if (children) setOpen(true);
+    setOpen(!!children);
   }, [children]);
   return (
     <dialog

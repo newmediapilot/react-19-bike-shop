@@ -6,11 +6,12 @@ import { NavLink } from 'react-router';
  * @constructor
  */
 function NavGlobal() {
-  const active = ({ isActive }) => `${isActive ? 'underline' : ''}`;
+  const active = ({ isActive }) => `${isActive ? 
+      'hover:underline underline' : 
+      'hover:underline'}`;
   return (
     <nav className="flex gap-6 text-sm font-medium border-b pb-2">
       <NavLink
-        className="text-gray-700 hover:underline"
         to="/listings"
         className={active}
         {...pf.events('id@list')}
@@ -18,14 +19,15 @@ function NavGlobal() {
         Listings
       </NavLink>
       <NavLink
-        className="text-gray-700 hover:underline"
         to="/components"
         className={active}
-        {...pf.events('id@list')}
       >
         Components
       </NavLink>
-      <NavLink className="text-gray-700 hover:underline" to="/error" className={`${active}`}>
+      <NavLink
+          to="/error"
+          className={`${active}`}
+      >
         404
       </NavLink>
     </nav>

@@ -2,7 +2,7 @@
   "name": "react-19-bike-shop",
   "homepage": "https://newmediapilot.github.io/react-19-bike-shop",
   "private": true,
-  "version": "0.0.19",
+  "version": "0.0.20",
   "type": "module",
   "scripts": {
     "reset": "rm -rf node_modules && rm -rf ./*.lock && yarn install",

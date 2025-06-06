@@ -35,7 +35,6 @@ const VITE_DB = import.meta.env.VITE_DB;
  *
  * @param {string} route - Format: `@api/...` or `key@api/...`
  * @param {Function} action - Redux dispatch action to apply fetched result.
- * @param {object} [fixture={}] - Optional fallback or static data eg. `gh-pages`
  */
 export default async function loaderHandler(route: string, action: any) {
   let [key, path] = route.split('@');

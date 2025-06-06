@@ -1,6 +1,6 @@
-import { useForm } from "react-hook-form";
-import * as React from "react";
-import { setSearch, useAppDispatch } from "@local/composition/store";
+import { useForm } from 'react-hook-form';
+import * as React from 'react';
+import { setSearch, useAppDispatch } from '@local/composition/store';
 
 export type SearchData = string | null;
 
@@ -11,36 +11,12 @@ export type SearchData = string | null;
  * @constructor
  */
 function Search() {
-  const {
-    register,
-    // handleSubmit, // TODO: validation via `handleSubmit`
-    getValues,
-    setValue,
-    // @ts-ignore
-  } = useForm<SearchData>({
-    // TODO: type match here
-    mode: "onTouched",
-  });
   const dispatch = useAppDispatch();
-  const changeHandler = () => dispatch(setSearch(getValues().search));
-  // const submitHandler = () => handleSubmit(()=>changeHandler());
-  const keyDownHandler = (e) => {
-    if (e.key === "Escape") setValue("search", "", { focus: true });
-  };
+  const { register } = useForm({ mode: 'onChange' });
+  const onChange = (e) => dispatch(setSearch(e.currentTarget.value));
   return (
-    <form
-      onKeyDown={(e) => keyDownHandler(e)}
-      onKeyUp={() => changeHandler()}
-      onChange={() => changeHandler()}
-      onSubmit={(e) => {
-        e.preventDefault();
-        changeHandler();
-      }}
-    >
-      <input
-        placeholder="Search..."
-        {...register("search", { required: true })}
-      />
+    <form onSubmit={(e) => e.preventDefault()}>
+      <input {...register('search', { onChange })} />
     </form>
   );
 }

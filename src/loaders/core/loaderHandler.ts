@@ -1,5 +1,5 @@
-import { store } from "@local/composition/store";
-import { pf } from "@local/loaders/core/pf";
+import { store } from '@local/composition/store';
+import { pf } from '@local/loaders/core/pf';
 // @ts-ignore
 const VITE_DB = import.meta.env.VITE_DB;
 /**
@@ -38,7 +38,7 @@ const VITE_DB = import.meta.env.VITE_DB;
  * @param {object} [fixture={}] - Optional fallback or static data eg. `gh-pages`
  */
 export default async function loaderHandler(route: string, action: any) {
-  let [key, path] = route.split("@");
+  let [key, path] = route.split('@');
   let url = `${VITE_DB}/${path}`;
   let data = store.getState()[key];
   if (data) return data;
@@ -49,7 +49,7 @@ export default async function loaderHandler(route: string, action: any) {
     store.dispatch(action({ data, key: `@${path}` }));
     window.localStorage.setItem(`@${path}`, data);
 
-    if (key) pf.registerAsIterable(route, data as Array<any>);
+    if (key) pf.loaderIterable(route, data as Array<any>);
 
     return data;
   } catch (e) {

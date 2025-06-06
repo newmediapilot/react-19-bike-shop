@@ -83,8 +83,8 @@ npm run dev
 > - Styling & Bindings eg. `{prop.value}`
 
 - [AppVersion.tsx](src/components/AppVersion.tsx)
-- [DetailDialog.tsx](src/components/DetailDialog.tsx)
-- [Listings.tsx](src/components/Listings.tsx)
+- [DetailDialog.tsx](src/components/ListingsDetail.tsx)
+- [Listings.tsx](src/primitives/LTable.tsx)
 - [Nav.tsx](src/components/Nav.tsx)
 - [Search.tsx](src/components/Search.tsx)
 

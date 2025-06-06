@@ -1,7 +1,7 @@
-import { Outlet } from "react-router";
-import Nav from "@local/components/Nav";
-import * as React from "react";
-import { Box, Grid } from "@radix-ui/themes";
+import { Outlet } from 'react-router';
+import Nav from '@local/components/Nav';
+import * as React from 'react';
+import { Box, Grid } from '@radix-ui/themes';
 
 /**
  * Initial layout with <nav>

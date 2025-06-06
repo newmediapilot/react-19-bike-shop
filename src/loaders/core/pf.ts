@@ -1,6 +1,6 @@
-import _ from "lodash";
-import prefetchLoader from "@local/loaders/core/prefetchLoader";
-import loaderHandler from "@local/loaders/core/loaderHandler";
+import _ from 'lodash';
+import prefetchLoader from '@local/loaders/core/prefetchLoader';
+import loaderHandler from '@local/loaders/core/loaderHandler';
 
 /**
  * Strategy to run loaders independently of routes and prefetch
@@ -19,7 +19,7 @@ class PrefetchResolver {
    * @param route
    */
   prefetch(route: string) {
-    console.log("PrefetchResolver :: prefetch ::", route);
+    //console.log('PrefetchResolver :: prefetch ::', route);
     this.loaders[route]();
     return this.loaders[route];
   }
@@ -29,10 +29,13 @@ class PrefetchResolver {
    * @param route
    * @param loader
    */
-  register(route: string, loader) {
-    console.log("PrefetchResolver :: register ::", route);
-    if (_.has(this.loaders, route)) return this.loaders[route];
-    this.loaders[route] = loader || prefetchLoader(route);
+  loader(route: string, loader?) {
+    if (_.has(this.loaders, route)) {
+      return this.loaders[route];
+    } else {
+      this.loaders[route] = loader || prefetchLoader(route);
+    }
+    //console.log('PrefetchResolver :: register ::', route);
     return this.loaders[route];
   }
 
@@ -41,13 +44,12 @@ class PrefetchResolver {
    * @param route
    * @param list
    */
-  registerAsIterable(route: string, list: Array<any>) {
-    console.log("PrefetchResolver :: registerAsIterable ::", list);
+  loaderIterable(route: string, list: Array<any>) {
+    //console.log('PrefetchResolver :: registerAsIterable :: ', list);
     return list.map((item) => {
-      let [key, path] = route.split("@");
+      let [key, path] = route.split('@');
       path = `@${path}/${item[key]}`;
-      let loader = prefetchLoader(path);
-      this.register(path, loader);
+      this.loader(path);
     });
   }
 
@@ -61,7 +63,7 @@ class PrefetchResolver {
     return {
       onMouseOver: () => {
         this.prefetch(route);
-        console.log(`PrefetchResolver :: events :: onMouseOver :: ${route}`);
+        //console.log(`PrefetchResolver :: events :: onMouseOver :: ${route}`);
       },
     };
   }

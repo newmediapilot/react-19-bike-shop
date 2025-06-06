@@ -1,8 +1,8 @@
 /**
  * Registers a loader for later use;
  */
-import loaderHandler from "./loaderHandler";
-import { setPrefetch, store } from "@local/composition/store";
+import loaderHandler from './loaderHandler';
+import { setPrefetch, store } from '@local/composition/store';
 // @ts-ignore
 
 /**

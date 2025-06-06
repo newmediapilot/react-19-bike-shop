@@ -1,150 +1,184 @@
 {
   "list": [
-    { "id": 0, "title": "Bicycle Type", "description": "Random Lorem Ipsum" },
+    {
+      "id": 0,
+      "title": "Bicycle Type",
+      "description": "Random Lorem Ipsum",
+      "image": "https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg"
+    },
     {
       "id": 1,
       "title": "Mountain Terrain",
-      "description": "Lorem ipsum dolor sit amet"
+      "description": "Lorem ipsum dolor sit amet",
+      "image": "https://images.pexels.com/photos/100582/pexels-photo-100582.jpeg"
     },
     {
       "id": 2,
       "title": "Gear Ratio",
-      "description": "Consectetur adipiscing elit"
+      "description": "Consectetur adipiscing elit",
+      "image": "https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg"
     },
     {
       "id": 3,
       "title": "Brake System",
-      "description": "Sed do eiusmod tempor incididunt"
+      "description": "Sed do eiusmod tempor incididunt",
+      "image": "https://images.pexels.com/photos/100582/pexels-photo-100582.jpeg"
     },
     {
       "id": 4,
       "title": "Frame Material",
-      "description": "Ut labore et dolore magna aliqua"
+      "description": "Ut labore et dolore magna aliqua",
+      "image": "https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg"
     },
     {
       "id": 5,
       "title": "Suspension Type",
-      "description": "Ut enim ad minim veniam"
+      "description": "Ut enim ad minim veniam",
+      "image": "https://images.pexels.com/photos/100582/pexels-photo-100582.jpeg"
     },
     {
       "id": 6,
       "title": "Wheel Size",
-      "description": "Quis nostrud exercitation ullamco"
+      "description": "Quis nostrud exercitation ullamco",
+      "image": "https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg"
     },
     {
       "id": 7,
       "title": "Tire Pressure",
-      "description": "Laboris nisi ut aliquip ex ea commodo"
+      "description": "Laboris nisi ut aliquip ex ea commodo",
+      "image": "https://images.pexels.com/photos/100582/pexels-photo-100582.jpeg"
     },
     {
       "id": 8,
       "title": "Handlebar Style",
-      "description": "Duis aute irure dolor in reprehenderit"
+      "description": "Duis aute irure dolor in reprehenderit",
+      "image": "https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg"
     },
     {
       "id": 9,
       "title": "Seat Comfort",
-      "description": "In voluptate velit esse cillum dolore"
+      "description": "In voluptate velit esse cillum dolore",
+      "image": "https://images.pexels.com/photos/100582/pexels-photo-100582.jpeg"
     },
     {
       "id": 10,
       "title": "Pedal Grip",
-      "description": "Eu fugiat nulla pariatur"
+      "description": "Eu fugiat nulla pariatur",
+      "image": "https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg"
     },
     {
       "id": 11,
       "title": "Chain Tension",
-      "description": "Excepteur sint occaecat cupidatat non proident"
+      "description": "Excepteur sint occaecat cupidatat non proident",
+      "image": "https://images.pexels.com/photos/100582/pexels-photo-100582.jpeg"
     },
     {
       "id": 12,
       "title": "Rim Strength",
-      "description": "Sunt in culpa qui officia deserunt"
+      "description": "Sunt in culpa qui officia deserunt",
+      "image": "https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg"
     },
     {
       "id": 13,
       "title": "Bell Tone",
-      "description": "Mollit anim id est laborum"
+      "description": "Mollit anim id est laborum",
+      "image": "https://images.pexels.com/photos/100582/pexels-photo-100582.jpeg"
     },
     {
       "id": 14,
       "title": "Kickstand Stability",
-      "description": "Ut enim ad minim veniam"
+      "description": "Ut enim ad minim veniam",
+      "image": "https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg"
     },
     {
       "id": 15,
       "title": "Fender Width",
-      "description": "Quis nostrud exercitation ullamco laboris"
+      "description": "Quis nostrud exercitation ullamco laboris",
+      "image": "https://images.pexels.com/photos/100582/pexels-photo-100582.jpeg"
     },
     {
       "id": 16,
       "title": "Crank Arm Length",
-      "description": "Nisi ut aliquip ex ea commodo consequat"
+      "description": "Nisi ut aliquip ex ea commodo consequat",
+      "image": "https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg"
     },
     {
       "id": 17,
       "title": "Spoke Count",
-      "description": "Duis aute irure dolor in reprehenderit"
+      "description": "Duis aute irure dolor in reprehenderit",
+      "image": "https://images.pexels.com/photos/100582/pexels-photo-100582.jpeg"
     },
     {
       "id": 18,
       "title": "Derailleur Type",
-      "description": "In voluptate velit esse cillum dolore"
+      "description": "In voluptate velit esse cillum dolore",
+      "image": "https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg"
     },
     {
       "id": 19,
       "title": "Shifter Precision",
-      "description": "Eu fugiat nulla pariatur"
+      "description": "Eu fugiat nulla pariatur",
+      "image": "https://images.pexels.com/photos/100582/pexels-photo-100582.jpeg"
     },
     {
       "id": 20,
       "title": "Reflector Quality",
-      "description": "Excepteur sint occaecat cupidatat non proident"
+      "description": "Excepteur sint occaecat cupidatat non proident",
+      "image": "https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg"
     },
     {
       "id": 21,
       "title": "Lighting System",
-      "description": "Sunt in culpa qui officia deserunt mollit"
+      "description": "Sunt in culpa qui officia deserunt mollit",
+      "image": "https://images.pexels.com/photos/100582/pexels-photo-100582.jpeg"
     },
     {
       "id": 22,
       "title": "Bottle Cage Fit",
-      "description": "Anim id est laborum"
+      "description": "Anim id est laborum",
+      "image": "https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg"
     },
     {
       "id": 23,
       "title": "Grip Texture",
-      "description": "Ut enim ad minim veniam"
+      "description": "Ut enim ad minim veniam",
+      "image": "https://images.pexels.com/photos/100582/pexels-photo-100582.jpeg"
     },
     {
       "id": 24,
       "title": "Chainring Size",
-      "description": "Quis nostrud exercitation ullamco laboris nisi"
+      "description": "Quis nostrud exercitation ullamco laboris nisi",
+      "image": "https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg"
     },
     {
       "id": 25,
       "title": "Axle Width",
-      "description": "Ut aliquip ex ea commodo consequat"
+      "description": "Ut aliquip ex ea commodo consequat",
+      "image": "https://images.pexels.com/photos/100582/pexels-photo-100582.jpeg"
     },
     {
       "id": 26,
       "title": "Cassette Range",
-      "description": "Duis aute irure dolor in reprehenderit"
+      "description": "Duis aute irure dolor in reprehenderit",
+      "image": "https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg"
     },
     {
       "id": 27,
       "title": "Rear Hub Engagement",
-      "description": "In voluptate velit esse cillum dolore"
+      "description": "In voluptate velit esse cillum dolore",
+      "image": "https://images.pexels.com/photos/100582/pexels-photo-100582.jpeg"
     },
     {
       "id": 28,
       "title": "Dropout Design",
-      "description": "Eu fugiat nulla pariatur"
+      "description": "Eu fugiat nulla pariatur",
+      "image": "https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg"
     },
     {
       "id": 29,
       "title": "Top Tube Length",
-      "description": "Excepteur sint occaecat cupidatat non proident"
+      "description": "Excepteur sint occaecat cupidatat non proident",
+      "image": "https://images.pexels.com/photos/100582/pexels-photo-100582.jpeg"
     }
   ]
 }

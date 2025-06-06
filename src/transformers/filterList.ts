@@ -31,12 +31,12 @@ export function filterList(
   search: string | null,
   items: Array<any>,
   key: string | number,
-  fields: Array<string>,
+  fields: Array<string>
 ): Array<any> {
   let result = [];
   items.forEach((item, row) => {
     fields.forEach((field, column) => {
-      const value = item[field] || "";
+      const value = item[field] || '';
       const payload = {
         key: item.id,
         field,

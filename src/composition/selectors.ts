@@ -1,7 +1,7 @@
-import { RootState } from "./store";
-import { SearchData } from "@local/components/Search";
-import { ListData, ListItem } from "@local/components/Listings";
-import { ModeSelectType } from "@local/components/ModeSelect";
+import { RootState } from './store';
+import { SearchData } from '@local/components/Search';
+import { ListData, ListItem } from '@local/primitives/LTable';
+import { ModeSelectType } from '@local/components/ModeSelect';
 
 /**
  * Return <Search> value
@@ -10,15 +10,13 @@ export const selectSearch = (state: RootState) => state.search as SearchData;
 /**
  * Return <ModeSelect> value
  */
-export const selectMode = (state: RootState) => state.mode as ModeSelectType;
+export const selectFilter = (state: RootState) => state.mode as ModeSelectType;
 /**
  * Return all listings
  */
-export const selectList = (state: RootState): ListData =>
-  state["@list"] as ListItem[];
+export const selectList = (state: RootState): ListData => state['@list'] as ListItem[];
 /**
  * Return a single listing by {id}
  */
-export const selectListDetail = (id: string) => {
-  return (state: RootState) => state[`@list/${id}`] as ListItem;
-};
+export const selectListDetail = (id: string) => (state: RootState) =>
+  state[`@list/${id}`] as ListItem;

@@ -1,7 +1,8 @@
-import * as React from "react";
-import { setMode, useAppDispatch } from "@local/composition/store";
+import * as React from 'react';
+import { setFilter, useAppDispatch } from '@local/composition/store';
+import LRadioItem from '@local/primitives/LRadioItem';
 
-export type ModeSelectType = "filter" | "highlight" | "decoration";
+export type ModeSelectType = 'filter' | 'highlight' | 'decoration';
 
 /**
  * ModeSelect input emitting a value onChange
@@ -9,18 +10,11 @@ export type ModeSelectType = "filter" | "highlight" | "decoration";
  */
 function ModeSelect() {
   const dispatch = useAppDispatch();
-  const modes: string[] = ["filter", "highlight", "decoration"];
+  const modes: ModeSelectType[] = ['filter', 'highlight', 'decoration'];
   return (
     <form>
-      {modes.map((mode) => (
-        <label key={mode}>
-          <input
-            type="radio"
-            name="mode-select"
-            value={mode}
-            onClick={() => dispatch(setMode(mode))}
-          />
-        </label>
+      {modes.map((m) => (
+        <LRadioItem key={m} name={'m-select'} value={m} onClick={() => dispatch(setFilter(m))} />
       ))}
     </form>
   );

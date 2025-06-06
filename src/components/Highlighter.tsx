@@ -1,11 +1,10 @@
-import * as React from "react";
+import * as React from 'react';
 
 /**
  * Add highlight effects over a target element
  * @constructor
  */
-function Highlighter(list: Array<any>) {
-  console.log("Highlighter", list);
+function Highlighter() {
   return <p>Highlighter</p>;
 }
 

@@ -17,9 +17,9 @@ function FilterRadioGroup() {
     dispatch(setFilter(m));
   };
   return (
-    <div className="flex gap-2">
+    <div className="flex gap-2 my-2">
       {filters.map((m) => (
-        <label key={m} className="py-2 cursor-pointer">
+        <label key={m} className="flex items-center border border-gray-600 px-3 py-2 rounded cursor-pointer">
           <input
             type="radio"
             name="m-select"

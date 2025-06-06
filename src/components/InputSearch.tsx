@@ -14,7 +14,7 @@ function InputSearch() {
   const onChange = (e) => dispatch(setSearch(e.currentTarget.value));
   const placeholder = '';
   return (
-    <div className="py-2">
+    <div className="my-2">
       <input
         className="input"
         placeholder="Enter your search..."

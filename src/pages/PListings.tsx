@@ -15,8 +15,8 @@ function PListings() {
   return (
     <>
       <InputSearch />
-      <FilterLabel />
       <FilterRadioGroup />
+      <FilterLabel />
       <Listings />
       <ListingsOverlay />
       <CDialog>

@@ -8,7 +8,7 @@ import * as React from 'react';
 const CInfoLabel = function ({ children }) {
   return (
     <div className="my-2">
-      <span className="bg-gray-800 text-white text-xs p-2 mt-2 rounded">{children}</span>
+      <div className="inline-block p-2 bg-gray-800 text-white text-xs rounded">{children}</div>
     </div>
   );
 };

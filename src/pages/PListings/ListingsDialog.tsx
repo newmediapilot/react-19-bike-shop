@@ -52,7 +52,7 @@ function ListingsDialog() {
                 p-4
         `}
         >
-            <div className="btn btn-sm bg-none text-white border border-gray-600">Click to Close</div>
+          <div className="btn btn-sm bg-none text-white border border-gray-600">Click to Close</div>
         </footer>
       </div>
     )

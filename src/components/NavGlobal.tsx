@@ -9,13 +9,19 @@ import { NavLink } from 'react-router';
 function NavGlobal() {
   const active = ({ isActive }) => `${isActive ? 'hover:underline underline' : 'hover:underline'}`;
   return (
-    <nav className="flex justify-between text-sm font-medium border-b border-gray-600 pb-2">
+    <nav className="flex justify-between text-sm font-medium border-b border-gray-600 p-4">
       <div className="flex gap-6">
-        <NavLink to="/listings" className={active} {...pf.events('id@list')}>Listings</NavLink>
-        <NavLink to="/components" className={active}>Components</NavLink>
+        <NavLink to="/listings" className={active} {...pf.events('id@list')}>
+          Listings
+        </NavLink>
+        <NavLink to="/components" className={active}>
+          Components
+        </NavLink>
       </div>
       <div className="flex">
-        <NavLink to="/" className="hover:underline">Log Out</NavLink>
+        <NavLink to="/" className="hover:underline">
+          Log Out
+        </NavLink>
       </div>
     </nav>
   );

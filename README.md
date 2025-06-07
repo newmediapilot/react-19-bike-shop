@@ -17,7 +17,6 @@ https://newmediapilot.github.io/react-19-bike-shop
 - [React Hook Form](https://react-hook-form.com)
 - [Workbox CLI](https://developer.chrome.com/docs/workbox/)
 - [Skeleton UI](https://www.skeleton.dev/)
-- [Radix UI](https://www.radix-ui.com/)
 - [React Spring](https://www.react-spring.dev/)
 - [LoDash](https://lodash.com/)
 - [JSON Server](https://www.npmjs.com/package/json-server)

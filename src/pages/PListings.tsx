@@ -1,10 +1,10 @@
+import CDialog from '@local/components/core/CDialog';
 import FilterRadioGroup from '@local/pages/PListings/FilterRadioGroup';
 import FilterRadioLabel from '@local/pages/PListings/FilterRadioLabel';
 import InputSearch from '@local/pages/PListings/InputSearch';
 import Listings from '@local/pages/PListings/Listings';
 import ListingsDialog from '@local/pages/PListings/ListingsDialog';
 import ListingsOverlay from '@local/pages/PListings/ListingsOverlay';
-import CDialog from '@local/components/core/CDialog';
 import * as React from 'react';
 
 /**
@@ -20,11 +20,13 @@ import * as React from 'react';
  */
 function PListings() {
   return (
-    <section>
-      <div className="w-full sm:w-1/2">
-        <InputSearch />
-        <FilterRadioGroup />
-        <FilterRadioLabel />
+    <section className="relative">
+      <div className="px-3 pb-1 pt-1 w-full sticky top-[56px] z-[1] bg-black">
+          <div  className="lg:max-w-[50vw]">
+              <InputSearch/>
+              <FilterRadioGroup />
+              <FilterRadioLabel />
+          </div>
       </div>
       <Listings />
       <ListingsOverlay />

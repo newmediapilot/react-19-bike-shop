@@ -6,6 +6,7 @@ import LDefault from '../layouts/LDefault';
 import { pf } from '@local/loaders/core/pf';
 import PLogin from '@local/pages/PLogin';
 import * as React from 'react';
+import PRegister from '@local/pages/PRegister';
 
 /**
  * Starter router with one DefaultLayout
@@ -19,6 +20,11 @@ export const router = [
     path: '/',
     index: true,
     element: <PLogin />,
+  },
+  {
+    path: '/register',
+    index: true,
+    element: <PRegister />,
   },
   {
     path: '/listings',

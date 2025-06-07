@@ -13,7 +13,7 @@ function InputSearch() {
   const { register } = useForm({ mode: 'onChange' });
   const onChange = (e) => dispatch(setSearch(e.currentTarget.value));
   return (
-    <div className="my-2">
+    <div className="py-2">
       <input
         className="p-4 border-1 border-gray-600 w-full"
         placeholder="Enter your search..."

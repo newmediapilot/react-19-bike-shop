@@ -17,7 +17,7 @@ function FilterRadioGroup() {
     dispatch(setFilter(m));
   };
   return (
-    <div className="grid grid-flow-col auto-cols-auto gap-2 my-2">
+    <div className="grid grid-flow-col auto-cols-auto gap-2">
       {filters.map((m) => (
         <label
           key={m}

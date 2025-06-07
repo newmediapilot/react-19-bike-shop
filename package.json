@@ -2,7 +2,7 @@
   "name": "react-19-bike-shop",
   "homepage": "https://newmediapilot.github.io/react-19-bike-shop",
   "private": true,
-  "version": "0.0.29",
+  "version": "0.0.30",
   "type": "module",
   "scripts": {
     "reset": "rm -rf node_modules && rm -rf ./*.lock && yarn install",
@@ -19,8 +19,6 @@
   },
   "dependencies": {
     "@eslint/js": "^9.25.0",
-    "@radix-ui/react-direction": "^1.1.1",
-    "@radix-ui/themes": "^3.2.1",
     "@react-spring/web": "^10.0.1",
     "@reduxjs/toolkit": "^2.8.2",
     "@skeletonlabs/skeleton": "^3.1.3",

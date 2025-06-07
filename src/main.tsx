@@ -8,7 +8,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { registerSW } from 'virtual:pwa-register';
 import AppVersion from './components/AppVersion';
 import { router, routerOptions } from './composition/router';
-import { store } from './composition/store';
+import { store, setStoreKey } from './composition/store';
 import './main.css';
 
 registerSW();

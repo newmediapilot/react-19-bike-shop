@@ -11,7 +11,7 @@ import { router, routerOptions } from './composition/router';
 import { store, setStoreKey } from './composition/store';
 import './main.css';
 
-registerSW();
+// registerSW();
 pf.configureStore(store);
 
 // @ts-ignore

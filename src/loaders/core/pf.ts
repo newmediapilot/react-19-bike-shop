@@ -27,7 +27,9 @@ class PrefetchResolver {
    */
   prefetch(route: string) {
     // console.log('PrefetchResolver :: prefetch ::', route, this.loaders[route]);
-    this.loaders[route]();
+      if (typeof this.loaders[route] === "function") {
+          this.loaders[route]();
+      }
   }
 
   /**

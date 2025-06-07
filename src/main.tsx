@@ -20,7 +20,7 @@ if (import.meta.env.DEV) import.meta.hot?.on('vite:beforeUpdate', console.clear)
 import * as localJSON from './db.json';
 
 // fixture fallback for gh-pages
-if (import.meta.env.PRODUCTION || true) {
+if (import.meta.env.PRODUCTION) {
   const { list } = localJSON.default;
   store.dispatch(setStoreKey({ data: list, key: `@list` }));
   list.forEach((item) =>

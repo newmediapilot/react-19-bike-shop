@@ -83,10 +83,10 @@ npm run dev
 > - Styling & Bindings eg. `{prop.value}`
 
 - [AppVersion.tsx](src/components/AppVersion.tsx)
-- [DetailDialog.tsx](src/components/ListingsDialog.tsx)
+- [DetailDialog.tsx](src/pages/PListings/ListingsDialog.tsx)
 - [Listings.tsx](src/components/core/CTable.tsx)
 - [Nav.tsx](src/components/NavGlobal.tsx)
-- [Search.tsx](src/components/InputSearch.tsx)
+- [Search.tsx](src/pages/PListings/InputSearch.tsx)
 
 ### Pages
 

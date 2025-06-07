@@ -1,4 +1,4 @@
-import { ModeSelectType } from '@local/components/FilterRadioGroup';
+import { ModeSelectType } from '@local/pages/PListings/FilterRadioGroup';
 import { configureStore, createDynamicMiddleware, createSlice } from '@reduxjs/toolkit';
 import { useDispatch, useSelector } from 'react-redux';
 

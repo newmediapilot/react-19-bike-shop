@@ -24,6 +24,7 @@ function ListingsDialog() {
       <div
         onClick={() => navigate('./?detail=none')}
         className={`
+                cursor-pointer
                 card preset-filled-surface-100-900 
                 card-hover 
                 border-[1px] 
@@ -51,7 +52,7 @@ function ListingsDialog() {
                 p-4
         `}
         >
-          Click to Close
+            <div className="btn btn-sm bg-none text-white border border-gray-600">Click to Close</div>
         </footer>
       </div>
     )

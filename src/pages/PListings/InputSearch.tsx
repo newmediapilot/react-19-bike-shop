@@ -15,7 +15,7 @@ function InputSearch() {
   return (
     <div className="my-2">
       <input
-        className="p-4 border-1 border-gray-600"
+        className="p-4 border-1 border-gray-600 w-full"
         placeholder="Enter your search..."
         {...register('search', { onChange })}
       />

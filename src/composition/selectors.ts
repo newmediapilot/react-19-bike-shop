@@ -1,4 +1,4 @@
-import { ModeSelectType } from '@local/components/FilterRadioGroup';
+import { ModeSelectType } from '@local/pages/PListings/FilterRadioGroup';
 import { ListData, ListItem, RootState } from './store';
 
 /**

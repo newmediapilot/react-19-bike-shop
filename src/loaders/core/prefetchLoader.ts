@@ -9,6 +9,7 @@ import loaderHandler from './loaderHandler';
  * Process exclusively via `setStoreKey` reducer
  */
 export default function prefetchLoader(route: string) {
-  store.dispatch(setStoreKey({ data: { ready: true }, key: route }));
+  let rpath = `@${route.split('@')[1]}`;
+  store.dispatch(setStoreKey({ data: rpath, key: rpath }));
   return () => loaderHandler(route, setStoreKey);
 }

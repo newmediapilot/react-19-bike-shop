@@ -5,9 +5,9 @@
 import ProgressFS from '@local/components/ProgressFS';
 import { useLoaderData } from 'react-router-dom';
 
-function LSuspense({ children }: { children: React.ReactNode }) {
+function CSuspense({ children }: { children: React.ReactNode }) {
   const d = useLoaderData();
   return !d ? <ProgressFS /> : children;
 }
 
-export default LSuspense;
+export default CSuspense;

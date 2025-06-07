@@ -40,8 +40,9 @@ export default async function loaderHandler(route: string, action: any) {
   let [key, path] = route.split('@');
   let rpath = `@${path}`;
   let url = `${VITE_DB}/${path}`;
-  let data = store.getState()[key];
-  if (data) return data;
+  let data = store.getState()[rpath];
+
+  if (data !== rpath && !!data) return data;
 
   try {
     const result = await fetch(url);

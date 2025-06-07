@@ -1,5 +1,5 @@
 import { pf } from '@local/loaders/core/pf';
-import { default as React } from 'react';
+import * as React from 'react';
 import { NavLink } from 'react-router';
 
 /**

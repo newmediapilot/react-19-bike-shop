@@ -1,35 +1,28 @@
 import { pf } from '@local/loaders/core/pf';
 import * as React from 'react';
 import { NavLink } from 'react-router';
+
 /**
  * Navigation for the router
  * @constructor
  */
 function NavGlobal() {
-  const active = ({ isActive }) => `${isActive ? 
-      'hover:underline underline' : 
-      'hover:underline'}`;
+  const active = ({ isActive }) => `${isActive ? 'hover:underline underline' : 'hover:underline'}`;
   return (
-    <nav className="flex gap-6 text-sm font-medium border-b pb-2">
-      <NavLink
-        to="/listings"
-        className={active}
-        {...pf.events('id@list')}
-      >
-        Listings
-      </NavLink>
-      <NavLink
-        to="/components"
-        className={active}
-      >
-        Components
-      </NavLink>
-      <NavLink
-          to="/error"
-          className={`${active}`}
-      >
-        404
-      </NavLink>
+    <nav className="flex justify-between text-sm font-medium border-b border-gray-600 pb-2">
+      <div className="flex gap-6">
+        <NavLink to="/listings" className={active} {...pf.events('id@list')}>
+          Listings
+        </NavLink>
+        <NavLink to="/components" className={active}>
+          Components
+        </NavLink>
+      </div>
+      <div>
+        <NavLink to="/" className={`${active}`}>
+          Log Out
+        </NavLink>
+      </div>
     </nav>
   );
 }

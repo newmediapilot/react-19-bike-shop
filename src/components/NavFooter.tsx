@@ -1,19 +1,11 @@
 import * as React from 'react';
-import { useState } from 'react';
-import { NavLink } from 'react-router';
 /**
  * Navigation for the router
  * @constructor
  */
 function NavFooter() {
-  const [value, setValue] = useState('/');
   return (
-    <footer>
-      <nav className="p-4 flex space-x-4">
-        <NavLink to="/">Home</NavLink>
-        <NavLink to="/">About</NavLink>
-        <NavLink to="/">Privacy</NavLink>
-      </nav>
+    <footer className="text-xs border-t-1 border-gray-600 pt-2 mt-2 text-right">
       <span>© 2025 React19 Bike Shop. All rights reserved.</span>
     </footer>
   );

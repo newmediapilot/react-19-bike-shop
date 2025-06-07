@@ -1,5 +1,5 @@
-import FilterLabel from '@local/components/FilterLabel';
 import FilterRadioGroup from '@local/components/FilterRadioGroup';
+import FilterRadioLabel from '@local/components/FilterRadioLabel';
 import InputSearch from '@local/components/InputSearch';
 import Listings from '@local/components/Listings';
 import ListingsDialog from '@local/components/ListingsDialog';
@@ -13,16 +13,18 @@ import * as React from 'react';
  */
 function PListings() {
   return (
-    <>
-      <InputSearch />
-      <FilterRadioGroup />
-      <FilterLabel />
+    <section>
+      <div className="w-full sm:w-1/2">
+        <InputSearch />
+        <FilterRadioGroup />
+        <FilterRadioLabel />
+      </div>
       <Listings />
       <ListingsOverlay />
       <CDialog>
         <ListingsDialog />
       </CDialog>
-    </>
+    </section>
   );
 }
 

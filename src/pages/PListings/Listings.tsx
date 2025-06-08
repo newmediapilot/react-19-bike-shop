@@ -1,11 +1,10 @@
 // @ts-ignore
-import { default as React, useState } from 'react';
+import { default as React, useEffect, useState } from 'react';
 // @ts-ignore
 import CInfoLabel from '@local/components/core/CInfoLabel';
 import CTable from '@local/components/core/CTable';
 import { selectSearchFiltered } from '@local/composition/selectors';
 import { useAppSelector } from '@local/composition/store';
-import { useEffectDebounced } from '@local/effects/useEffectDebounced';
 
 /**
  * <Listings> component hosting <LTable>
@@ -17,13 +16,9 @@ function Listings({
 }) {
   const filtered: Array<any> = useAppSelector(selectSearchFiltered);
   const [reduced, setReduced] = useState([]);
-  useEffectDebounced(
-    () => {
-      setReduced(filtered.filter((i) => i.$match.length));
-    },
-    [filtered],
-    100
-  );
+  useEffect(() => {
+    setReduced(filtered.filter((i) => i.$match.length));
+  }, [filtered]);
   return reduced.length ? (
     <CTable list={reduced} fields={fields} classItems={classItems} />
   ) : (

@@ -7,26 +7,18 @@ import { Outlet } from 'react-router';
  * Initial layout with <nav>
  * @constructor
  */
-export default function LDefault({ nav = true, footer = true }) {
+export default function LDefault() {
   return (
-    <div className="grid grid-rows-[auto_1fr_auto]">
-      {nav && (
-        <header className="h-[6vh]">
-          <NavGlobal />
-        </header>
-      )}
-      <div className="h-[90vh] overflow-y-scroll">
-        <main>
-          <Outlet />
-        </main>
-      </div>
-      <div className="h-[4vh]">
-          {footer && (
-              <footer>
-                  <NavFooter />
-              </footer>
-          )}
-      </div>
+    <div className="relative grid grid-rows">
+      <header className="h-[5vh]">
+        <NavGlobal />
+      </header>
+      <main className="h-[90vh]">
+        <Outlet />
+      </main>
+      <footer className="h-[5vh]">
+        <NavFooter />
+      </footer>
     </div>
   );
 }

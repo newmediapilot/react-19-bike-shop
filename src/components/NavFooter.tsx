@@ -6,7 +6,9 @@ import * as React from 'react';
 function NavFooter() {
   return (
     <footer className="text-xs text-right my-3 pr-2">
-      <div className="opacity-[50%]">©{new Date().getFullYear()} React19 Bike Shop. All rights reserved.</div>
+      <div className="opacity-[50%]">
+        ©{new Date().getFullYear()} React19 Bike Shop. All rights reserved.
+      </div>
     </footer>
   );
 }

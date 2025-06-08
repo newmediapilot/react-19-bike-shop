@@ -5,8 +5,6 @@ concepts in a sterile context.
 
 # Table of Contents
 
-- [React + Vite : Bicycle Shop](#react--vite--bicycle-shop)
-- [Table of Contents](#table-of-contents)
 - [Live Demo](#live-demo)
 - [Local](#local)
 - [All `package.json` commands](#all-packagejson-commands)
@@ -100,7 +98,7 @@ Vite uses `VITE_{VARIABLE}` to define its environment by default.
 > Stubbed with `http://localhost:3000` for `npm run db`  
 > This will become your API root
 
-## Deployment
+# Deployment
 
 `npm run deploy`
 
@@ -111,7 +109,7 @@ Vite uses `VITE_{VARIABLE}` to define its environment by default.
 1. Adds git tag  
 1. Pushes to `gh-pages`
 
-## Component strategy
+# Component strategy
 
 - [Layouts](src/layouts/) are used as a general wrapper and declared in [router.tsx](src/composition/router.tsx)  
 - Also in `router.tsx` [Page](src/page/) declarations and `prefetch("@route")` declarations are set  
@@ -135,7 +133,7 @@ Vite uses `VITE_{VARIABLE}` to define its environment by default.
 - Must fill their container `w&h-[100%]`  
 - Doesn't need to be visual eg. `Suspense`
 
-#### Powered by:
+# Powered by:
 
 - [Yarn](https://yarnpkg.com/)  
 - [Vite](https://vite.dev/)  

@@ -16,7 +16,7 @@ function PRegister() {
           <div>
             <div className="flex-1">
               <label className="block text-sm font-medium">Username</label>
-              <input id="email" name="dna" type="text" className="input w-full" />
+              <input id="text" name="dna" type="text" className="input w-full" />
             </div>
             <div className="flex-1">
               <label className="block text-sm font-medium">Email</label>

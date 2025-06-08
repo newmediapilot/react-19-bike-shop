@@ -34,21 +34,9 @@ https://newmediapilot.github.io/react-19-bike-shop
 - [References](#references)
   - [Command Comparison](#command-comparison)
 
-# Preview
-
 ```
-npm i
-npm run build
-npm run preview
-```
-
-In a separate window run:
-```
-npm run db
-```
-
-```
-npm run deploy
+npm run db // Separate window
+npm run dev
 ```
 
 # Development
@@ -74,29 +62,6 @@ npm run dev
 
 # Technical Features
 
-### Components
-
-> ##### Focus
-> - Only emit actions
-> - Receive data via ( props | selector )
-> - Styling & Bindings eg. `{prop.value}`
-
-- [AppVersion.tsx](src/components/AppVersion.tsx)
-- [DetailDialog.tsx](src/pages/PListings/ListingsDialog.tsx)
-- [Listings.tsx](src/components/core/CTable.tsx)
-- [Nav.tsx](src/components/NavGlobal.tsx)
-- [Search.tsx](src/pages/PListings/InputSearch.tsx)
-
-### Pages
-
-> ##### Focus
-> - Acting as HOC (for now)
-> - `selectors` to drill data into components
-
-- [Catch.tsx](src/pages/PCatch.tsx)
-- [Components.tsx](src/pages/PComponents.tsx)
-- [Index.tsx](src/pages/PListings.tsx)
-
 ### Redux + Loader
 
 > Each loader definition is processed by [loaderHandler.tsx](src/loaders/core/loaderHandler.ts)
@@ -119,10 +84,13 @@ npm run dev
 > Since we aren't using NextJS we have to write a pre-fetch solution 
 > Prefetch is handled by [pf.ts](src/loaders/core/pf.ts)
 
-- When we define a loader via `loaderHandler` we provide a `route:string`
+- Define a loader via `loaderHandler` we provide a `route:string`
+- Use the result inside your `router` to prepare for `prefetch`
+- Then register the `prefetch` recall in your components
+
 
 ```
-// TODO: define loader
+
 ```
 ```
 // TODO: infoke prefetch
@@ -133,7 +101,6 @@ npm run dev
 Vite uses `VITE_{VARIABE}` to define its environment by default.
 `.env()` consumes and scans the files on compile.
 
-- [.env.local](.env.uat)
 - [.env.development](.env.development)
 - [.env.production](.env.production)
 
@@ -155,19 +122,3 @@ Vite uses `VITE_{VARIABE}` to define its environment by default.
 
 # References
 
-> Switching to `yarn`
-
-### Command Comparison
-
-| Command                      | `npm *`                   | `yarn *`                 |
-|------------------------------|---------------------------|--------------------------|
-| Init project                 | `npm init`                | `yarn init`              |
-| Install dependencies         | `npm install`             | `yarn` or `yarn install` |
-| Install specific package     | `npm install lodash`      | `yarn add lodash`        |
-| Install dev dependency       | `npm install --save-dev`  | `yarn add --dev`         |
-| Remove package               | `npm uninstall lodash`    | `yarn remove lodash`     |
-| Upgrade package              | `npm update lodash`       | `yarn upgrade lodash`    |
-| Run script                   | `npm run start`           | `yarn start`             |
-| List installed packages      | `npm list`                | `yarn list`              |
-| Audit security issues        | `npm audit`               | `yarn audit`             |
-| Add globally                 | `npm install -g <pkg>`    | `yarn global add <pkg>`  |

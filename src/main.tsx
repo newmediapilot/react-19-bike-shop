@@ -1,5 +1,4 @@
 import { pf } from '@local/loaders/core/pf';
-import { Direction } from 'radix-ui';
 import * as React from 'react';
 import ReactDOM from 'react-dom/client';
 import { Provider } from 'react-redux';
@@ -32,9 +31,7 @@ if (import.meta.env.PRODUCTION) {
  */
 ReactDOM.createRoot(document.getElementById('root')).render(
   <Provider store={store}>
-    <Direction.Provider dir="rtl">
-      <AppVersion />
-        <RouterProvider router={createBrowserRouter(router, routerOptions)} />
-    </Direction.Provider>
+    <AppVersion />
+    <RouterProvider router={createBrowserRouter(router, routerOptions)} />
   </Provider>
 );

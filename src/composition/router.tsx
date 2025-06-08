@@ -5,8 +5,8 @@ import LDefault from '../layouts/LDefault';
 // @ts-ignore
 import { pf } from '@local/loaders/core/pf';
 import PLogin from '@local/pages/PLogin';
-import * as React from 'react';
 import PRegister from '@local/pages/PRegister';
+import * as React from 'react';
 
 /**
  * Starter router with one DefaultLayout

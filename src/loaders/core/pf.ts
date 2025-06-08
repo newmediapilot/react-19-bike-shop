@@ -10,8 +10,15 @@ import prefetchLoader from '@local/loaders/core/prefetchLoader';
  * @see src/loaders/core/loaderHandler.ts;
  */
 class PrefetchResolver {
-  loaders = {};
+  _loaders = {};
   store = null;
+
+  /**
+   * Returns a copy of the loaders object
+   */
+  get loaders() {
+    return { ...this._loaders };
+  }
 
   /**
    * Configure with store so we can check values against routes
@@ -26,9 +33,9 @@ class PrefetchResolver {
    * @param route
    */
   prefetch(route: string) {
-    // console.log('PrefetchResolver :: prefetch ::', route, this.loaders[route]);
-    if (typeof this.loaders[route] === 'function') {
-      this.loaders[route]();
+    // console.log('PrefetchResolver :: prefetch ::', route, this._loaders[route]);
+    if (typeof this._loaders[route] === 'function') {
+      this._loaders[route]();
     }
   }
 
@@ -38,11 +45,11 @@ class PrefetchResolver {
    * @param loader?
    */
   loader(route: string) {
-    // console.log('PrefetchResolver :: register ::', route, this.loaders[route]);
-    if (!this.loaders[route] && this.loaders[route] !== route) {
-      this.loaders[route] = prefetchLoader(route);
+    // console.log('PrefetchResolver :: register ::', route, this._loaders[route]);
+    if (!this._loaders[route] && this._loaders[route] !== route) {
+      this._loaders[route] = prefetchLoader(route);
     }
-    return this.loaders[route];
+    return this._loaders[route];
   }
 
   /**
@@ -54,7 +61,7 @@ class PrefetchResolver {
     return list.map((item) => {
       let [key, path] = route.split('@');
       path = `@${path}/${item[key]}`;
-      console.log('PrefetchResolver :: registerAsIterable :: ', item.id, path);
+      // console.log('PrefetchResolver :: registerAsIterable :: ', item.id, path);
       this.loader(path);
     });
   }

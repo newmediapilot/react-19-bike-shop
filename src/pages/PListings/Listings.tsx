@@ -11,8 +11,8 @@ import { useAppSelector } from '@local/composition/store';
  * Filters the list based on <Search> and <Mode>
  */
 function Listings({
-  fields = ['', 'Title', 'Description', 'Action'],
-  classItems = ['w-[0%]', 'w-[25%]', 'w-[65%]', 'w-[10%]'],
+  fields = ['', 'Title', 'Description', 'Action', ''],
+  classItems = ['w-[5%]', 'w-[20%]', 'w-[60%]', 'w-[10%]', 'w-[5%]'],
 }) {
   const filtered: Array<any> = useAppSelector(selectSearchFiltered);
   const [reduced, setReduced] = useState([]);
@@ -22,8 +22,8 @@ function Listings({
   return reduced.length ? (
     <CTable list={reduced} fields={fields} classItems={classItems} />
   ) : (
-    <div class="ml-3">
-      <CInfoLabel>No matches found</CInfoLabel>
+    <div className="h-[85vh]">
+      <CInfoLabel children={`No matches found`} />
     </div>
   );
 }

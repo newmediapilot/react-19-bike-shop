@@ -1,4 +1,4 @@
-import { PrefetchSetType, store } from '@local/composition/store';
+import { store } from '@local/composition/store';
 import { pf } from '@local/loaders/core/pf';
 // @ts-ignore
 const VITE_DB = import.meta.env.VITE_DB;
@@ -18,7 +18,7 @@ export default async function loaderHandler(route: string, action: any) {
   try {
     const result = await fetch(url);
     data = await result.json();
-    store.dispatch(action({ data, key: rpath } as PrefetchSetType));
+    store.dispatch(action({ data, key: rpath }));
 
     if (key) pf.iterate(route, data as Array<any>);
 

@@ -2,12 +2,10 @@
  * Suspense wrapper for `router.ts`
  * @see src/composition/router.ts
  */
-import ProgressFS from '@local/components/ProgressFS';
-import { useLoaderData } from 'react-router-dom';
+import * as React from 'react';
 
 function CSuspense({ children }: { children: React.ReactNode }) {
-  const d = useLoaderData();
-  return !d ? <ProgressFS /> : children;
+  return <div>Loading...</div>;
 }
 
 export default CSuspense;

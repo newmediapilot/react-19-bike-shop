@@ -6,17 +6,44 @@ import { NavLink } from 'react-router';
  * Navigation for the router
  * @constructor
  */
+const className = `
+        h-[100%] 
+        w-[50%]
+        s:w-[100%]
+        grid 
+        grid-flow-col 
+        items-center 
+        gap-4 
+        [&>*]:h-[100%]
+        [&>*]:flex 
+        [&>*]:items-center 
+        [&>*]:justify-center 
+    `;
 function NavGlobal() {
-  const active = ({ isActive }) => `${isActive ? 'hover:underline underline' : 'hover:underline'}`;
+  const active = ({ isActive }) => `${isActive ? 'underline' : 'hover:underline'}`;
   return (
-    <nav className="grid grid-flow-col items-center gap-4 h-full">
-      <NavLink to="/listings" className={`${active} m-4`} {...pf.events('id@list')}>
+    <nav
+      className={`
+        h-[100%] 
+        w-[50%]
+        s:w-[100%]
+        grid 
+        grid-flow-col 
+        items-center 
+        gap-4 
+        [&>*]:h-[100%]
+        [&>*]:flex 
+        [&>*]:items-center 
+        [&>*]:justify-center 
+    `}
+    >
+      <NavLink to="/listings" className={active} {...pf.events('id@list')}>
         Listings
       </NavLink>
-      <NavLink to="/components" className={`${active} m-4`}>
+      <NavLink to="/components" className={active}>
         Components
       </NavLink>
-      <NavLink to="/" className="hover:underline m-4">
+      <NavLink to="/" className={active}>
         Log Out
       </NavLink>
     </nav>

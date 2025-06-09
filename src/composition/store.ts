@@ -1,4 +1,4 @@
-import { ModeSelectType } from '@local/pages/PListings/FilterRadioGroup';
+// @ts-ignore
 import { configureStore, createDynamicMiddleware, createSlice } from '@reduxjs/toolkit';
 import { useDispatch, useSelector } from 'react-redux';
 
@@ -14,12 +14,11 @@ export type RootState = {
   list: ListData;
   detail?: ListItem;
   search?: string;
-  filter?: ModeSelectType;
 };
 
 export type PrefetchSetType = {
   key: string;
-  payload: ListData | ListItem;
+  payload: ListData | ListItem | any;
 };
 
 const rootSlice = createSlice({
@@ -32,9 +31,6 @@ const rootSlice = createSlice({
     },
     setSearch: (state: RootState, action) => {
       state.search = action.payload as string;
-    },
-    setFilter: (state: RootState, action) => {
-      state.filter = action.payload as ModeSelectType;
     },
   },
 });
@@ -52,7 +48,9 @@ export const store = configureStore({
 });
 
 export type AppDispatch = typeof store.dispatch;
+// @ts-ignore
 export const useAppDispatch = useDispatch.withTypes<AppDispatch>();
+// @ts-ignore
 export const useAppSelector = useSelector.withTypes<RootState>();
 // export const createAppSelector = createSelector;
-export const { setSearch, setFilter, setStoreKey } = rootSlice.actions;
+export const { setSearch, setStoreKey } = rootSlice.actions;

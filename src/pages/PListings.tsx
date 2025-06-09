@@ -1,5 +1,4 @@
 import CDialog from '@local/components/core/CDialog';
-import InputSearch from '@local/pages/PListings/InputSearch';
 import Listings from '@local/pages/PListings/Listings';
 import ListingsDialog from '@local/pages/PListings/ListingsDialog';
 import * as React from 'react';
@@ -18,11 +17,6 @@ import * as React from 'react';
 function PListings() {
   return (
     <section>
-      <div className="px-3 pb-1 pt-1 w-full">
-        <div className="lg:max-w-[50vw]">
-          <InputSearch />
-        </div>
-      </div>
       <Listings />
       <CDialog>
         <ListingsDialog />

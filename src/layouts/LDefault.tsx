@@ -1,5 +1,6 @@
 import NavFooter from '@local/components/NavFooter';
 import NavGlobal from '@local/components/NavGlobal';
+import InputSearch from '@local/pages/PListings/InputSearch';
 import * as React from 'react';
 import { Outlet } from 'react-router';
 
@@ -13,7 +14,10 @@ export default function LDefault() {
       <header className="h-[5vh]">
         <NavGlobal />
       </header>
-      <main className="h-[90vh]">
+      <aside className="h-[5vh]">
+        <InputSearch />
+      </aside>
+      <main className="h-[85vh]">
         <Outlet />
       </main>
       <footer className="h-[5vh]">

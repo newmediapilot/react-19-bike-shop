@@ -69,6 +69,7 @@ This is the general flow of data in `loaderHandler`:
 > Since we aren't using `NextJS` we have to write a pre-fetch solution  
 > Prefetch is handled by [pf.ts](src/loaders/core/pf.ts)
 
+
 - `pf` uses its own syntax to distribute a pre-fetch strategy  
 - `pf.loader("@api/list")` prepares and returns a loader to invoke later  
 - `pf.prefetch("@api/list")` downloads the data  
@@ -114,23 +115,29 @@ Vite uses `VITE_{VARIABLE}` to define its environment by default.
 - [Layouts](src/layouts/) are used as a general wrapper and declared in [router.tsx](src/composition/router.tsx)  
 - Also in `router.tsx` [Page](src/page/) declarations and `prefetch("@route")` declarations are set  
 - Page templates (eg. [PListings.tsx](src/pages/PListings.tsx)) assemble from (eg. [PListings/](src/pages/PListings/))  
-- [Components](src/components/) general purpose components such as navbar  
-- [Core Components](src/components/core) are frequently used atomic components
+- [Components](src/components/) are general purpose components such as navbar/footer  
+- [Core Components](src/components/core) atomic and frequently used
+
+> Each type of component adheres to state management differently
 
 ### Layouts
 
 - Defines a `grid` strategy for its members
+- DRY composition layer for Flex, Grid, etc.
+- No selectors, injections or emits
 
 ## Components
 
-- Only hydrate via `selector`  
+- Only hydrate via `selector` 
+- Should be simple to move around the page
 - Must use `useSelector`, cannot use `props`  
 - Must fill their container `w&h-[100%]`
 
 ## Components/Core 
 
-- Only hydrate via `props`  
-- Must fill their container `w&h-[100%]`  
+- Only hydrate via `props` 
+- Can exist anywhere, lightweight API
+- Must fill their container `w&h-[100%]`
 - Doesn't need to be visual eg. `Suspense`
 
 # Powered by:
@@ -147,5 +154,12 @@ Vite uses `VITE_{VARIABLE}` to define its environment by default.
 - [React Spring](https://www.react-spring.dev/)  
 - [LoDash](https://lodash.com/)  
 - [JSON Server](https://www.npmjs.com/package/json-server)
+<br>
+
+# References:
+
+| Tool | URL                             | Description                                     | Notes                                                                          |
+|-----------|---------------------------------|-------------------------------------------------|--------------------------------------------------------------------------------|
+| Jotai     | https://github.com/pmndrs/jotai | A great alternative to Redux or Zustand.        | Accidentally found this, very powerful and clean implement (pre-fetch capable) |
 
 > AI was used to generate `db.json`

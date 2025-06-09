@@ -43,6 +43,9 @@ function NavGlobal() {
       <NavLink to="/listings" className={active} {...pf.events('id@list')}>
         Search
       </NavLink>
+      <NavLink to="/test" className={active}>
+        Test
+      </NavLink>
       <NavLink to="/" className={active}>
         Log Out
       </NavLink>

@@ -16,11 +16,6 @@ export type RootState = {
   search?: string;
 };
 
-export type PrefetchSetType = {
-  key: string;
-  payload: ListData | ListItem | any;
-};
-
 const rootSlice = createSlice({
   name: 'slices',
   initialState: {},

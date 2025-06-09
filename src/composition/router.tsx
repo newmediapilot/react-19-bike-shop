@@ -1,5 +1,4 @@
 import PCatch from '@local/pages/PCatch';
-import PComponents from '@local/pages/PComponents';
 import PListings from '@local/pages/PListings';
 import LDefault from '../layouts/LDefault';
 // @ts-ignore
@@ -8,6 +7,7 @@ import PLogin from '@local/pages/PLogin';
 import PPost from '@local/pages/PPost';
 import PRegister from '@local/pages/PRegister';
 import * as React from 'react';
+import NavGlobal from '@local/components/NavGlobal';
 
 /**
  * Starter router with one DefaultLayout
@@ -45,8 +45,9 @@ export const router = [
     errorElement: <PCatch message="Loader Error" />,
   },
   {
-    path: '/components',
-    element: <PComponents />,
+    path: '/test',
+      element: <div className="h-[5vh]"><NavGlobal/></div>,
+    errorElement: <PCatch message="Loader Error" />,
   },
   {
     path: '*',

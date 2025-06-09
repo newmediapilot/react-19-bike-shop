@@ -143,6 +143,7 @@ Vite uses `VITE_{VARIABLE}` to define its environment by default.
 - [React Hook Form](https://react-hook-form.com)  
 - [Workbox CLI](https://developer.chrome.com/docs/workbox/)  
 - [Skeleton UI](https://www.skeleton.dev/)  
+- [Hero Icons](https://heroicons.com/)  
 - [React Spring](https://www.react-spring.dev/)  
 - [LoDash](https://lodash.com/)  
 - [JSON Server](https://www.npmjs.com/package/json-server)

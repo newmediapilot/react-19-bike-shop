@@ -7,7 +7,7 @@ import { NavLink } from 'react-router';
  * into a storybook like list
  * @constructor
  */
-function PComponents({ components }: { components: Array<any> }) {
+function PComponents() {
   return (
     <main className="p-4">
       <NavLink to="/">Return Home</NavLink>

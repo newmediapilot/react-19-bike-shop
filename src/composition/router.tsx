@@ -5,6 +5,7 @@ import LDefault from '../layouts/LDefault';
 // @ts-ignore
 import { pf } from '@local/loaders/core/pf';
 import PLogin from '@local/pages/PLogin';
+import PPost from '@local/pages/PPost';
 import PRegister from '@local/pages/PRegister';
 import * as React from 'react';
 
@@ -39,14 +40,13 @@ export const router = [
     ],
   },
   {
+    path: '/post',
+    element: <PPost />,
+    errorElement: <PCatch message="Loader Error" />,
+  },
+  {
     path: '/components',
-    element: <LDefault />,
-    children: [
-      {
-        index: true,
-        element: <PComponents components={false} />,
-      },
-    ],
+    element: <PComponents />,
   },
   {
     path: '*',

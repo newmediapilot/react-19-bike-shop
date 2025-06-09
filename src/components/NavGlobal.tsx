@@ -37,11 +37,11 @@ function NavGlobal() {
         [&>*]:justify-center 
     `}
     >
-      <NavLink to="/listings" className={active} {...pf.events('id@list')}>
-        Listings
+      <NavLink to="/post" className={active}>
+        Post
       </NavLink>
-      <NavLink to="/components" className={active}>
-        Components
+      <NavLink to="/listings" className={active} {...pf.events('id@list')}>
+        Search
       </NavLink>
       <NavLink to="/" className={active}>
         Log Out

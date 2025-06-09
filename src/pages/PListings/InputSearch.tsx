@@ -12,13 +12,11 @@ function InputSearch({ action = setSearch }) {
   const { register } = useForm({ mode: 'onChange' });
   const onChange = (e) => dispatch(action(e.currentTarget.value));
   return (
-    <div className="h-[100%]">
-      <input
-        className="p-4 border-1 border-gray-600 w-full"
-        placeholder="Enter your search..."
-        {...register('search', { onChange })}
-      />
-    </div>
+    <input
+      className="h-[100%] px-4 border-1 border-gray-600 w-full"
+      placeholder="Enter your search..."
+      {...register('search', { onChange })}
+    />
   );
 }
 

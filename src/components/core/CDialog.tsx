@@ -7,21 +7,21 @@ import { useEffect, useRef, useState } from 'react';
  * @param content
  */
 const LDialog = function ({ children }) {
-  const dialog = useRef<HTMLDialogElement>(null);
-  const [open, setOpen] = useState(undefined);
-  useEffect(() => {
-    setOpen(!!children);
-  }, [children]);
-  return (
-    <dialog
-      popover="auto"
-      open={open}
-      ref={dialog}
-      className="z-[2] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
-    >
-      {children}
-    </dialog>
-  );
+    const dialog = useRef<HTMLDialogElement>(null);
+    const [open, setOpen] = useState(undefined);
+    useEffect(() => {
+        setOpen(!!children);
+    }, [children]);
+    return (
+        <dialog
+            popover="auto"
+            open={open}
+            ref={dialog}
+            className="z-[2] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+        >
+            {children}
+        </dialog>
+    );
 };
 
 export default LDialog;

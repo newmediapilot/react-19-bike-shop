@@ -18,11 +18,11 @@ import * as localJSON from './db.json';
 
 // fixture fallback for gh-pages
 if (import.meta.env.PRODUCTION) {
-  const { list } = localJSON.default;
-  store.dispatch(setStoreKey({ data: list, key: `@list` }));
-  list.forEach((item) =>
-    store.dispatch(setStoreKey({ data: list[Number(item.id)], key: `@list/${item.id}` }))
-  );
+    const { list } = localJSON.default;
+    store.dispatch(setStoreKey({ data: list, key: `@list` }));
+    list.forEach((item) =>
+        store.dispatch(setStoreKey({ data: list[Number(item.id)], key: `@list/${item.id}` }))
+    );
 }
 
 /**
@@ -30,8 +30,8 @@ if (import.meta.env.PRODUCTION) {
  * @see https://www.radix-ui.com/primitives/docs/utilities/direction-provider
  */
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <Provider store={store}>
-    <AppVersion />
-    <RouterProvider router={createBrowserRouter(router, routerOptions)} />
-  </Provider>
+    <Provider store={store}>
+        <AppVersion />
+        <RouterProvider router={createBrowserRouter(router, routerOptions)} />
+    </Provider>
 );

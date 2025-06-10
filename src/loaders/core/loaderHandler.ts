@@ -8,27 +8,27 @@ const VITE_DB = import.meta.env.VITE_DB;
  * @param {Function} action - Redux dispatch action to apply fetched result.
  */
 export default async function loaderHandler(route: string, action: any) {
-  let [key, path] = route.split('@');
-  let rpath = `@${path}`;
-  let url = `${VITE_DB}/${path}`;
-  let data = store.getState()[rpath];
+    let [key, path] = route.split('@');
+    let rpath = `@${path}`;
+    let url = `${VITE_DB}/${path}`;
+    let data = store.getState()[rpath];
 
-  if (data !== rpath && !!data) return data;
+    if (data !== rpath && !!data) return data;
 
-  try {
-    const result = await fetch(url);
-    data = await result.json();
-    store.dispatch(action({ data, key: rpath }));
+    try {
+        const result = await fetch(url);
+        data = await result.json();
+        store.dispatch(action({ data, key: rpath }));
 
-    if (key) pf.iterate(route, data as Array<any>);
+        if (key) pf.iterate(route, data as Array<any>);
 
-    window.localStorage.setItem(rpath, data);
+        window.localStorage.setItem(rpath, data);
 
-    return data;
-  } catch (e) {
-    const data = window.localStorage.getItem(key);
-    data && store.dispatch(action({ data, key }));
+        return data;
+    } catch (e) {
+        const data = window.localStorage.getItem(key);
+        data && store.dispatch(action({ data, key }));
 
-    return data;
-  }
+        return data;
+    }
 }

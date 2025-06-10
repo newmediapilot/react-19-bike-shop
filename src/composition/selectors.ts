@@ -9,7 +9,7 @@ export const selectList = (state: RootState): ListData => state['@list'] as List
  * Return a single listing by {id}
  */
 export const selectListDetail = (id: string) => (state: RootState) => {
-  return state[`@list/${id}`] as ListItem;
+    return state[`@list/${id}`] as ListItem;
 };
 /**
  * Return <Search> value
@@ -19,5 +19,5 @@ export const selectSearch = (state: RootState) => state.search as string;
  * Return list filtered by <Search> X <ModeSelect>
  */
 export const selectSearchFiltered = createSelector([selectList, selectSearch], (list, search) => {
-  return searchList(search, list, ['title', 'description']);
+    return searchList(search, list, ['title', 'description']);
 });

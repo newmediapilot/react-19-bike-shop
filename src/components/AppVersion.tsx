@@ -10,7 +10,7 @@ const appVersionMeta = <meta name="APP_VERSION" description={__APP_VERSION__} />
  * @constructor
  */
 function AppVersion() {
-  return createPortal(appVersionMeta, document.head);
+    return createPortal(appVersionMeta, document.head);
 }
 
 export default AppVersion;

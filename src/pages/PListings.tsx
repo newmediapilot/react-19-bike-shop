@@ -15,14 +15,14 @@ import * as React from 'react';
  * @see src/pages/PListings/FilterRadioGroup.tsx
  */
 function PListings() {
-  return (
-    <section>
-      <Listings />
-      <CDialog>
-        <ListingsDialog />
-      </CDialog>
-    </section>
-  );
+    return (
+        <section>
+            <Listings />
+            <CDialog>
+                <ListingsDialog />
+            </CDialog>
+        </section>
+    );
 }
 
 export default PListings;

@@ -158,8 +158,9 @@ Vite uses `VITE_{VARIABLE}` to define its environment by default.
 
 # References:
 
-| Tool | URL                             | Description                                     | Notes                                                                          |
-|-----------|---------------------------------|-------------------------------------------------|--------------------------------------------------------------------------------|
-| Jotai     | https://github.com/pmndrs/jotai | A great alternative to Redux or Zustand.        | Accidentally found this, very powerful and clean implement (pre-fetch capable) |
+| Tool     | URL                             | Description                              | Notes                                                 |
+|----------|---------------------------------|------------------------------------------|-------------------------------------------------------|
+| Jotai    | https://github.com/pmndrs/jotai | A great alternative to Redux or Zustand. | Powerful and clean implementation (pre-fetch capable) |
+| Daisu UI | https://daisyui.com/            | A UI component library based on Tailwind | Similar to Radix & Skeleton                           |
 
 > AI was used to generate `db.json`

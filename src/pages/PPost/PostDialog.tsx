@@ -4,11 +4,11 @@ import * as React from 'react';
  * @constructor
  */
 function PostDialog({ children }) {
-  return (
-    <article className="flex justify-center mt-6 min-w-[320px]">
-      <section className="max-w-sm w-full p-6 border space-y-4">{children}</section>
-    </article>
-  );
+    return (
+        <article className="flex justify-center mt-6 min-w-[320px]">
+            <section className="max-w-sm w-full p-6 border space-y-4">{children}</section>
+        </article>
+    );
 }
 
 export default PostDialog;

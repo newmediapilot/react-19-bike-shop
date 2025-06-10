@@ -6,20 +6,20 @@
  * @param fields
  */
 export function searchList(
-  search: string | null,
-  items: Array<any>,
-  fields: Array<string>
+    search: string | null,
+    items: Array<any>,
+    fields: Array<string>
 ): Array<any> {
-  let result = items.map((item) => {
-    const $match = [];
-    fields.forEach((field) => {
-      const match = item[field].match(new RegExp(search, 'gi'));
-      match && $match.push(match);
+    let result = items.map((item) => {
+        const $match = [];
+        fields.forEach((field) => {
+            const match = item[field].match(new RegExp(search, 'gi'));
+            match && $match.push(match);
+        });
+        return {
+            ...item,
+            $match,
+        };
     });
-    return {
-      ...item,
-      $match,
-    };
-  });
-  return result;
+    return result;
 }

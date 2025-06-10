@@ -46,9 +46,12 @@ export type PPostList = typeof initPPostConstructs;
 function PPost() {
     const dispatch = useAppDispatch();
     const componentList: PPostList = useSelector(selectPPostConstructs);
-    const onClick = () => {
+    const onClickReset = () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
         dispatch(resetFormShow());
+    };
+    const onClickExit = () => {
+        window.scrollTo({ top: 0 });
     };
     return (
         <>
@@ -72,10 +75,18 @@ function PPost() {
                 })}
             </main>
             <nav className="sticky bottom-[2px] mx-auto flex justify-center min-w-[320px] w-[320px]">
-                <NavLink onClick={onClick} to="/listings" className="w-[50%] btn preset-filled">
-                    Listings
+                <NavLink
+                    onClick={onClickExit}
+                    to="/listings"
+                    className="w-[50%] btn preset-filled bg-blue-900 text-white"
+                >
+                    Exit
                 </NavLink>
-                <NavLink onClick={onClick} to="./" className="w-[50%] btn preset-filled">
+                <NavLink
+                    onClick={onClickReset}
+                    to="./"
+                    className="w-[50%] btn preset-filled bg-red-900 text-white"
+                >
                     Reset
                 </NavLink>
             </nav>

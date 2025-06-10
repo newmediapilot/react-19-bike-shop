@@ -31,7 +31,6 @@ function ListingsDialog() {
                 border-surface-200-800 
                 divide-surface-200-800 
                 divide-y 
-                max-w-md 
              `}
             >
                 <header>

@@ -17,7 +17,16 @@ const LDialog = function ({ children }) {
             popover="auto"
             open={open}
             ref={dialog}
-            className="z-[2] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+            className={`
+                z-[10] 
+                top-1/2 
+                left-1/2 
+                -translate-x-1/2 
+                -translate-y-1/2 
+                w-[100vw] 
+                md:w-[768px]
+                lg:w-[1024px]
+            `}
         >
             {children}
         </dialog>

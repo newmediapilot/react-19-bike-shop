@@ -1,6 +1,6 @@
 import NavGlobal from '@local/components/NavGlobal';
 import * as React from 'react';
-import {useNavigate} from 'react-router';
+import { useNavigate } from 'react-router';
 
 /**
  * Post mock
@@ -13,7 +13,7 @@ function PPreview() {
     };
     return (
         <main className="grid">
-            <header className="h-[5vh]">
+            <header className="h-[5vh] sticky top-[0] bg-black">
                 <NavGlobal />
             </header>
             <article
@@ -25,17 +25,29 @@ function PPreview() {
                         block
                         sm:grid 
                         sm:gap-10 
-                        sm:grid-cols-4 
-                        sm:grid-rows-4 
+                        sm:grid-cols-3 
+                        sm:grid-rows-3 
+                        md:grid-cols-4 
+                        md:grid-rows-4 
                 `}
             >
-                <section className="grid grid-cols-1 sm:grid-cols-4 gap-3 col-start-1 col-end-4 row-start-1 row-end-2">
-                    {[1, 2, 3, 4].map((i) => (
+                <section className="grid grid-cols-2 sm:grid-cols-4 gap-3 col-start-1 col-end-4 row-start-1 row-end-2">
+                    <div
+                        style={{
+                            background:
+                                "url('https://images.pexels.com/photos/100582/pexels-photo-100582.jpeg')",
+                            backgroundSize: 'contain',
+                            backgroundRepeat: 'no-repeat',
+                            backgroundPosition: 'center',
+                        }}
+                        className="pb-[50%] border-2 border-dotted border-gray-400 flex justify-center items-center max-w-full"
+                    ></div>
+                    {[1, 2, 3].map((i) => (
                         <div
                             key={i}
-                            className="border-2 border-dotted border-gray-400 flex justify-center items-center max-w-full"
+                            className="pb-[50%] border-2 border-dotted border-gray-400 flex justify-center items-center max-w-full"
                         >
-                            <button className="btn preset-filled whitespace-nowrap">
+                            <button className="mt-[10px] btn preset-filled whitespace-nowrap">
                                 Upload Photo
                             </button>
                         </div>
@@ -139,8 +151,10 @@ function PPreview() {
                         </span>
                     </p>
                 </section>
-                <section className="col-start-1 col-end-4 row-start-4 row-end-5 sm:grid-rows-none flex flex-col justify-center items-center border-[1px] border-dotted">
-                    <button onClick={onClick} className="btn preset-filled whitespace-nowrap">Post My Bike</button>
+                <section className="p-4 sticky bottom-[0] mx-[-16px] bg-black col-start-1 col-end-4 row-start-4 row-end-5 sm:grid-rows-none flex flex-col justify-center items-center border-[1px] border-dotted">
+                    <button onClick={onClick} className="btn preset-filled whitespace-nowrap">
+                        Post My Bike
+                    </button>
                 </section>
             </article>
         </main>

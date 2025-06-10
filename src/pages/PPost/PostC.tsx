@@ -28,9 +28,9 @@ function PostC() {
             </div>
             <div className="border-b-3">
                 <dt className="h6">Guessed Attributes</dt>
-                <dd className="mb-3">
-                    Verify the specs below, click <CInfoLabel>Custom</CInfoLabel> if it has been
-                    modded.
+                <dd className="mb-3 leading-loose">
+                    Verify the specs below, check <CInfoLabel>Customized</CInfoLabel> if it has been
+                    customized from its original build.
                 </dd>
             </div>
             <div className="grid grid-rows-auto grid-cols-3 border-b-1 border-dotted pb-3">

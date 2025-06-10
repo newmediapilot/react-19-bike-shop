@@ -29,7 +29,7 @@ function PostF() {
                     Pick-up
                 </Segment.Item>
                 <Segment.Item classes="w-[33%]" value="c">
-                    Shipping
+                    Parcel
                 </Segment.Item>
                 <Segment.Item classes="w-[33%]" value="d">
                     Meet

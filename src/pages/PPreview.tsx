@@ -24,7 +24,7 @@ function PPreview() {
                         w-[100%] 
                         block
                         sm:grid 
-                        sm:gap-3 
+                        sm:gap-10 
                         sm:grid-cols-4 
                         sm:grid-rows-4 
                 `}
@@ -115,6 +115,28 @@ function PPreview() {
                     <p className="text-base pt-3 text-justify">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
                         tempor incididunt ut labore et dolore magna aliqua.
+                    </p>
+                </section>
+                <section className="col-start-3 col-end-4 row-start-3 row-end-5 sm:grid-rows-none">
+                    <div className="border-b-3 pb-3 pt-3">
+                        <h6 className="h6">Tags</h6>
+                    </div>
+                    <p className="pt-3">
+                        <span className="chip border-[1px] border-dotted mr-2 mb-2 pointer-events-none">
+                            custom-tires
+                        </span>
+                        <span className="chip border-[1px] border-dotted mr-2 mb-2 pointer-events-none">
+                            custom-saddle
+                        </span>
+                        <span className="chip border-[1px] border-dotted mr-2 mb-2 pointer-events-none">
+                            custom-tires
+                        </span>
+                        <span className="chip border-[1px] border-dotted mr-2 mb-2 pointer-events-none">
+                            disc-brakes
+                        </span>
+                        <span className="chip border-[1px] border-dotted mr-2 mb-2 pointer-events-none">
+                            aluminum-frame
+                        </span>
                     </p>
                 </section>
                 <section className="col-start-1 col-end-4 row-start-4 row-end-5 sm:grid-rows-none flex flex-col justify-center items-center border-[1px] border-dotted">

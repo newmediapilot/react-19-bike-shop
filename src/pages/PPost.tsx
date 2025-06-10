@@ -8,7 +8,9 @@ import PostD from '@local/pages/PPost/PostD';
 import PostE from '@local/pages/PPost/PostE';
 import PostF from '@local/pages/PPost/PostF';
 import PostG from '@local/pages/PPost/PostG';
+import { animated, useSpring } from '@react-spring/web';
 import * as React from 'react';
+import { useRef } from 'react';
 import { useSelector } from 'react-redux';
 
 /**
@@ -44,10 +46,20 @@ function PPost() {
     return (
         <main className="flex flex-col justify-center width-[100%] mb-[25vh]">
             {componentList.map(({ component, show }, index) => {
+                const ref = useRef(null);
+                const springProps = useSpring({
+                    opacity: show ? 1 : 0,
+                });
                 return (
-                    <div key={index} data-post={index} className={show ? 'visible' : 'hidden'}>
+                    <animated.div
+                        className="opacity-0"
+                        data-post={index}
+                        style={springProps}
+                        key={index}
+                        ref={ref}
+                    >
                         {component}
-                    </div>
+                    </animated.div>
                 );
             })}
         </main>

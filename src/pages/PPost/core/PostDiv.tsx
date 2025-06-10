@@ -16,7 +16,11 @@ function PostDiv({ direction = true }) {
             : document.body.scrollIntoView({ behavior: 'smooth', block: 'start' });
     };
     return (
-        <div ref={ref} className="flex justify-center mt-6 min-w-[320px]">
+        <div
+            ref={ref}
+            aria-label="Scrolls to previous form"
+            className="flex justify-center mt-6 min-w-[320px]"
+        >
             {!direction ? (
                 <ChevronDoubleDownIcon onClick={onClick} width="40px" />
             ) : (

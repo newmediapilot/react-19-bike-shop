@@ -12,8 +12,8 @@ import { animated, useSpring } from '@react-spring/web';
 import * as React from 'react';
 import { useRef } from 'react';
 import { useSelector } from 'react-redux';
-import {NavLink} from 'react-router';
 import {resetFormShow, useAppDispatch} from '@local/composition/store';
+import {NavLink} from 'react-router';
 
 /**
  * This is the initial `store.post` configuration

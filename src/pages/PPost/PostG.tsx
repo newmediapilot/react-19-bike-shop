@@ -1,20 +1,17 @@
 import { BeakerIcon } from '@heroicons/react/16/solid';
-import { setFormShow, useAppDispatch } from '@local/composition/store';
 import PostDialog from '@local/pages/PPost/core/PostDialog';
 import * as React from 'react';
 import { useRef } from 'react';
+import { useNavigate } from 'react-router';
 /**
  * Step in post process
  * @constructor
  */
 function PostG() {
-    const dispatch = useAppDispatch();
+    const navigate = useNavigate();
     const ref = useRef<HTMLDivElement>(null);
     const onClick = () => {
-        const postEl:HTMLDivElement = ref.current.closest('[data-post]');
-        const indexOf = Array.from(postEl.parentElement.children).indexOf(postEl);
-        postEl.nextSibling?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        dispatch(setFormShow(indexOf));
+        navigate('/preview');
     };
     return (
         <PostDialog>

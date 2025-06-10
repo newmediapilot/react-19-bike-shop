@@ -7,6 +7,7 @@ import CProgressRing from '@local/components/core/CProgressCircle';
 import { pf } from '@local/loaders/core/pf';
 import PLogin from '@local/pages/PLogin';
 import PPost from '@local/pages/PPost';
+import PPreview from '@local/pages/PPreview';
 import PRegister from '@local/pages/PRegister';
 import * as React from 'react';
 
@@ -46,6 +47,11 @@ export const router = [
         errorElement: <PCatch message="Loader Error" />,
     },
     {
+        path: '/preview',
+        element: <PPreview />,
+        errorElement: <PCatch message="Loader Error" />,
+    },
+    {
         path: '/test',
         element: (
             <>
@@ -57,7 +63,6 @@ export const router = [
                 </div>
             </>
         ),
-        errorElement: <PCatch message="Loader Error" />,
     },
     {
         path: '*',

@@ -1,4 +1,5 @@
 import { selectPPostConstructs } from '@local/composition/selectors';
+import { resetFormShow, useAppDispatch } from '@local/composition/store';
 import PostDiv from '@local/pages/PPost/core/PostDiv';
 import PostA from '@local/pages/PPost/PostA';
 import PostB from '@local/pages/PPost/PostB';
@@ -12,8 +13,7 @@ import { animated, useSpring } from '@react-spring/web';
 import * as React from 'react';
 import { useRef } from 'react';
 import { useSelector } from 'react-redux';
-import {resetFormShow, useAppDispatch} from '@local/composition/store';
-import {NavLink} from 'react-router';
+import { NavLink } from 'react-router';
 
 /**
  * This is the initial `store.post` configuration
@@ -46,35 +46,39 @@ export type PPostList = typeof initPPostConstructs;
 function PPost() {
     const dispatch = useAppDispatch();
     const componentList: PPostList = useSelector(selectPPostConstructs);
-    const onClick = ()=> {
-        window.scrollTo({ top: 0, behavior: 'smooth' })
+    const onClick = () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
         dispatch(resetFormShow());
     };
     return (
         <>
-        <main className="flex flex-col justify-center width-[100%] mb-[25vh]">
-            {componentList.map(({ component, show }, index) => {
-                const ref = useRef(null);
-                const springProps = useSpring({
-                    opacity: show ? 1 : 0,
-                });
-                return (
-                    <animated.div
-                        className="opacity-0"
-                        data-post={index}
-                        style={springProps}
-                        key={index}
-                        ref={ref}
-                    >
-                        {component}
-                    </animated.div>
-                );
-            })}
-        </main>
-        <nav className="sticky bottom-[2px] mx-auto flex justify-center min-w-[320px] w-[320px]">
-            <NavLink onClick={onClick} to="/listings" className="w-[50%] btn preset-filled">Listings</NavLink>
-            <NavLink onClick={onClick} className="w-[50%] btn preset-filled">Reset</NavLink>
-        </nav>
+            <main className="flex flex-col justify-center width-[100%] mb-[25vh]">
+                {componentList.map(({ component, show }, index) => {
+                    const ref = useRef(null);
+                    const springProps = useSpring({
+                        opacity: show ? 1 : 0,
+                    });
+                    return (
+                        <animated.div
+                            className="opacity-0"
+                            data-post={index}
+                            style={springProps}
+                            key={index}
+                            ref={ref}
+                        >
+                            {component}
+                        </animated.div>
+                    );
+                })}
+            </main>
+            <nav className="sticky bottom-[2px] mx-auto flex justify-center min-w-[320px] w-[320px]">
+                <NavLink onClick={onClick} to="/listings" className="w-[50%] btn preset-filled">
+                    Listings
+                </NavLink>
+                <NavLink onClick={onClick} to="./" className="w-[50%] btn preset-filled">
+                    Reset
+                </NavLink>
+            </nav>
         </>
     );
 }

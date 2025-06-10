@@ -12,7 +12,7 @@ function PostD() {
     const dispatch = useAppDispatch();
     const ref = useRef<HTMLDivElement>(null);
     const onValueChange = (e) => {
-        const postEl:HTMLDivElement = ref.current.closest('[data-post]');
+        const postEl: HTMLDivElement = ref.current.closest('[data-post]');
         const indexOf = Array.from(postEl.parentElement.children).indexOf(postEl);
         postEl.nextSibling?.scrollIntoView({ behavior: 'smooth', block: 'start' });
         dispatch(setFormShow(indexOf));

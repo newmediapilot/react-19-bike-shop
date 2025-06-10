@@ -21,3 +21,7 @@ export const selectSearch = (state: RootState) => state.search as string;
 export const selectSearchFiltered = createSelector([selectList, selectSearch], (list, search) => {
     return searchList(search, list, ['title', 'description']);
 });
+/**
+ * Return post forms constructor list
+ */
+export const selectPPostConstructs = (state: RootState) => state.post;

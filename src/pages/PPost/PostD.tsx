@@ -1,24 +1,28 @@
-import PostDialog from '@local/pages/PPost/PostDialog';
+import { setFormShow, useAppDispatch } from '@local/composition/store';
+import PostDialog from '@local/pages/PPost/core/PostDialog';
 import { Segment } from '@skeletonlabs/skeleton-react';
 import * as React from 'react';
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 /**
  * Step in post process
  * @constructor
  */
 function PostD() {
     const [align, setAlign] = useState('a');
+    const dispatch = useAppDispatch();
+    const ref = useRef<HTMLDivElement>(null);
+    const onValueChange = (e) => {
+        const postEl = ref.current.closest('[data-post]');
+        const indexOf = Array.from(postEl.parentElement.children).indexOf(postEl);
+        dispatch(setFormShow(indexOf));
+        setAlign(e.value!);
+    };
     return (
         <PostDialog>
-            <div>
+            <div ref={ref}>
                 <h6 className="h6">Choose more photos?</h6>
             </div>
-            <Segment
-                classes="w-full"
-                value={align}
-                name="align"
-                onValueChange={(e) => setAlign(e.value!)}
-            >
+            <Segment classes="w-full" value={align} name="align" onValueChange={onValueChange}>
                 <Segment.Item classes="w-[0%] hidden" value="a"></Segment.Item>
                 <Segment.Item classes="w-[50%] " value="b">
                     Upload More

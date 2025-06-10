@@ -1,16 +1,29 @@
 import CInfoLabel from '@local/components/core/CInfoLabel';
-import PostDialog from '@local/pages/PPost/PostDialog';
-import * as React from 'react';
 import CSwitch from '@local/components/core/CSwitch';
+import { setFormShow, useAppDispatch } from '@local/composition/store';
+import PostDialog from '@local/pages/PPost/core/PostDialog';
+import { imgFadeIn } from '@local/util/imgFadeIn';
+import * as React from 'react';
+import { useRef } from 'react';
 /**
  * Step in post process
  * @constructor
  */
 function PostC() {
+    const dispatch = useAppDispatch();
+    const ref = useRef<HTMLDivElement>(null);
+    const onClick = () => {
+        const postEl = ref.current.closest('[data-post]');
+        const indexOf = Array.from(postEl.parentElement.children).indexOf(postEl);
+        dispatch(setFormShow(indexOf));
+    };
     return (
         <PostDialog>
-            <div>
-                <img src="https://images.pexels.com/photos/100582/pexels-photo-100582.jpeg" />
+            <div ref={ref}>
+                <img
+                    {...imgFadeIn}
+                    src="https://images.pexels.com/photos/100582/pexels-photo-100582.jpeg"
+                />
             </div>
             <div className="border-b-3">
                 <dt className="h6">Guessed Attributes</dt>
@@ -32,25 +45,25 @@ function PostC() {
             <div className="grid grid-rows-auto grid-cols-3 border-b border-dotted pb-3">
                 <b>Tires</b>
                 <dt>700x32c</dt>
-               <CSwitch />
+                <CSwitch />
             </div>
             <div className="grid grid-rows-auto grid-cols-3 border-b border-dotted pb-3">
                 <b>Frame</b>
                 <dt>Aluminum</dt>
-               <CSwitch />
+                <CSwitch />
             </div>
             <div className="grid grid-rows-auto grid-cols-3 border-b border-dotted pb-3">
                 <b>Saddle</b>
                 <dt>Comfort</dt>
-               <CSwitch />
+                <CSwitch />
             </div>
             <div className="grid grid-rows-auto grid-cols-3 border-b border-dotted pb-3">
                 <b>Pedals</b>
                 <dt>Flat</dt>
-               <CSwitch/>
+                <CSwitch />
             </div>
             <div className="flex justify-center">
-                <button type="button" className="btn preset-filled">
+                <button onClick={onClick} type="button" className="btn preset-filled">
                     Done Verifying
                 </button>
             </div>

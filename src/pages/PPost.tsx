@@ -1,69 +1,55 @@
+import { selectPPostConstructs } from '@local/composition/selectors';
+import PostDiv from '@local/pages/PPost/core/PostDiv';
 import PostA from '@local/pages/PPost/PostA';
 import PostB from '@local/pages/PPost/PostB';
 import PostC from '@local/pages/PPost/PostC';
 import PostC1 from '@local/pages/PPost/PostC1';
 import PostD from '@local/pages/PPost/PostD';
-import PostDiv from '@local/pages/PPost/PostDiv';
 import PostE from '@local/pages/PPost/PostE';
 import PostF from '@local/pages/PPost/PostF';
 import PostG from '@local/pages/PPost/PostG';
-import PostPreloader from '@local/pages/PPost/PostPreloader';
 import * as React from 'react';
+import { useSelector } from 'react-redux';
+
+/**
+ * This is the initial `store.post` configuration
+ * We use it to power animations
+ */
+export const initPPostConstructs = [
+    { component: <PostA />, show: true, value: false },
+    { component: <PostDiv direction={false} />, show: false, value: false },
+    { component: <PostB />, show: false, value: false },
+    { component: <PostDiv />, show: false, value: false },
+    { component: <PostC />, show: false, value: false },
+    { component: <PostDiv />, show: false, value: false },
+    { component: <PostC1 />, show: false, value: false },
+    { component: <PostDiv />, show: false, value: false },
+    { component: <PostD />, show: false, value: false },
+    { component: <PostDiv />, show: false, value: false },
+    { component: <PostE />, show: false, value: false },
+    { component: <PostDiv />, show: false, value: false },
+    { component: <PostF />, show: false, value: false },
+    { component: <PostDiv />, show: false, value: false },
+    { component: <PostG />, show: false, value: false },
+];
+
+export type PPostList = typeof initPPostConstructs;
+
 /**
  * Post mock
  * @constructor
  */
 function PPost() {
-
-    
-
+    const componentList: PPostList = useSelector(selectPPostConstructs);
     return (
-        <main className="flex flex-col justify-center width-[100%]">
-            <div className="mt-[25vh]">
-                <PostA />
-            </div>
-            <div className="">
-                <PostPreloader />
-            </div>
-            <div className="">
-                <PostB />
-            </div>
-            <div className="">
-                <PostDiv />
-            </div>
-            <div className="">
-                <PostC />
-            </div>
-            <div className="">
-                <PostDiv />
-            </div>
-            <div className="">
-                <PostC1 />
-            </div>
-            <div className="">
-                <PostDiv />
-            </div>
-            <div className="">
-                <PostD />
-            </div>
-            <div className="">
-                <PostDiv />
-            </div>
-            <div className="">
-                <PostE />
-            </div>
-            <div className="">
-                <PostDiv />
-            </div>
-            <div className="">
-                <PostF />
-            </div>
-            <div className="">
-                <PostDiv />
-            </div>
-            <div className="mb-[25vh]">
-                <PostG />
-            </div>
+        <main className="flex flex-col justify-center width-[100%] mb-[25vh]">
+            {componentList.map(({ component, show }, index) => {
+                return (
+                    <div key={index} data-post={index} className={show ? 'visible' : 'hidden'}>
+                        {component}
+                    </div>
+                );
+            })}
         </main>
     );
 }

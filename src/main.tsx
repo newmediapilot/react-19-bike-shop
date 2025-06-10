@@ -1,5 +1,7 @@
 import { pf } from '@local/loaders/core/pf';
+import '@local/util/stringExtensions';
 import * as React from 'react';
+// @ts-ignore
 import ReactDOM from 'react-dom/client';
 import { Provider } from 'react-redux';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
@@ -13,10 +15,11 @@ pf.configureStore(store);
 
 // @ts-ignore
 if (import.meta.env.DEV) import.meta.hot?.on('vite:beforeUpdate', console.clear); // [HMR] forces console refresh
-
+// @ts-ignore
 import * as localJSON from './db.json';
 
 // fixture fallback for gh-pages
+// @ts-ignore
 if (import.meta.env.PRODUCTION) {
     const { list } = localJSON.default;
     store.dispatch(setStoreKey({ data: list, key: `@list` }));

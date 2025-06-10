@@ -1,5 +1,5 @@
-import * as React from 'react';
 import { Progress } from '@skeletonlabs/skeleton-react';
+import * as React from 'react';
 /**
  * Generic <dialog> Wraps any component with a dialog
  * @constructor

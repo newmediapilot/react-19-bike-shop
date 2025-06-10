@@ -12,6 +12,8 @@ import { animated, useSpring } from '@react-spring/web';
 import * as React from 'react';
 import { useRef } from 'react';
 import { useSelector } from 'react-redux';
+import {NavLink} from 'react-router';
+import {resetFormShow, useAppDispatch} from '@local/composition/store';
 
 /**
  * This is the initial `store.post` configuration
@@ -42,8 +44,14 @@ export type PPostList = typeof initPPostConstructs;
  * @constructor
  */
 function PPost() {
+    const dispatch = useAppDispatch();
     const componentList: PPostList = useSelector(selectPPostConstructs);
+    const onClick = ()=> {
+        window.scrollTo({ top: 0, behavior: 'smooth' })
+        dispatch(resetFormShow());
+    };
     return (
+        <>
         <main className="flex flex-col justify-center width-[100%] mb-[25vh]">
             {componentList.map(({ component, show }, index) => {
                 const ref = useRef(null);
@@ -63,6 +71,11 @@ function PPost() {
                 );
             })}
         </main>
+        <nav className="sticky bottom-[2px] mx-auto flex justify-center min-w-[320px] w-[320px]">
+            <NavLink onClick={onClick} to="/listings" className="w-[50%] btn preset-filled">Listings</NavLink>
+            <NavLink onClick={onClick} className="w-[50%] btn preset-filled">Reset</NavLink>
+        </nav>
+        </>
     );
 }
 

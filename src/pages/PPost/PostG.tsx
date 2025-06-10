@@ -11,7 +11,7 @@ function PostG() {
     const dispatch = useAppDispatch();
     const ref = useRef<HTMLDivElement>(null);
     const onClick = () => {
-        const postEl = ref.current.closest('[data-post]');
+        const postEl:HTMLDivElement = ref.current.closest('[data-post]');
         const indexOf = Array.from(postEl.parentElement.children).indexOf(postEl);
         postEl.nextSibling?.scrollIntoView({ behavior: 'smooth', block: 'start' });
         dispatch(setFormShow(indexOf));
@@ -20,10 +20,10 @@ function PostG() {
         <PostDialog>
             <div ref={ref} className="flex flex-col items-center">
                 <BeakerIcon width={100} />
-                <h6 className="h6 align-center pt-2 pb-5">Congratulations your post is ready.</h6>
+                <h6 className="h6 align-center pt-2 pb-5">Your post is almost ready.</h6>
                 <div className="flex justify-center">
                     <button onClick={onClick} type="button" className="btn preset-filled">
-                        View Post
+                        Preview Post
                     </button>
                 </div>
             </div>

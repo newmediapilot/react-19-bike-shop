@@ -20,13 +20,13 @@ import * as localJSON from './db.json';
 
 // fixture fallback for gh-pages
 // @ts-ignore
-if (import.meta.env.PRODUCTION) {
+// if (import.meta.env.PRODUCTION) {
     const { list } = localJSON.default;
     store.dispatch(setStoreKey({ data: list, key: `@list` }));
     list.forEach((item) =>
         store.dispatch(setStoreKey({ data: list[Number(item.id)], key: `@list/${item.id}` }))
     );
-}
+// }
 
 /**
  * @see https://www.radix-ui.com/themes/docs/components/theme

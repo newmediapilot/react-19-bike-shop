@@ -6,13 +6,6 @@ import * as React from 'react';
 /**
  * Listings page
  * @constructor
- * @see src/pages/PListings/FilterRadioGroup.tsx
- * @see src/pages/PListings/FilterRadioLabel.tsx
- * @see src/pages/PListings/InputSearch.tsx
- * @see src/pages/PListings/Listings.tsx
- * @see src/pages/PListings/ListingsDialog.tsx
- * @see src/pages/PListings/ListingsOverlay.tsx
- * @see src/pages/PListings/FilterRadioGroup.tsx
  */
 function PListings() {
     return (

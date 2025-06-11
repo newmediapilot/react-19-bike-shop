@@ -12,7 +12,7 @@ function PostC1() {
     const onClick = () => {
         const postEl: HTMLDivElement = ref.current.closest('[data-post]');
         const indexOf = Array.from(postEl.parentElement.children).indexOf(postEl);
-        postEl.nextSibling?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        (postEl.nextSibling as Element)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
         dispatch(setFormShow(indexOf));
     };
     return (
@@ -23,13 +23,13 @@ function PostC1() {
             <div>
                 <h5 className="h5 mb-3">Customizations</h5>
                 <span className="chip border-[1px] border-dotted mr-2 pointer-events-none">
-                    pedals
+                    custom-pedals
                 </span>
                 <span className="chip border-[1px] border-dotted mr-2 pointer-events-none">
-                    saddle
+                    custom-saddle
                 </span>
                 <span className="chip border-[1px] border-dotted mr-2 pointer-events-none">
-                    tires
+                    custom-tires
                 </span>
             </div>
             <textarea

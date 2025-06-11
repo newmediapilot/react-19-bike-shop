@@ -18,17 +18,16 @@ function PPreview() {
             </header>
             <article
                 className={`
-                        box-border
-                        p-4
-                        h-[95vh] 
-                        w-[100%] 
-                        block
-                        sm:grid 
-                        sm:gap-10 
-                        sm:grid-cols-3 
-                        sm:grid-rows-3 
-                        md:grid-cols-4 
-                        md:grid-rows-4 
+                      box-border
+                      p-4
+                      w-[100%]
+                      h-auto
+                      block
+                      md:h-[95vh]
+                      sm:grid 
+                      sm:gap-5 
+                      sm:grid-cols-3 
+                      md:grid-cols-4 
                 `}
             >
                 <section className="grid grid-cols-2 sm:grid-cols-4 gap-3 col-start-1 col-end-4 row-start-1 row-end-2">
@@ -53,7 +52,7 @@ function PPreview() {
                         </div>
                     ))}
                 </section>
-                <section className="col-start-1 col-end-2 row-start-2 row-end-4 sm:grid-rows-none">
+                <section className="col-start-1 col-end-3 row-start-2 row-end-4 sm:grid-rows-none">
                     <div className="border-b-3 pb-3 pt-3">
                         <dt className="h6">Specifications</dt>
                     </div>
@@ -99,28 +98,28 @@ function PPreview() {
                     </div>
                     <h5 className="h5 my-3">Customizations</h5>
                     <span className="chip border-[1px] border-dotted mr-2 pointer-events-none">
-                        pedals
+                        custom-pedals
                     </span>
                     <span className="chip border-[1px] border-dotted mr-2 pointer-events-none">
-                        saddle
+                        custom-saddle
                     </span>
                     <span className="chip border-[1px] border-dotted mr-2 pointer-events-none">
-                        tires
+                        custom-tires
                     </span>
                 </section>
-                <section className="col-start-2 col-end-3 row-start-2 row-end-4 sm:grid-rows-none">
+                <section className="col-start-3 col-end-4 row-start-2 row-end-4 sm:grid-rows-none">
                     <div className="border-b-3 pb-3 pt-3">
                         <h6 className="h6">Asking Price</h6>
                     </div>
                     <p className="text-3xl">$ 1,890.00</p>
                 </section>
-                <section className="col-start-3 col-end-4 row-start-2 row-end-4 sm:grid-rows-none">
+                <section className="col-start-4 col-end-5 row-start-2 row-end-4 sm:grid-rows-none">
                     <div className="border-b-3 pb-3 pt-3">
                         <h6 className="h6">How will it be delivered</h6>
                     </div>
                     <p className="text-3xl">Parcel</p>
                 </section>
-                <section className="col-start-2 col-end-3 row-start-3 row-end-5 sm:grid-rows-none">
+                <section className="col-start-3 col-end-4 row-start-3 row-end-5 sm:grid-rows-none">
                     <div className="border-b-3 pb-3 pt-3">
                         <h6 className="h6">Customizations</h6>
                     </div>
@@ -129,7 +128,7 @@ function PPreview() {
                         tempor incididunt ut labore et dolore magna aliqua.
                     </p>
                 </section>
-                <section className="col-start-3 col-end-4 row-start-3 row-end-5 sm:grid-rows-none">
+                <section className="col-start-4 col-end-5 row-start-3 row-end-5 sm:grid-rows-none mb-[25vh]">
                     <div className="border-b-3 pb-3 pt-3">
                         <h6 className="h6">Tags</h6>
                     </div>
@@ -151,7 +150,7 @@ function PPreview() {
                         </span>
                     </p>
                 </section>
-                <section className="p-4 sticky bottom-[0] mx-[-16px] bg-black col-start-1 col-end-4 row-start-4 row-end-5 sm:grid-rows-none flex flex-col justify-center items-center border-[1px] border-dotted">
+                <section className="p-4 fixed w-[100%] bottom-[0] mx-[-16px] bg-black col-start-1 col-end-4 row-start-4 row-end-5 sm:grid-rows-none flex flex-col justify-center items-center border-[1px] border-dotted">
                     <button onClick={onClick} className="btn preset-filled whitespace-nowrap">
                         Post My Bike
                     </button>

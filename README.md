@@ -149,6 +149,7 @@ Vite uses `VITE_{VARIABLE}` to define its environment by default.
 - [React Redux](https://react-redux.js.org/introduction/getting-started)  
 - [React Hook Form](https://react-hook-form.com)  
 - [Workbox CLI](https://developer.chrome.com/docs/workbox/)  
+- [Tailwind CSS](https://tailwindcss.com/)  
 - [Skeleton UI](https://www.skeleton.dev/)  
 - [Hero Icons](https://heroicons.com/)  
 - [React Spring](https://www.react-spring.dev/)  
@@ -161,6 +162,6 @@ Vite uses `VITE_{VARIABLE}` to define its environment by default.
 | Tool     | URL                             | Description                              | Notes                                                 |
 |----------|---------------------------------|------------------------------------------|-------------------------------------------------------|
 | Jotai    | https://github.com/pmndrs/jotai | A great alternative to Redux or Zustand. | Powerful and clean implementation (pre-fetch capable) |
-| Daisu UI | https://daisyui.com/            | A UI component library based on Tailwind | Similar to Radix & Skeleton                           |
+| Daisy UI | https://daisyui.com/            | A UI component library based on Tailwind | Similar to Radix & Skeleton                           |
 
 > AI was used to generate `db.json`

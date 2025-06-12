@@ -74,6 +74,7 @@ class PrefetchResolver {
      */
     events(route: string, id?: string): { onMouseOver: () => void } {
         return {
+            // @ts-ignore
             onMouseOver: (e) => {
                 this.prefetch(route);
                 //console.log(`PrefetchResolver :: events :: onMouseOver :: ${route}`);

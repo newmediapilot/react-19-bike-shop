@@ -14,7 +14,6 @@
     "docs": "node ./node_modules/jsdoc/jsdoc.js \"src/**/*.ts\" -r -d docs",
     "db": "node ./node_modules/json-server/lib/bin.js ./src/db.json",
     "gf": "bash scripts/git-flatten-branch.sh",
-    "gw": "node scripts/git-watch.js",
     "pr": "prettier --write \"src/**/*\""
   },
   "dependencies": {
